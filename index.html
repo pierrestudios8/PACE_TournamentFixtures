@@ -143,6 +143,9 @@ nav.side .all{margin-top:10px;color:var(--muted);font-weight:500}
 .pill.live{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
 .pill.soon{color:var(--accent-text)}
 .pill.done{color:var(--muted)}
+.pills{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.pill.stage{color:var(--neutral-text)}
+.pill.stage.inline{margin-left:6px;vertical-align:1px;font-size:.62rem;padding:2px 9px}
 .state{font-size:.86rem;font-weight:700;color:var(--muted);display:flex;align-items:center;gap:8px;margin-top:auto;padding-top:10px;border-top:1px solid var(--line)}
 .dot{width:9px;height:9px;border-radius:50%;background:var(--muted);flex:none}
 .dot.on{background:var(--accent)}
@@ -455,12 +458,33 @@ function status(t){
   return {cls:"soon", label: days<=60 ? `In ${days} days` : "Upcoming"};
 }
 
+/* Current stage, derived from the fixtures rather than assumed.
+   The rule: the first fixture the data cannot show as played. A tournament whose
+   fixtures carry no dates at all (ASEAN's grid is unpublished) returns null —
+   we genuinely cannot tell which matchday it is on, and a guess here would be
+   read as fact. */
+function currentStage(t){
+  if(t.id==="nzl"){
+    const next=["W","M"].flatMap(c=>(DATA[c]||[])
+        .filter(g=>!g.bye&&g.d&&!g._started&&!g.s)
+        .map(g=>({round:g.r,key:g.d.split("/").reverse().join("")})))
+      .sort((a,b)=>a.key.localeCompare(b.key))[0];
+    return next?`Round ${next.round}`:null;
+  }
+  const list=FIX[t.id]||[];
+  if(!list.length) return null;
+  if(!list.some(x=>x.date)) return null;
+  const pending=list.find(x=>!x._started&&!x.score);
+  return pending&&pending.stage?pending.stage:null;
+}
+
 /* ---------- dashboard ---------- */
 function dashboard(){
   const cards=TOURNAMENTS.map(t=>{
-    const st=status(t);
+    const st=status(t), stage=currentStage(t);
     return `<div class="card" role="button" tabindex="0" data-open="${t.id}">
-      <span class="pill ${st.cls}">${st.label}</span>
+      <div class="pills"><span class="pill ${st.cls}">${st.label}</span>${
+        stage?`<span class="pill stage">${esc(stage)}</span>`:""}</div>
       <h3>${esc(t.name)}</h3>
       <dl>
         <dt>Dates</dt><dd>${esc(t.window)}</dd>
@@ -477,9 +501,9 @@ function dashboard(){
 
 /* ---------- tournament overview ---------- */
 function overview(t){
-  const st=status(t);
+  const st=status(t), stage=currentStage(t);
   return `<div class="panel"><h3>Overview</h3><dl class="facts">
-      <div><dt>Status</dt><dd>${st.label}</dd></div>
+      <div><dt>Status</dt><dd>${st.label}${stage?` <span class="pill stage inline">${esc(stage)}</span>`:""}</dd></div>
       <div><dt>Dates</dt><dd>${esc(t.window)}</dd></div>
       <div><dt>Host</dt><dd>${esc(t.host)}</dd></div>
       <div><dt>Format</dt><dd>${esc(t.format)}</dd></div>
