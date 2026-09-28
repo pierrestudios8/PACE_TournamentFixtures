@@ -1,7 +1,7 @@
 {
  "version": 1,
  "note": "Display-only scores, keyed by fixture id. Written by the scheduled fetcher. Never feeds Figma assets.",
- "updated": "2026-09-28T10:21:19Z",
+ "updated": "2026-09-28T13:20:49Z",
  "results": {
   "icc-01": {
    "score": "1–0",
@@ -137,6 +137,78 @@
    "corroboration": "https://www.gbcghanaonline.com/news/spain-edge-dpr-korea-4-3-on-penalties-to-claim-u-20-womens-world-cup/2026/",
    "confirmed": false,
    "at": "2026-09-28T10:21:19Z"
+  },
+  "nzl-w-01": {
+   "score": "0–1",
+   "status": "FT",
+   "source": "https://www.flashscore.com/football/new-zealand/national-league-women/results/",
+   "corroboration": "https://www.soccerway.com/new-zealand/national-league-women/",
+   "confirmed": false,
+   "at": "2026-09-28T13:20:49Z"
+  },
+  "nzl-w-02": {
+   "score": "0–4",
+   "status": "FT",
+   "source": "https://www.flashscore.com/football/new-zealand/national-league-women/results/",
+   "corroboration": "https://www.soccerway.com/new-zealand/national-league-women/",
+   "confirmed": false,
+   "at": "2026-09-28T13:20:49Z"
+  },
+  "nzl-w-03": {
+   "score": "5–0",
+   "status": "FT",
+   "source": "https://www.flashscore.com/football/new-zealand/national-league-women/results/",
+   "corroboration": "https://www.soccerway.com/new-zealand/national-league-women/",
+   "confirmed": false,
+   "at": "2026-09-28T13:20:49Z"
+  },
+  "nzl-w-04": {
+   "score": "3–1",
+   "status": "FT",
+   "source": "https://www.flashscore.com/football/new-zealand/national-league-women/results/",
+   "corroboration": "https://www.soccerway.com/new-zealand/national-league-women/",
+   "confirmed": false,
+   "at": "2026-09-28T13:20:49Z"
+  },
+  "nzl-m-01": {
+   "score": "1–1",
+   "status": "FT",
+   "source": "https://www.flashscore.com/football/new-zealand/national-league/results/",
+   "corroboration": "https://www.fotmob.com/leagues/8870/table",
+   "confirmed": false,
+   "at": "2026-09-28T13:20:49Z"
+  },
+  "nzl-m-02": {
+   "score": "0–0",
+   "status": "FT",
+   "source": "https://www.flashscore.com/football/new-zealand/national-league/results/",
+   "corroboration": "https://www.fotmob.com/leagues/8870/table",
+   "confirmed": false,
+   "at": "2026-09-28T13:20:49Z"
+  },
+  "nzl-m-03": {
+   "score": "1–1",
+   "status": "FT",
+   "source": "https://www.flashscore.com/football/new-zealand/national-league/results/",
+   "corroboration": "https://www.fotmob.com/leagues/8870/table",
+   "confirmed": false,
+   "at": "2026-09-28T13:20:49Z"
+  },
+  "nzl-m-04": {
+   "score": "2–3",
+   "status": "FT",
+   "source": "https://www.flashscore.com/football/new-zealand/national-league/results/",
+   "corroboration": "https://www.fotmob.com/leagues/8870/table",
+   "confirmed": false,
+   "at": "2026-09-28T13:20:49Z"
+  },
+  "nzl-m-05": {
+   "score": "0–4",
+   "status": "FT",
+   "source": "https://www.flashscore.com/football/new-zealand/national-league/results/",
+   "corroboration": "https://www.fotmob.com/leagues/8870/table",
+   "confirmed": false,
+   "at": "2026-09-28T13:20:49Z"
   }
  }
 }
