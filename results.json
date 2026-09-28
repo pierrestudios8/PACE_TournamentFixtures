@@ -1,0 +1,142 @@
+{
+ "version": 1,
+ "note": "Display-only scores, keyed by fixture id. Written by the scheduled fetcher. Never feeds Figma assets.",
+ "updated": "2026-09-28T10:21:19Z",
+ "results": {
+  "icc-01": {
+   "score": "1–0",
+   "status": "FT",
+   "source": null,
+   "confirmed": true,
+   "at": "2026-09-28T10:14:19Z"
+  },
+  "icc-02": {
+   "score": "2–1",
+   "status": "FT",
+   "source": null,
+   "confirmed": true,
+   "at": "2026-09-28T10:14:19Z"
+  },
+  "u20w-37": {
+   "score": "0–1",
+   "status": "FT",
+   "source": null,
+   "confirmed": true,
+   "at": "2026-09-28T10:14:19Z"
+  },
+  "u20w-38": {
+   "score": "1–1",
+   "pens": "5–4",
+   "note": "After extra time",
+   "status": "FT",
+   "source": null,
+   "confirmed": true,
+   "at": "2026-09-28T10:14:19Z"
+  },
+  "u20w-40": {
+   "score": "1–1",
+   "pens": "5–4",
+   "status": "FT",
+   "source": null,
+   "confirmed": true,
+   "at": "2026-09-28T10:14:19Z"
+  },
+  "u20w-44": {
+   "score": "2–0",
+   "status": "FT",
+   "source": null,
+   "confirmed": true,
+   "at": "2026-09-28T10:14:19Z"
+  },
+  "u20w-42": {
+   "score": "1–3",
+   "status": "FT",
+   "source": null,
+   "confirmed": true,
+   "at": "2026-09-28T10:14:19Z"
+  },
+  "u20w-43": {
+   "score": "0–3",
+   "status": "FT",
+   "source": null,
+   "confirmed": true,
+   "at": "2026-09-28T10:14:19Z"
+  },
+  "u20w-39": {
+   "score": "2–0",
+   "status": "FT",
+   "source": null,
+   "confirmed": true,
+   "at": "2026-09-28T10:14:19Z"
+  },
+  "u20w-41": {
+   "score": "0–1",
+   "status": "FT",
+   "source": null,
+   "confirmed": true,
+   "at": "2026-09-28T10:14:19Z"
+  },
+  "u20w-46": {
+   "score": "1–3",
+   "status": "FT",
+   "source": null,
+   "confirmed": true,
+   "at": "2026-09-28T10:14:19Z"
+  },
+  "u20w-45": {
+   "score": "0–1",
+   "status": "FT",
+   "source": null,
+   "confirmed": true,
+   "at": "2026-09-28T10:14:19Z"
+  },
+  "u20w-48": {
+   "score": "0–1",
+   "status": "FT",
+   "source": null,
+   "confirmed": true,
+   "at": "2026-09-28T10:14:19Z"
+  },
+  "u20w-47": {
+   "score": "2–0",
+   "status": "FT",
+   "source": null,
+   "confirmed": true,
+   "at": "2026-09-28T10:14:19Z"
+  },
+  "u20w-49": {
+   "score": "0–2",
+   "status": "FT",
+   "source": null,
+   "confirmed": true,
+   "at": "2026-09-28T10:14:19Z"
+  },
+  "u20w-50": {
+   "score": "3–0",
+   "status": "FT",
+   "source": null,
+   "confirmed": true,
+   "at": "2026-09-28T10:14:19Z"
+  },
+  "u20w-51": {
+   "score": "1–1",
+   "pens": "3–4",
+   "note": "After extra time",
+   "status": "FT",
+   "source": "https://www.figc.it/en/national-teams/news/heartbreak-for-italy-defeat-on-penalties-in-the-bronze-medal-match-pqj7gzwi",
+   "corroboration": "https://www.fifa.com/en/tournaments/womens/u20womensworldcup/poland-2026/articles/luisa-agudelo-colombia-bronze-medal",
+   "confirmed": false,
+   "at": "2026-09-28T10:21:19Z"
+  },
+  "u20w-52": {
+   "score": "0–0",
+   "pens": "4–3",
+   "note": "After extra time",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/womens/u20womensworldcup/poland-2026/articles/spain-dpr-korea-final-match-report-highlights",
+   "corroboration": "https://www.gbcghanaonline.com/news/spain-edge-dpr-korea-4-3-on-penalties-to-claim-u-20-womens-world-cup/2026/",
+   "confirmed": false,
+   "at": "2026-09-28T10:21:19Z"
+  }
+ }
+}

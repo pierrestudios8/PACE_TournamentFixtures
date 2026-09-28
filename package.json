@@ -1,0 +1,6 @@
+{
+  "name": "pace-fixture-hub",
+  "private": true,
+  "type": "module",
+  "scripts": { "build": "node validate.mjs" }
+}

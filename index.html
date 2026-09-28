@@ -1,0 +1,893 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PACE Fixture Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Archivo+Black&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* PACE [Brand & Slide] — tokens audited from the Figma brand file.
+   One accent (orange), Archivo Black display, 20px radius.
+   Dark is the brand default; light is a derived mode behind the header toggle. */
+:root{
+  --pace-orange:#fd6632;
+  --pace-dark-blue:#031119;
+  --pace-sidebar-bg:#1f2c33;
+  --pace-graphite:#1C2327;            /* lifted field — black was crushing the card edges */
+
+  /* Inverted from v4: the field is graphite and the cards carry the brand blue.
+     At 50% the card fill can only reach ~1.2:1 against the field, so the card
+     BOUNDARY does the separating — hence --line-card, and hence the lift off black,
+     which took the same border from 1.44:1 to 2.9:1. */
+  --bg:var(--pace-graphite);
+  --surface:rgba(3,17,25,.50);        /* card fill: PACE dark blue, 50% — reads as a recess */
+  --chrome:rgba(3,17,25,.96);         /* header + tab strip — must occlude scrolling content */
+  --ink:#FFFFFF;
+  --band-ink:#FFFFFF;
+  --muted:rgba(255,255,255,.62);
+  --neutral-text:rgba(255,255,255,.80);
+  --line:rgba(255,255,255,.20);       /* internal hairlines, row dividers */
+  --line-card:rgba(255,255,255,.32);  /* outer edge of a card/panel/list — ~2.9:1 */
+  --line-strong:rgba(255,255,255,.38);
+  --lift-1:rgba(255,255,255,.05);     /* day strips, hovers, segment track */
+  --lift-2:rgba(255,255,255,.15);     /* neutral chips */
+  --glow-1:rgba(253,102,50,.30);
+  --glow-2:rgba(253,102,50,.14);
+
+  --accent:var(--pace-orange);        /* fills, rules, indicators */
+  --accent-text:var(--pace-orange);   /* accent as type */
+  --accent-ink:var(--pace-dark-blue); /* type on an accent fill */
+  --warn:var(--accent-text);
+  --live:var(--pace-orange);
+  --w:var(--pace-orange);
+  --m:rgba(255,255,255,.80);
+
+  --radius-card:20px;
+  --tabs-h:49px;                      /* height of the sticky tournament strip */
+  --font-display:"Archivo Black","Archivo",system-ui,sans-serif;
+  --font-head:"Archivo",system-ui,sans-serif;
+  --font:"Roboto",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+:root[data-theme="light"]{
+  --bg:#E9EDEF;
+  --surface:rgba(255,255,255,.72);
+  --chrome:rgba(255,255,255,.94);
+  --ink:var(--pace-dark-blue);
+  --band-ink:var(--pace-dark-blue);
+  --muted:rgba(3,17,25,.62);
+  --neutral-text:rgba(3,17,25,.72);
+  --line:rgba(3,17,25,.14);
+  --line-card:rgba(3,17,25,.22);
+  --line-strong:rgba(3,17,25,.30);
+  --lift-1:rgba(3,17,25,.05);
+  --lift-2:rgba(3,17,25,.11);
+  --glow-1:rgba(253,102,50,.20);
+  --glow-2:rgba(253,102,50,.10);
+  /* #fd6632 as type on a light field is ~2.4:1, so accent TYPE darkens while
+     accent FILLS stay the exact brand orange. */
+  --accent-text:#9A3410;
+  --m:rgba(3,17,25,.72);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.45;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(70vw 60vh at 88% 104%, var(--glow-1), transparent 62%),
+    radial-gradient(48vw 42vh at 104% 62%, var(--glow-2), transparent 66%),
+    var(--bg);}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+
+header{background:var(--chrome);color:var(--ink);border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}
+.head{max-width:1120px;margin:0 auto;padding:22px 20px;display:flex;flex-wrap:wrap;gap:16px 32px;align-items:flex-end;justify-content:space-between}
+.eyebrow{margin:0 0 8px;font-family:var(--font);font-size:.76rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-text);opacity:1}
+h1{margin:0;font-family:var(--font-display);font-weight:900;font-size:clamp(1.55rem,3.8vw,2.6rem);line-height:1;letter-spacing:-0.02em;text-transform:uppercase}
+.sub{margin:10px 0 0;font-family:var(--font-head);opacity:.72;font-size:.95rem}
+.brand{font-family:var(--font-display);font-weight:900;font-size:1.05rem;letter-spacing:.02em;text-transform:uppercase;line-height:1;margin:0 0 14px;display:flex;gap:.5ch}
+.brand span{color:var(--accent-text)}
+.headright{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:flex-end;margin-left:auto}
+.themebtn{background:var(--lift-1);border:1.5px solid var(--line);color:var(--muted);border-radius:999px;
+  padding:8px 16px;font-family:var(--font);font-weight:700;font-size:.76rem;letter-spacing:.1em;
+  text-transform:uppercase;cursor:pointer;display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
+.themebtn:hover{color:var(--ink);border-color:var(--line-strong)}
+.themebtn svg{width:15px;height:15px;flex:none}
+.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.seg{display:inline-flex;border:1.5px solid var(--line);border-radius:999px;padding:3px;background:var(--lift-1)}
+.seg button{background:none;border:0;border-radius:999px;padding:7px 18px;font-weight:700;font-size:.86rem;cursor:pointer;color:var(--muted)}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+.seg button[hidden],[hidden]{display:none}
+.back{background:none;border:0;padding:6px 0;margin:0 0 8px;font-weight:700;font-size:.88rem;cursor:pointer;opacity:.75}
+
+.tabs{background:var(--chrome);color:var(--ink);border-bottom:1px solid var(--line);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  position:sticky;top:0;z-index:20}
+@supports not ((backdrop-filter:blur(10px)) or (-webkit-backdrop-filter:blur(10px))){
+  .tabs{background:var(--bg)}
+}
+.tabs .inner{max-width:1120px;margin:0 auto;padding:0 20px;display:flex;gap:4px;overflow-x:auto}
+.drag-scroll{scrollbar-width:none;-ms-overflow-style:none;cursor:grab;overscroll-behavior-x:contain}
+.drag-scroll::-webkit-scrollbar{display:none}
+.drag-scroll.dragging{cursor:grabbing;user-select:none}
+.drag-scroll.dragging button{cursor:grabbing}
+.tabs .inner.more-r{-webkit-mask-image:linear-gradient(to right,#000 calc(100% - 56px),transparent);mask-image:linear-gradient(to right,#000 calc(100% - 56px),transparent)}
+.tabs .inner.more-l{-webkit-mask-image:linear-gradient(to right,transparent,#000 56px);mask-image:linear-gradient(to right,transparent,#000 56px)}
+.tabs .inner.more-l.more-r{-webkit-mask-image:linear-gradient(to right,transparent,#000 56px,#000 calc(100% - 56px),transparent);mask-image:linear-gradient(to right,transparent,#000 56px,#000 calc(100% - 56px),transparent)}
+.tabs button{background:none;border:0;padding:13px 14px;font-family:var(--font-display);font-weight:900;font-size:.82rem;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap;cursor:pointer;border-bottom:3px solid transparent;opacity:.6}
+.tabs button[aria-pressed="true"]{opacity:1;color:var(--accent-text);border-bottom-color:var(--accent)}
+
+main.page{max-width:1120px;margin:0 auto;padding:28px 20px 60px}
+.layout{display:grid;grid-template-columns:240px 1fr;gap:32px;padding:28px 20px 60px;max-width:1120px;margin:0 auto}
+nav.side{position:sticky;top:calc(var(--tabs-h) + 16px);align-self:start;display:flex;flex-direction:column;gap:2px;max-height:calc(100vh - var(--tabs-h) - 32px);overflow:auto}
+nav.side button{background:none;border:0;text-align:left;padding:10px 13px;border-radius:10px;cursor:pointer;font-weight:500;border-left:3px solid transparent;color:var(--muted)}
+nav.side button small{display:block;font-weight:400;color:var(--muted);font-size:.82rem}
+nav.side button:hover{background:var(--lift-1);color:var(--ink)}
+nav.side button[aria-pressed="true"]{background:var(--surface);border-left-color:var(--accent);color:var(--ink)}
+nav.side .all{margin-top:10px;color:var(--muted);font-weight:500}
+
+/* dashboard */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px}
+.card{background:var(--surface);border:1px solid var(--line-card);border-radius:var(--radius-card);padding:22px;text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:12px;font:inherit;line-height:1.45;color:inherit;min-width:0}
+.card>*{margin:0}
+.card:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.card:hover{border-color:var(--accent)}
+.card{transition:border-color .15s ease}
+.card h3{margin:0;font-family:var(--font-display);font-weight:900;font-size:1.1rem;line-height:1.12;letter-spacing:-0.01em;text-transform:uppercase}
+.card dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:.9rem}
+.card dt{color:var(--muted)}
+.card dd{margin:0}
+.pill{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 11px;border-radius:999px;border:1.5px solid currentColor;width:max-content}
+.pill.live{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.pill.soon{color:var(--accent-text)}
+.pill.done{color:var(--muted)}
+.state{font-size:.86rem;font-weight:700;color:var(--muted);display:flex;align-items:center;gap:8px;margin-top:auto;padding-top:10px;border-top:1px solid var(--line)}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--muted);flex:none}
+.dot.on{background:var(--accent)}
+
+/* tournament overview */
+.panel{background:var(--surface);border:1px solid var(--line-card);border-radius:var(--radius-card);padding:24px;margin-bottom:20px}
+.panel h3{margin:0 0 16px;font-family:var(--font-display);font-weight:900;font-size:.95rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-text)}
+.facts{margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px 28px}
+.facts div{min-width:0}
+.facts dt{color:var(--muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;font-weight:700}
+.facts dd{margin:2px 0 0}
+ul.plain{margin:0;padding-left:20px}
+ul.plain li{margin:4px 0}
+.check{list-style:none;margin:0;padding:0}
+.check li{display:grid;grid-template-columns:22px 1fr;gap:10px;padding:9px 0;border-top:1px solid var(--line)}
+.check li:first-child{border-top:0}
+.check b{font-weight:700}
+.check small{display:block;color:var(--muted);font-size:.86rem}
+.mark{font-weight:900;color:var(--muted)}
+.mark.on{color:var(--accent-text)}
+.groups{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}
+.groups h4{margin:0 0 6px;font-family:var(--font-display);font-weight:900;font-size:.82rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.groups ol{margin:0;padding-left:18px}
+.empty{border:1.5px dashed var(--line);border-radius:var(--radius-card);padding:30px;text-align:center;color:var(--muted)}
+.empty b{display:block;color:var(--ink);font-family:var(--font-display);font-weight:900;font-size:1.05rem;letter-spacing:-0.01em;text-transform:uppercase;margin-bottom:8px}
+
+/* fixture lists */
+section.block{margin-bottom:48px;scroll-margin-top:calc(var(--tabs-h) + 16px)}
+section.block h2{margin:0;font-family:var(--font-display);font-weight:900;font-size:clamp(1.35rem,3.2vw,2.05rem);line-height:1;letter-spacing:-0.02em;text-transform:uppercase}
+.meta{color:var(--muted);margin:6px 0 16px;font-size:.92rem}
+.list{background:var(--surface);border:1px solid var(--line-card);border-radius:var(--radius-card);overflow:hidden}
+.row{display:grid;grid-template-columns:44px 118px 70px 64px minmax(0,1fr) 104px;gap:12px;align-items:center;padding:12px 16px;border-top:1px solid var(--line)}
+.row:first-child{border-top:0}
+.rnd{font-family:var(--font-display);font-weight:900;color:var(--muted);font-variant-numeric:tabular-nums;font-size:.92rem}
+.date b{font-weight:700}
+.ko{font-variant-numeric:tabular-nums;font-weight:600}
+.ha{display:inline-block;text-align:center;font-size:.72rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:4px 0;border-radius:999px;width:58px}
+.ha.home{background:var(--lift-2);color:var(--ink)}
+.ha.away{border:1.5px solid var(--line-strong);color:var(--muted)}
+.opp{font-weight:700}
+.opp small,.match small{display:block;font-weight:400;color:var(--muted);font-size:.86rem}
+.flag{color:var(--warn)}
+.row.bye{opacity:.6}
+.row.bye .opp{font-weight:500;font-style:italic}
+.row.final{background:rgba(253,102,50,.12);box-shadow:inset 3px 0 0 var(--accent);color:var(--ink)}
+.row.final .rnd,.row.final .opp small,.row.final .match small{color:inherit;opacity:.75}
+.kom{display:none}
+.day{padding:11px 16px;font-family:var(--font-display);font-weight:900;font-size:.9rem;letter-spacing:.02em;text-transform:uppercase;border-top:1px solid var(--line);background:var(--lift-1)}
+.day:first-child{border-top:0}
+.wrow{display:grid;grid-template-columns:60px minmax(0,104px) minmax(0,1fr) 104px;gap:12px;align-items:center;padding:11px 16px;border-top:1px solid var(--line)}
+.wrow.notag{grid-template-columns:60px minmax(0,1fr) 104px}
+.wrow>*{min-width:0}
+.tag{display:inline-block;font-size:.76rem;font-weight:700;line-height:1.25;padding:2px 8px;border-radius:12px;border:1.5px solid currentColor;text-align:center;max-width:100%;overflow-wrap:anywhere}
+.tag.W{color:var(--accent-text)}
+.tag.M{color:var(--neutral-text)}
+.match{font-weight:700;overflow-wrap:anywhere}
+.match .v{font-weight:400;color:var(--muted);margin:0 6px}
+.sc{display:flex;align-items:center;justify-content:flex-end;gap:10px;font-variant-numeric:tabular-nums;padding-left:12px;border-left:1px solid var(--line);align-self:stretch}
+.sc.none{color:var(--muted);opacity:.55;font-weight:700}
+.scv{display:flex;flex-direction:column;align-items:flex-end;line-height:1}
+.scv b{font-family:var(--font-display);font-weight:900;font-size:1.3rem;letter-spacing:-0.03em}
+.scv small{margin-top:4px;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.res{width:26px;height:26px;border-radius:8px;display:grid;place-items:center;font-family:var(--font-display);font-weight:900;font-size:.74rem;flex:none}
+.res.W{background:var(--accent);color:var(--accent-ink)}
+.res.D{border:1.5px solid var(--muted);color:var(--muted)}
+.res.L{background:var(--lift-2);color:var(--muted)}
+.sc.none.await{font-family:var(--font);font-weight:700;font-size:.62rem;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--accent-text);opacity:.9}
+.stamp{margin:6px 0 0;font-size:.76rem;color:var(--muted)}
+.stamp b{font-weight:700;color:var(--neutral-text)}
+.stamp .warn{color:var(--accent-text);font-weight:700}
+.row.final .sc,.row.bye .sc{border-left:0}
+.byes{padding:10px 16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.foot{color:var(--muted);font-size:.85rem;margin-top:8px}
+
+@media (max-width:760px){
+  .headright{margin-left:0;justify-content:flex-start;width:100%}
+  .layout{grid-template-columns:1fr;gap:18px;padding-top:16px}
+  nav.side{position:static;flex-direction:row;overflow-x:auto;gap:6px;padding-bottom:6px;max-height:none}
+  nav.side button{white-space:nowrap;border-left:0;border-bottom:3px solid transparent;background:var(--lift-1);border-radius:10px}
+  nav.side button[aria-pressed="true"]{border-bottom-color:var(--accent)}
+  nav.side .all{margin-top:0}
+  .row{grid-template-columns:34px minmax(0,1fr) auto;grid-template-areas:"r d h" "r o s";row-gap:4px}
+  .row .sc{grid-area:s;border-left:0;padding-left:0}
+  .rnd{grid-area:r;align-self:start}
+  .date{grid-area:d} .ko{display:none} .date .kom{display:inline}
+  .ha{grid-area:h} .opp{grid-area:o}
+  .wrow{grid-template-columns:auto minmax(0,1fr) auto;grid-template-areas:"k t s" "m m s";row-gap:4px}
+  .wrow.notag{grid-template-columns:auto minmax(0,1fr) auto;grid-template-areas:"k . s" "m m s";row-gap:4px}
+  .wrow .sc{grid-area:s;border-left:0}
+  .wrow .ko{display:block;grid-area:k} .wrow .tagc{grid-area:t} .wrow .match{grid-area:m}
+}
+@media print{
+  html{scroll-behavior:auto}
+  .controls,nav.side,.tabs,.back,.themebtn{display:none}
+  .layout{grid-template-columns:1fr}
+  section.block{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="head">
+    <div>
+      <p class="brand">PACE<span>Fixtures</span></p>
+      <button class="back" id="back" hidden>← All tournaments</button>
+      <p class="eyebrow" id="eyebrow">Fixture hub</p>
+      <h1 id="title">Tournament fixture hub</h1>
+      <p class="sub" id="sub">Schedules, fixture data and Figma rollout status</p>
+      <p class="stamp" id="stamp" hidden></p>
+    </div>
+    <div class="headright">
+      <div class="controls" id="controls" hidden></div>
+      <button class="themebtn" id="theme" type="button" aria-pressed="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.2"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.5 1.5M17.6 17.6l1.5 1.5M19.1 4.9l-1.5 1.5M6.4 17.6l-1.5 1.5"/>
+        </svg><span id="themelabel">Light</span>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="tabs"><div class="inner drag-scroll" id="tabs"></div></div>
+<div id="app"></div>
+<script>
+let DATA = {"W": [{"r": 1, "d": "26/09", "t": "14:00", "h": "Waterside Karori", "a": "Fencibles United", "v": "Martin Luckie Park"}, {"r": 1, "d": "26/09", "t": "15:00", "h": "West Coast Rangers", "a": "Eastern Suburbs", "v": "Fred Taylor Park"}, {"r": 1, "d": "27/09", "t": "12:30", "h": "Auckland United", "a": "SU Uni of Otago", "v": "Keith Hay Park"}, {"r": 1, "d": "27/09", "t": "13:00", "h": "Wellington Phoenix", "a": "Canterbury Utd Pride", "v": "NZCIS"}, {"r": 1, "bye": "Wellington United"}, {"r": 2, "d": "03/10", "t": "15:00", "h": "West Coast Rangers", "a": "Waterside Karori", "v": "Fred Taylor Park"}, {"r": 2, "d": "04/10", "t": "15:00", "h": "Wellington United", "a": "Auckland United", "v": "TBC"}, {"r": 2, "d": "04/10", "t": "15:00", "h": "SU Uni of Otago", "a": "Fencibles United", "v": "Logan Park"}, {"r": 2, "d": "04/10", "t": "16:30", "h": "Eastern Suburbs", "a": "Wellington Phoenix", "v": "Madills Farm"}, {"r": 2, "bye": "Canterbury Utd Pride"}, {"r": 3, "d": "11/10", "t": "14:00", "h": "SU Uni of Otago", "a": "Waterside Karori", "v": "Logan Park"}, {"r": 3, "d": "11/10", "t": "14:30", "h": "Fencibles United", "a": "Wellington United", "v": "Riverhills Park"}, {"r": 3, "d": "11/10", "t": "15:00", "h": "Auckland United", "a": "Canterbury Utd Pride", "v": "Keith Hay Park"}, {"r": 3, "d": "11/10", "t": "16:00", "h": "Wellington Phoenix", "a": "West Coast Rangers", "v": "Fraser Park"}, {"r": 3, "bye": "Eastern Suburbs"}, {"r": 4, "d": "16/10", "t": "19:00", "h": "Waterside Karori", "a": "Wellington Phoenix", "v": "Martin Luckie Park"}, {"r": 4, "d": "17/10", "t": "14:30", "h": "Canterbury Utd Pride", "a": "Fencibles United", "v": "English Park"}, {"r": 4, "d": "17/10", "t": "16:00", "h": "Auckland United", "a": "Eastern Suburbs", "v": "Keith Hay Park"}, {"r": 4, "d": "18/10", "t": "12:00", "h": "Wellington United", "a": "SU Uni of Otago", "v": "TBC"}, {"r": 4, "bye": "West Coast Rangers"}, {"r": 5, "d": "24/10", "t": "15:00", "h": "Wellington United", "a": "Waterside Karori", "v": "TBC"}, {"r": 5, "d": "25/10", "t": "14:00", "h": "SU Uni of Otago", "a": "Canterbury Utd Pride", "v": "Logan Park"}, {"r": 5, "d": "25/10", "t": "14:00", "h": "Fencibles United", "a": "Eastern Suburbs", "v": "Riverhills Park"}, {"r": 5, "d": "25/10", "t": "14:00", "h": "Auckland United", "a": "West Coast Rangers", "v": "Keith Hay Park"}, {"r": 5, "bye": "Wellington Phoenix"}, {"r": 6, "d": "31/10", "t": "14:00", "h": "Canterbury Utd Pride", "a": "Wellington United", "v": "English Park"}, {"r": 6, "d": "01/11", "t": "12:00", "h": "Eastern Suburbs", "a": "SU Uni of Otago", "v": "Madills Farm"}, {"r": 6, "d": "01/11", "t": "16:00", "h": "West Coast Rangers", "a": "Fencibles United", "v": "Fred Taylor Park"}, {"r": 6, "d": "01/11", "t": "16:00", "h": "Wellington Phoenix", "a": "Auckland United", "v": "Fraser Park"}, {"r": 6, "bye": "Waterside Karori"}, {"r": 7, "d": "07/11", "t": "14:00", "h": "Canterbury Utd Pride", "a": "Waterside Karori", "v": "English Park"}, {"r": 7, "d": "07/11", "t": "14:00", "h": "Wellington United", "a": "Eastern Suburbs", "v": "TBC"}, {"r": 7, "d": "08/11", "t": "14:00", "h": "SU Uni of Otago", "a": "West Coast Rangers", "v": "Logan Park"}, {"r": 7, "d": "08/11", "t": "16:00", "h": "Fencibles United", "a": "Wellington Phoenix", "v": "Riverhills Park"}, {"r": 7, "bye": "Auckland United"}, {"r": 8, "d": "14/11", "t": "14:00", "h": "Waterside Karori", "a": "Auckland United", "v": "Martin Luckie Park"}, {"r": 8, "d": "15/11", "t": "12:00", "h": "Wellington Phoenix", "a": "SU Uni of Otago", "v": "Fraser Park"}, {"r": 8, "d": "15/11", "t": "14:00", "h": "West Coast Rangers", "a": "Wellington United", "v": "Fred Taylor Park"}, {"r": 8, "d": "15/11", "t": "16:00", "h": "Eastern Suburbs", "a": "Canterbury Utd Pride", "v": "Madills Farm"}, {"r": 8, "bye": "Fencibles United"}, {"r": 9, "d": "22/11", "t": "14:00", "h": "Fencibles United", "a": "Auckland United", "v": "Riverhills Park"}, {"r": 9, "d": "22/11", "t": "14:00", "h": "Eastern Suburbs", "a": "Waterside Karori", "v": "Madills Farm"}, {"r": 9, "d": "22/11", "t": "14:00", "h": "Canterbury Utd Pride", "a": "West Coast Rangers", "v": "English Park"}, {"r": 9, "d": "22/11", "t": "14:00", "h": "Wellington United", "a": "Wellington Phoenix", "v": "TBC"}, {"r": 9, "bye": "SU Uni of Otago"}], "M": [{"r": 1, "d": "26/09", "t": "14:30", "h": "Wellington Phoenix", "a": "Auckland United", "v": "NZCIS"}, {"r": 1, "d": "26/09", "t": "15:30", "h": "Ferrymead Bays", "a": "Eastern Suburbs", "v": "Ferrymead Park"}, {"r": 1, "d": "27/09", "t": "12:30", "h": "Napier City Rovers", "a": "Miramar Rangers", "v": "Blue Water Stadium"}, {"r": 1, "d": "27/09", "t": "14:00", "h": "Auckland FC", "a": "Wellington Olympic", "v": "Fred Taylor Park"}, {"r": 1, "d": "27/09", "t": "15:00", "h": "Birkenhead United", "a": "Cashmere Technical", "v": "Sheppards Park"}, {"r": 1, "bye": "Auckland City FC"}, {"r": 2, "d": "03/10", "t": "14:00", "h": "Miramar Rangers", "a": "Auckland FC", "v": "David Farrington"}, {"r": 2, "d": "03/10", "t": "14:00", "h": "Wellington Olympic", "a": "Ferrymead Bays", "v": "Wakefield Park"}, {"r": 2, "d": "04/10", "t": "11:30", "h": "Eastern Suburbs", "a": "Auckland City FC", "v": "Madills Farm"}, {"r": 2, "d": "04/10", "t": "13:00", "h": "Auckland United", "a": "Napier City Rovers", "v": "Keith Hay Park"}, {"r": 2, "d": "04/10", "t": "14:00", "h": "Cashmere Technical", "a": "Wellington Phoenix", "v": "Garrick Memorial"}, {"r": 2, "bye": "Birkenhead United"}, {"r": 3, "d": "10/10", "t": "14:30", "h": "Wellington Phoenix", "a": "Birkenhead United", "v": "Fraser Park"}, {"r": 3, "d": "10/10", "t": "15:00", "h": "Auckland City FC", "a": "Wellington Olympic", "v": "Kiwitea Street"}, {"r": 3, "d": "10/10", "t": "16:00", "h": "Ferrymead Bays", "a": "Miramar Rangers", "v": "Ferrymead Park"}, {"r": 3, "d": "11/10", "t": "12:00", "h": "Auckland FC", "a": "Auckland United", "v": "Fred Taylor Park"}, {"r": 3, "d": "11/10", "t": "13:00", "h": "Napier City Rovers", "a": "Cashmere Technical", "v": "Blue Water Stadium"}, {"r": 3, "bye": "Eastern Suburbs"}, {"r": 4, "d": "17/10", "t": "13:00", "h": "Miramar Rangers", "a": "Auckland City FC", "v": "Fraser Park"}, {"r": 4, "d": "17/10", "t": "15:00", "h": "Wellington Olympic", "a": "Eastern Suburbs", "v": "Wakefield Park"}, {"r": 4, "d": "18/10", "t": "14:00", "h": "Cashmere Technical", "a": "Auckland FC", "v": "Garrick Memorial"}, {"r": 4, "d": "18/10", "t": "14:00", "h": "Birkenhead United", "a": "Napier City Rovers", "v": "Sheppards Park"}, {"r": 4, "d": "18/10", "t": "16:00", "h": "Auckland United", "a": "Ferrymead Bays", "v": "Keith Hay Park"}, {"r": 4, "bye": "Wellington Phoenix"}, {"r": 5, "d": "24/10", "t": "14:00", "h": "Auckland City FC", "a": "Auckland United", "v": "Kiwitea Street"}, {"r": 5, "d": "24/10", "t": "15:00", "h": "Eastern Suburbs", "a": "Miramar Rangers", "v": "Madills Farm"}, {"r": 5, "d": "24/10", "t": "17:00", "h": "Ferrymead Bays", "a": "Cashmere Technical", "v": "Ferrymead Park"}, {"r": 5, "d": "25/10", "t": "12:00", "h": "Auckland FC", "a": "Birkenhead United", "v": "Fred Taylor Park"}, {"r": 5, "d": "25/10", "t": "12:30", "h": "Napier City Rovers", "a": "Wellington Phoenix", "v": "Blue Water Stadium"}, {"r": 5, "bye": "Wellington Olympic"}, {"r": 6, "d": "31/10", "t": "13:00", "h": "Miramar Rangers", "a": "Wellington Olympic", "v": "David Farrington"}, {"r": 6, "d": "31/10", "t": "15:00", "h": "Wellington Phoenix", "a": "Auckland FC", "v": "Fraser Park"}, {"r": 6, "d": "31/10", "t": "17:00", "h": "Auckland United", "a": "Eastern Suburbs", "v": "Keith Hay Park"}, {"r": 6, "d": "01/11", "t": "13:00", "h": "Cashmere Technical", "a": "Auckland City FC", "v": "Garrick Memorial"}, {"r": 6, "d": "01/11", "t": "15:00", "h": "Birkenhead United", "a": "Ferrymead Bays", "v": "Sheppards Park"}, {"r": 6, "bye": "Napier City Rovers"}, {"r": 7, "d": "07/11", "t": "14:00", "h": "Auckland City FC", "a": "Birkenhead United", "v": "Kiwitea Street"}, {"r": 7, "d": "07/11", "t": "14:00", "h": "Wellington Olympic", "a": "Auckland United", "v": "Wakefield Park"}, {"r": 7, "d": "07/11", "t": "16:00", "h": "Ferrymead Bays", "a": "Wellington Phoenix", "v": "Ferrymead Park"}, {"r": 7, "d": "08/11", "t": "14:00", "h": "Auckland FC", "a": "Napier City Rovers", "v": "Fred Taylor Park"}, {"r": 7, "d": "08/11", "t": "16:00", "h": "Eastern Suburbs", "a": "Cashmere Technical", "v": "Madills Farm"}, {"r": 7, "bye": "Miramar Rangers"}, {"r": 8, "d": "14/11", "t": "14:00", "h": "Wellington Phoenix", "a": "Auckland City FC", "v": "Fraser Park"}, {"r": 8, "d": "15/11", "t": "13:00", "h": "Napier City Rovers", "a": "Ferrymead Bays", "v": "Ferrymead Park"}, {"r": 8, "d": "15/11", "t": "14:00", "h": "Cashmere Technical", "a": "Wellington Olympic", "v": "Garrick Memorial"}, {"r": 8, "d": "15/11", "t": "15:00", "h": "Auckland United", "a": "Miramar Rangers", "v": "Keith Hay Park"}, {"r": 8, "d": "15/11", "t": "16:00", "h": "Birkenhead United", "a": "Eastern Suburbs", "v": "Sheppards Park"}, {"r": 8, "bye": "Auckland FC"}, {"r": 9, "d": "21/11", "t": "13:00", "h": "Auckland City FC", "a": "Napier City Rovers", "v": "Kiwitea Street"}, {"r": 9, "d": "21/11", "t": "14:00", "h": "Miramar Rangers", "a": "Cashmere Technical", "v": "David Farrington"}, {"r": 9, "d": "21/11", "t": "15:00", "h": "Ferrymead Bays", "a": "Auckland FC", "v": "Ferrymead Park"}, {"r": 9, "d": "21/11", "t": "16:00", "h": "Wellington Olympic", "a": "Birkenhead United", "v": "Wakefield Park"}, {"r": 9, "d": "22/11", "t": "16:00", "h": "Eastern Suburbs", "a": "Wellington Phoenix", "v": "Madills Farm"}, {"r": 9, "bye": "Auckland United"}, {"r": 10, "d": "28/11", "t": "14:00", "h": "Wellington Phoenix", "a": "Wellington Olympic", "v": "Fraser Park"}, {"r": 10, "d": "29/11", "t": "12:00", "h": "Auckland FC", "a": "Auckland City FC", "v": "Fred Taylor Park"}, {"r": 10, "d": "29/11", "t": "14:00", "h": "Cashmere Technical", "a": "Auckland United", "v": "Garrick Memorial"}, {"r": 10, "d": "29/11", "t": "14:00", "h": "Napier City Rovers", "a": "Eastern Suburbs", "v": "Blue Water Stadium"}, {"r": 10, "d": "29/11", "t": "16:00", "h": "Birkenhead United", "a": "Miramar Rangers", "v": "Sheppards Park"}, {"r": 10, "bye": "Ferrymead Bays"}, {"r": 11, "d": "06/12", "t": "14:00", "h": "Auckland City FC", "a": "Ferrymead Bays", "v": "Kiwitea Street"}, {"r": 11, "d": "06/12", "t": "14:00", "h": "Auckland United", "a": "Birkenhead United", "v": "Keith Hay Park"}, {"r": 11, "d": "06/12", "t": "14:00", "h": "Miramar Rangers", "a": "Wellington Phoenix", "v": "David Farrington"}, {"r": 11, "d": "06/12", "t": "14:00", "h": "Wellington Olympic", "a": "Napier City Rovers", "v": "Wakefield Park"}, {"r": 11, "d": "06/12", "t": "14:00", "h": "Eastern Suburbs", "a": "Auckland FC", "v": "Madills Farm"}, {"r": 11, "bye": "Cashmere Technical"}]};
+let FIX = {"u17w": [{"no": 2, "stage": "Group stage", "group": "Group A", "date": "2026-10-17", "ko": "15:00", "home": "Germany", "away": "Argentina", "venue": "Women's Football Complex, Pitch 1"}, {"no": 3, "stage": "Group stage", "group": "Group B", "date": "2026-10-17", "ko": "15:00", "home": "DPR Korea", "away": "Puerto Rico", "venue": "Women's Football Complex, Pitch 2"}, {"no": 1, "stage": "Group stage", "group": "Group A", "date": "2026-10-17", "ko": "18:00", "home": "Morocco", "away": "New Zealand", "venue": "Women's Football Complex, Pitch 3"}, {"no": 4, "stage": "Group stage", "group": "Group B", "date": "2026-10-17", "ko": "18:00", "home": "Poland", "away": "Nigeria", "venue": "Women's Football Complex, Pitch 4"}, {"no": 5, "stage": "Group stage", "group": "Group C", "date": "2026-10-18", "ko": "15:00", "home": "Canada", "away": "Brazil", "venue": "Women's Football Complex, Pitch 1"}, {"no": 7, "stage": "Group stage", "group": "Group D", "date": "2026-10-18", "ko": "15:00", "home": "Japan", "away": "Zambia", "venue": "Women's Football Complex, Pitch 2"}, {"no": 6, "stage": "Group stage", "group": "Group C", "date": "2026-10-18", "ko": "18:00", "home": "Norway", "away": "Ghana", "venue": "Women's Football Complex, Pitch 3"}, {"no": 8, "stage": "Group stage", "group": "Group D", "date": "2026-10-18", "ko": "18:00", "home": "France", "away": "Venezuela", "venue": "Women's Football Complex, Pitch 4"}, {"no": 10, "stage": "Group stage", "group": "Group E", "date": "2026-10-19", "ko": "15:00", "home": "Kenya", "away": "China PR", "venue": "Women's Football Complex, Pitch 1"}, {"no": 11, "stage": "Group stage", "group": "Group F", "date": "2026-10-19", "ko": "15:00", "home": "Spain", "away": "Mexico", "venue": "Women's Football Complex, Pitch 2"}, {"no": 9, "stage": "Group stage", "group": "Group E", "date": "2026-10-19", "ko": "18:00", "home": "USA", "away": "Samoa", "venue": "Women's Football Complex, Pitch 3"}, {"no": 12, "stage": "Group stage", "group": "Group F", "date": "2026-10-19", "ko": "18:00", "home": "Australia", "away": "Chile", "venue": "Women's Football Complex, Pitch 4"}, {"no": 14, "stage": "Group stage", "group": "Group A", "date": "2026-10-20", "ko": "15:00", "home": "Argentina", "away": "New Zealand", "venue": "Women's Football Complex, Pitch 1"}, {"no": 15, "stage": "Group stage", "group": "Group B", "date": "2026-10-20", "ko": "15:00", "home": "DPR Korea", "away": "Poland", "venue": "Women's Football Complex, Pitch 2"}, {"no": 13, "stage": "Group stage", "group": "Group A", "date": "2026-10-20", "ko": "18:00", "home": "Morocco", "away": "Germany", "venue": "Women's Football Complex, Pitch 3"}, {"no": 16, "stage": "Group stage", "group": "Group B", "date": "2026-10-20", "ko": "18:00", "home": "Nigeria", "away": "Puerto Rico", "venue": "Women's Football Complex, Pitch 4"}, {"no": 17, "stage": "Group stage", "group": "Group C", "date": "2026-10-21", "ko": "15:00", "home": "Canada", "away": "Norway", "venue": "Women's Football Complex, Pitch 1"}, {"no": 19, "stage": "Group stage", "group": "Group D", "date": "2026-10-21", "ko": "15:00", "home": "Japan", "away": "France", "venue": "Women's Football Complex, Pitch 2"}, {"no": 18, "stage": "Group stage", "group": "Group C", "date": "2026-10-21", "ko": "18:00", "home": "Ghana", "away": "Brazil", "venue": "Women's Football Complex, Pitch 3"}, {"no": 20, "stage": "Group stage", "group": "Group D", "date": "2026-10-21", "ko": "18:00", "home": "Venezuela", "away": "Zambia", "venue": "Women's Football Complex, Pitch 4"}, {"no": 22, "stage": "Group stage", "group": "Group E", "date": "2026-10-22", "ko": "15:00", "home": "China PR", "away": "Samoa", "venue": "Women's Football Complex, Pitch 1"}, {"no": 23, "stage": "Group stage", "group": "Group F", "date": "2026-10-22", "ko": "15:00", "home": "Spain", "away": "Australia", "venue": "Women's Football Complex, Pitch 2"}, {"no": 21, "stage": "Group stage", "group": "Group E", "date": "2026-10-22", "ko": "18:00", "home": "USA", "away": "Kenya", "venue": "Women's Football Complex, Pitch 3"}, {"no": 24, "stage": "Group stage", "group": "Group F", "date": "2026-10-22", "ko": "18:00", "home": "Chile", "away": "Mexico", "venue": "Women's Football Complex, Pitch 4"}, {"no": 27, "stage": "Group stage", "group": "Group B", "date": "2026-10-23", "ko": "15:00", "home": "Nigeria", "away": "DPR Korea", "venue": "Women's Football Complex, Pitch 1"}, {"no": 28, "stage": "Group stage", "group": "Group B", "date": "2026-10-23", "ko": "15:00", "home": "Puerto Rico", "away": "Poland", "venue": "Women's Football Complex, Pitch 2"}, {"no": 25, "stage": "Group stage", "group": "Group A", "date": "2026-10-23", "ko": "18:00", "home": "Argentina", "away": "Morocco", "venue": "Women's Football Complex, Pitch 4"}, {"no": 26, "stage": "Group stage", "group": "Group A", "date": "2026-10-23", "ko": "18:00", "home": "New Zealand", "away": "Germany", "venue": "Women's Football Complex, Pitch 3"}, {"no": 29, "stage": "Group stage", "group": "Group C", "date": "2026-10-24", "ko": "15:00", "home": "Ghana", "away": "Canada", "venue": "Women's Football Complex, Pitch 1"}, {"no": 30, "stage": "Group stage", "group": "Group C", "date": "2026-10-24", "ko": "15:00", "home": "Brazil", "away": "Norway", "venue": "Women's Football Complex, Pitch 2"}, {"no": 31, "stage": "Group stage", "group": "Group D", "date": "2026-10-24", "ko": "18:00", "home": "Venezuela", "away": "Japan", "venue": "Women's Football Complex, Pitch 3"}, {"no": 32, "stage": "Group stage", "group": "Group D", "date": "2026-10-24", "ko": "18:00", "home": "Zambia", "away": "France", "venue": "Women's Football Complex, Pitch 4"}, {"no": 35, "stage": "Group stage", "group": "Group F", "date": "2026-10-25", "ko": "15:00", "home": "Chile", "away": "Spain", "venue": "Women's Football Complex, Pitch 2"}, {"no": 36, "stage": "Group stage", "group": "Group F", "date": "2026-10-25", "ko": "15:00", "home": "Mexico", "away": "Australia", "venue": "Women's Football Complex, Pitch 1"}, {"no": 33, "stage": "Group stage", "group": "Group E", "date": "2026-10-25", "ko": "18:00", "home": "China PR", "away": "USA", "venue": "Women's Football Complex, Pitch 3"}, {"no": 34, "stage": "Group stage", "group": "Group E", "date": "2026-10-25", "ko": "18:00", "home": "Samoa", "away": "Kenya", "venue": "Women's Football Complex, Pitch 4"}, {"no": 39, "stage": "Round of 16", "group": null, "date": "2026-10-28", "ko": "15:00", "home": "1B", "away": "3A/C/D", "venue": "Women's Football Complex, Pitch 2"}, {"no": 44, "stage": "Round of 16", "group": null, "date": "2026-10-28", "ko": "15:00", "home": "1A", "away": "3C/D/E", "venue": "Women's Football Complex, Pitch 1"}, {"no": 37, "stage": "Round of 16", "group": null, "date": "2026-10-28", "ko": "18:00", "home": "2A", "away": "2C", "venue": "Women's Football Complex, Pitch 3"}, {"no": 42, "stage": "Round of 16", "group": null, "date": "2026-10-28", "ko": "18:00", "home": "1C", "away": "3A/B/F", "venue": "Women's Football Complex, Pitch 4"}, {"no": 41, "stage": "Round of 16", "group": null, "date": "2026-10-29", "ko": "15:00", "home": "1E", "away": "2D", "venue": "Women's Football Complex, Pitch 1"}, {"no": 43, "stage": "Round of 16", "group": null, "date": "2026-10-29", "ko": "15:00", "home": "2B", "away": "2F", "venue": "Women's Football Complex, Pitch 2"}, {"no": 38, "stage": "Round of 16", "group": null, "date": "2026-10-29", "ko": "18:00", "home": "1D", "away": "3B/E/F", "venue": "Women's Football Complex, Pitch 3"}, {"no": 40, "stage": "Round of 16", "group": null, "date": "2026-10-29", "ko": "18:00", "home": "1F", "away": "2E", "venue": "Women's Football Complex, Pitch 4"}, {"no": 45, "stage": "Quarter-final", "group": null, "date": "2026-11-01", "ko": "15:00", "home": "W37", "away": "W38", "venue": "Women's Football Complex, Pitch 1"}, {"no": 46, "stage": "Quarter-final", "group": null, "date": "2026-11-01", "ko": "15:00", "home": "W39", "away": "W40", "venue": "Women's Football Complex, Pitch 2"}, {"no": 47, "stage": "Quarter-final", "group": null, "date": "2026-11-01", "ko": "18:00", "home": "W41", "away": "W42", "venue": "Women's Football Complex, Pitch 3"}, {"no": 48, "stage": "Quarter-final", "group": null, "date": "2026-11-01", "ko": "18:00", "home": "W43", "away": "W44", "venue": "Women's Football Complex, Pitch 4"}, {"no": 49, "stage": "Semi-final", "group": null, "date": "2026-11-04", "ko": "15:00", "home": "W45", "away": "W46", "venue": "Women's Football Complex, Pitch 2"}, {"no": 50, "stage": "Semi-final", "group": null, "date": "2026-11-04", "ko": "18:00", "home": "W47", "away": "W48", "venue": "Women's Football Complex, Pitch 4"}, {"no": 51, "stage": "Bronze final", "group": null, "date": "2026-11-07", "ko": "15:00", "home": "Loser SF1", "away": "Loser SF2", "venue": "Prince Moulay El Hassan Stadium"}, {"no": 52, "stage": "Final", "group": null, "date": "2026-11-07", "ko": "18:30", "home": "Winner SF1", "away": "Winner SF2", "venue": "Prince Moulay El Hassan Stadium"}], "asean": [{"no": 1, "division": "Division 1", "stage": "Matchday 1", "group": "Group A", "date": null, "ko": "20:00", "home": "Indonesia", "away": "Singapore", "venue": "Indonesia, venue TBC"}, {"no": 2, "division": "Division 1", "stage": "Matchday 1", "group": "Group A", "date": null, "ko": "16:00", "home": "Bangladesh", "away": "Malaysia", "venue": "Indonesia, venue TBC"}, {"no": 3, "division": "Division 1", "stage": "Matchday 1", "group": "Group B", "date": null, "ko": "19:30", "home": "Vietnam", "away": "Philippines", "venue": "Indonesia, venue TBC"}, {"no": 4, "division": "Division 1", "stage": "Matchday 1", "group": "Group B", "date": null, "ko": "16:00", "home": "Pakistan", "away": "Thailand", "venue": "Indonesia, venue TBC"}, {"no": 5, "division": "Division 1", "stage": "Matchday 2", "group": "Group A", "date": null, "ko": "19:30", "home": "Malaysia", "away": "Indonesia", "venue": "Indonesia, venue TBC"}, {"no": 6, "division": "Division 1", "stage": "Matchday 2", "group": "Group A", "date": null, "ko": "16:00", "home": "Singapore", "away": "Bangladesh", "venue": "Indonesia, venue TBC"}, {"no": 7, "division": "Division 1", "stage": "Matchday 2", "group": "Group B", "date": null, "ko": "19:30", "home": "Thailand", "away": "Vietnam", "venue": "Indonesia, venue TBC"}, {"no": 8, "division": "Division 1", "stage": "Matchday 2", "group": "Group B", "date": null, "ko": "16:00", "home": "Philippines", "away": "Pakistan", "venue": "Indonesia, venue TBC"}, {"no": 9, "division": "Division 1", "stage": "Matchday 3", "group": "Group A", "date": null, "ko": "19:30", "home": "Indonesia", "away": "Bangladesh", "venue": "Indonesia, venue TBC"}, {"no": 10, "division": "Division 1", "stage": "Matchday 3", "group": "Group A", "date": null, "ko": "19:30", "home": "Malaysia", "away": "Singapore", "venue": "Indonesia, venue TBC"}, {"no": 11, "division": "Division 1", "stage": "Matchday 3", "group": "Group B", "date": null, "ko": "16:00", "home": "Vietnam", "away": "Pakistan", "venue": "Indonesia, venue TBC"}, {"no": 12, "division": "Division 1", "stage": "Matchday 3", "group": "Group B", "date": null, "ko": "16:00", "home": "Thailand", "away": "Philippines", "venue": "Indonesia, venue TBC"}, {"no": 13, "division": "Division 1", "stage": "Bronze final", "group": null, "date": null, "ko": "16:00", "home": "Runner-up Group A", "away": "Runner-up Group B", "venue": "Indonesia, venue TBC"}, {"no": 14, "division": "Division 1", "stage": "Final", "group": null, "date": null, "ko": "20:00", "home": "Winner Group A", "away": "Winner Group B", "venue": "Indonesia, venue TBC"}, {"no": 1, "division": "Division 2", "stage": "Matchday 1", "group": "Group A", "date": null, "ko": "17:00", "home": "Laos", "away": "Brunei Darussalam", "venue": "Hong Kong, China, venue TBC"}, {"no": 2, "division": "Division 2", "stage": "Matchday 1", "group": "Group B", "date": null, "ko": "20:00", "home": "Myanmar", "away": "Timor-Leste", "venue": "Hong Kong, China, venue TBC"}, {"no": 3, "division": "Division 2", "stage": "Matchday 2", "group": "Group A", "date": null, "ko": "15:00", "home": "Hong Kong, China", "away": "Laos", "venue": "Hong Kong, China, venue TBC"}, {"no": 4, "division": "Division 2", "stage": "Matchday 2", "group": "Group B", "date": null, "ko": "18:00", "home": "Cambodia", "away": "Myanmar", "venue": "Hong Kong, China, venue TBC"}, {"no": 5, "division": "Division 2", "stage": "Matchday 3", "group": "Group A", "date": null, "ko": "20:00", "home": "Brunei Darussalam", "away": "Hong Kong, China", "venue": "Hong Kong, China, venue TBC"}, {"no": 6, "division": "Division 2", "stage": "Matchday 3", "group": "Group B", "date": null, "ko": "17:00", "home": "Timor-Leste", "away": "Cambodia", "venue": "Hong Kong, China, venue TBC"}, {"no": 7, "division": "Division 2", "stage": "Final", "group": null, "date": null, "ko": "18:00", "home": "Winner Group A", "away": "Winner Group B", "venue": "Hong Kong, China, venue TBC"}], "icc": [{"no": 1, "stage": "African-Asian-Pacific Play-off", "group": null, "date": "2026-08-26", "ko": "21:00", "home": "Al Ahli FC", "away": "Auckland FC", "venue": "King Abdullah Sports City Stadium, Jeddah", "score": "1\u20130"}, {"no": 2, "stage": "African-Asian-Pacific Cup", "group": null, "date": "2026-09-19", "ko": "15:00", "home": "Mamelodi Sundowns FC", "away": "Al Ahli FC", "venue": "Loftus Versfeld Stadium, Pretoria", "score": "2\u20131"}, {"no": 3, "stage": "Derby of the Americas", "group": null, "date": null, "ko": null, "home": "CONMEBOL Libertadores winner", "away": "Toluca FC", "venue": "TBC"}, {"no": 4, "stage": "Challenger Cup", "group": null, "date": null, "ko": null, "home": "Winner match 3", "away": "Mamelodi Sundowns FC", "venue": "TBC"}, {"no": 5, "stage": "Intercontinental Cup Final", "group": null, "date": null, "ko": null, "home": "Paris Saint-Germain", "away": "Winner match 4", "venue": "TBC"}], "u20w": [{"no": 37, "stage": "Round of 16", "group": null, "date": "2026-09-16", "ko": "15:00", "home": "Argentina", "away": "Korea Republic", "venue": "Venue to confirm", "score": "0\u20131", "pens": null, "note": null}, {"no": 38, "stage": "Round of 16", "group": null, "date": "2026-09-16", "ko": "15:00", "home": "Brazil", "away": "USA", "venue": "Arena Katowice", "score": "1\u20131", "pens": "5\u20134", "note": "After extra time"}, {"no": 40, "stage": "Round of 16", "group": null, "date": "2026-09-16", "ko": "18:30", "home": "Italy", "away": "China PR", "venue": "Arena Sosnowiec", "score": "1\u20131", "pens": "5\u20134", "note": null}, {"no": 44, "stage": "Round of 16", "group": null, "date": "2026-09-16", "ko": "18:30", "home": "Spain", "away": "Portugal", "venue": "Arena Katowice", "score": "2\u20130", "pens": null, "note": null}, {"no": 42, "stage": "Round of 16", "group": null, "date": "2026-09-17", "ko": "15:00", "home": "France", "away": "Canada", "venue": "Stadion Miejski \u0141KS, \u0141\u00f3d\u017a", "score": "1\u20133", "pens": null, "note": null}, {"no": 43, "stage": "Round of 16", "group": null, "date": "2026-09-17", "ko": "15:00", "home": "England", "away": "Nigeria", "venue": "Bielsko-Bia\u0142a Stadium", "score": "0\u20133", "pens": null, "note": null}, {"no": 39, "stage": "Round of 16", "group": null, "date": "2026-09-17", "ko": "18:30", "home": "DPR Korea", "away": "Japan", "venue": "Stadion Miejski \u0141KS, \u0141\u00f3d\u017a", "score": "2\u20130", "pens": null, "note": null}, {"no": 41, "stage": "Round of 16", "group": null, "date": "2026-09-17", "ko": "18:30", "home": "Poland", "away": "Colombia", "venue": "Bielsko-Bia\u0142a Stadium", "score": "0\u20131", "pens": null, "note": null}, {"no": 46, "stage": "Quarter-final", "group": null, "date": "2026-09-19", "ko": "15:00", "home": "Korea Republic", "away": "Italy", "venue": "Arena Sosnowiec", "score": "1\u20133", "note": null}, {"no": 45, "stage": "Quarter-final", "group": null, "date": "2026-09-19", "ko": "18:30", "home": "Brazil", "away": "Spain", "venue": "Arena Sosnowiec", "score": "0\u20131", "note": null}, {"no": 48, "stage": "Quarter-final", "group": null, "date": "2026-09-20", "ko": "15:00", "home": "Nigeria", "away": "Colombia", "venue": "Stadion Miejski \u0141KS, \u0141\u00f3d\u017a", "score": "0\u20131", "note": null}, {"no": 47, "stage": "Quarter-final", "group": null, "date": "2026-09-20", "ko": "18:30", "home": "DPR Korea", "away": "Canada", "venue": "Stadion Miejski \u0141KS, \u0141\u00f3d\u017a", "score": "2\u20130", "note": null}, {"no": 49, "stage": "Semi-final", "group": null, "date": "2026-09-23", "ko": "15:00", "home": "Italy", "away": "Spain", "venue": "Stadion Miejski \u0141KS, \u0141\u00f3d\u017a", "score": "0\u20132", "note": null}, {"no": 50, "stage": "Semi-final", "group": null, "date": "2026-09-23", "ko": "18:30", "home": "DPR Korea", "away": "Colombia", "venue": "Stadion Miejski \u0141KS, \u0141\u00f3d\u017a", "score": "3\u20130", "note": null}, {"no": 51, "stage": "Play-off for third place", "group": null, "date": "2026-09-26", "ko": "18:00", "home": "Italy", "away": "Colombia", "venue": "Stadion Miejski \u0141KS, \u0141\u00f3d\u017a", "score": "1\u20131", "pens": "3\u20134", "note": "After extra time"}, {"no": 52, "stage": "Final", "group": null, "date": "2026-09-27", "ko": "18:00", "home": "Spain", "away": "DPR Korea", "venue": "Stadion Miejski \u0141KS, \u0141\u00f3d\u017a", "score": "0\u20130", "pens": "4\u20133", "note": "After extra time"}]};
+let TOURNAMENTS = [
+  {
+    id: "nzl",
+    name: "NZ National League Championship 2026",
+    short: "NZ National League",
+    badge: "Dettol National League",
+    host: "New Zealand",
+    start: "2026-09-26", end: "2026-12-13",
+    window: "26 Sep – 13 Dec 2026",
+    format: "Women: 9 teams, 9 rounds. Men: 11 teams, 11 rounds",
+    matches: "91 matches + 2 finals",
+    venues: "Club grounds nationwide",
+    broadcast: "DAZN and FIFA+",
+    dataLoaded: true,
+    figma: "Round 1 built (Women V/H, Men V). Rounds 2–12 to roll out",
+    source: "Match schedule PDF, 8 September 2026. Amended 21 Sep: Phoenix v Pride (W, R1) now 13:00",
+    flags: [
+      "Men Round 1 row 4 shows Auckland United, schedule says Auckland FC",
+      "Wellington United (Women) home venues all TBC",
+      "Two men's home venues listed at the opponent's ground (R4, R8)"
+    ]
+  },
+  {
+    id: "u20w",
+    name: "FIFA U-20 Women's World Cup Poland 2026",
+    short: "U-20 Women's WC",
+    badge: "Stars in the Making",
+    host: "Poland",
+    start: "2026-09-05", end: "2026-09-27",
+    window: "5 – 27 Sep 2026",
+    format: "24 teams, 6 groups of 4, then knockouts",
+    matches: "52 matches",
+    venues: "Stadion Miejski ŁKS (Łódź), Arena Katowice, Arena Sosnowiec, Bielsko-Biała Stadium",
+    broadcast: "FIFA+",
+    dataLoaded: true,
+    figma: "Not started",
+    source: "FIFA fixtures and match reports, round of 16 onwards. Kick-offs in local time (CEST)",
+    groups: {
+      A: ["Poland", "Mexico", "Argentina", "Benin"],
+      B: ["Brazil", "England", "Canada", "Tanzania"],
+      C: ["France", "South Korea", "Ghana", "Ecuador"],
+      D: ["Japan", "United States", "New Zealand", "Italy"],
+      E: ["North Korea", "Colombia", "Costa Rica", "Portugal"],
+      F: ["Spain", "Nigeria", "China", "New Caledonia"]
+    },
+    flags: [
+      "Final set: Spain v DPR Korea, Sunday 27 September, 18:00 in Łódź",
+      "Kick-off times corrected to local time. The earlier list carried FIFA's feed times, which ran two hours behind local",
+      "Third-place play-off and final stay placeholders until Wednesday's semis are played",
+      "Group stage not included. Knockouts run from the round of 16",
+      "Argentina v Korea Republic venue still to confirm"
+    ]
+  },
+  {
+    id: "u17w",
+    name: "FIFA U-17 Women's World Cup Morocco 2026",
+    short: "U-17 Women's WC",
+    badge: "Morocco 2026",
+    host: "Morocco",
+    start: "2026-10-17", end: "2026-11-07",
+    window: "17 Oct – 7 Nov 2026",
+    format: "24 teams, 6 groups of 4, then knockouts",
+    matches: "52 matches",
+    venues: "Rabat. Women's Football Complex (4 pitches) up to the semi-finals",
+    broadcast: "FIFA+",
+    dataLoaded: true,
+    figma: "Not started",
+    source: "Match schedule v5, 31 August 2026",
+    flags: [
+      "Centralised format means several matches per day, so day grouping matters more than rounds",
+      "4 matches a day on 4 pitches, so cards work per day rather than per round",
+      "Knockout fixtures are placeholders (1A v 3C/D/E, W37 v W38) until qualification is settled"
+    ]
+  },
+  {
+    id: "icc",
+    name: "FIFA Intercontinental Cup 2026",
+    short: "Intercontinental Cup",
+    badge: "Intercontinental Cup",
+    host: "Multiple hosts",
+    start: "2026-08-26", end: "2026-12-31",
+    window: "From 26 Aug 2026",
+    format: "6 clubs, single-match knockout ladder into the final",
+    matches: "5 matches",
+    venues: "Jeddah and Pretoria confirmed. Later rounds TBC",
+    broadcast: "DAZN and FIFA+",
+    dataLoaded: true,
+    teamView: false,
+    figma: "Not started",
+    source: "Match schedule v2, 2 September 2026. Results updated 21 Sep",
+    flags: [
+      "Mamelodi Sundowns won the African-Asian-Pacific Cup and go through to the Challenger Cup",
+      "Matches 3 to 5 are all in one host country, still to be confirmed, with no dates yet",
+      "Derby of the Americas opponent for Toluca is set by the Libertadores final in Montevideo on 28 November",
+      "A ladder graphic may suit this better than a fixture list"
+    ]
+  },
+  {
+    id: "asean",
+    name: "FIFA ASEAN Cup 2026",
+    short: "ASEAN Cup",
+    badge: "ASEAN Cup",
+    host: "Indonesia and Hong Kong, China",
+    start: "2026-09-24", end: "2026-10-05",
+    window: "24 Sep – 5 Oct 2026",
+    format: "Division 1: 8 teams in Indonesia. Division 2: 6 teams in Hong Kong, China",
+    matches: "21 matches",
+    venues: "Jakarta and Bandung. Kai Tak and Mong Kok",
+    broadcast: "DAZN and FIFA+",
+    dataLoaded: true,
+    divisions: ["Division 1", "Division 2"],
+    figma: "Not started",
+    source: "Match schedule v11, 9 September 2026",
+    flags: [
+      "The supplied PDF's date grid didn't come through, so matches are grouped by matchday and still need dates",
+      "Which venue hosts which group also needs confirming",
+      "Two divisions in two countries, so local kick-off times run in different time zones"
+    ]
+  },
+  {
+    id: "wwc27",
+    name: "FIFA Women's World Cup Brazil 2027",
+    short: "Women's WC 2027",
+    badge: "Brazil 2027",
+    host: "Brazil",
+    start: "2027-06-24", end: "2027-07-25",
+    window: "24 Jun – 25 Jul 2027",
+    format: "32 teams, 8 groups of 4, then round of 16",
+    matches: "64 matches",
+    venues: "Maracanã (Rio), Arena Itaquera (São Paulo), Mineirão (Belo Horizonte), Estádio Nacional (Brasília), Castelão (Fortaleza), Beira-Rio (Porto Alegre), Arena de Pernambuco (Recife), Fonte Nova (Salvador)",
+    broadcast: "TBC",
+    dataLoaded: false,
+    figma: "Not started",
+    source: "FIFA match schedule announcement, 20 August 2026",
+    flags: [
+      "Final draw is on 11 December 2026, so no fixtures have teams until then",
+      "Qualification is still running: 18 of 32 teams confirmed so far",
+      "Opening match (Brazil) and final both at the Maracanã. Brazil's other group games: São Paulo 29 June, Brasília 4 July",
+      "The 64-match slot schedule is already published, so the page can be built out before the draw if that's useful"
+    ]
+  },
+  {
+    id: "u17m",
+    name: "FIFA U-17 World Cup Qatar 2026",
+    short: "U-17 World Cup",
+    badge: "Qatar 2026",
+    host: "Qatar",
+    start: "2026-11-19", end: "2026-12-13",
+    window: "19 Nov – 13 Dec 2026",
+    format: "48 teams, 12 groups of 4, then a round of 32",
+    matches: "104 matches over roughly 15 match days",
+    venues: "Aspire Zone, Doha. Final at Khalifa International Stadium",
+    broadcast: "FIFA+",
+    dataLoaded: false,
+    figma: "Not started",
+    source: "Group stage schedule published 1 June 2026",
+    flags: [
+      "8 matches per day in the group stage and round of 32, so the weekly card will need a daily variant",
+      "Biggest build of the three: 104 fixtures"
+    ]
+  }
+];
+
+const FINAL = {W:10, M:12};
+const NAME = {W:"Women", M:"Men"};
+const CHECK = {"M|4|Miramar Rangers":1, "M|8|Napier City Rovers":1};
+const DAYS=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"], DAYL=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+const MON=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const MONL=["January","February","March","April","May","June","July","August","September","October","November","December"];
+const TODAY = new Date();
+function sortTournaments(){TOURNAMENTS.sort((a,b)=>a.end.localeCompare(b.end)||a.start.localeCompare(b.start));}
+sortTournaments();
+let route="dash", view="team", comp="W", filt="all", sel=null;
+
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const toDate=d=>{const [dd,mm]=d.split("/").map(Number);return new Date(2026,mm-1,dd)};
+const venueTxt=(c,x)=>(x.v==="TBC"?"Venue TBC":x.v)+(CHECK[c+"|"+x.r+"|"+x.h]?` <span class="flag">(venue as printed, worth checking)</span>`:"");
+const tOf=id=>TOURNAMENTS.find(t=>t.id===id);
+function status(t){
+  const s=new Date(t.start+"T00:00:00"), e=new Date(t.end+"T23:59:59");
+  if(TODAY>e) return {cls:"done", label:"Finished"};
+  if(TODAY>=s) return {cls:"live", label:"Under way"};
+  const days=Math.ceil((s-TODAY)/86400000);
+  return {cls:"soon", label: days<=60 ? `In ${days} days` : "Upcoming"};
+}
+
+/* ---------- dashboard ---------- */
+function dashboard(){
+  const cards=TOURNAMENTS.map(t=>{
+    const st=status(t);
+    return `<div class="card" role="button" tabindex="0" data-open="${t.id}">
+      <span class="pill ${st.cls}">${st.label}</span>
+      <h3>${esc(t.name)}</h3>
+      <dl>
+        <dt>Dates</dt><dd>${esc(t.window)}</dd>
+        <dt>Host</dt><dd>${esc(t.host)}</dd>
+        <dt>Format</dt><dd>${esc(t.format)}</dd>
+        <dt>Matches</dt><dd>${esc(t.matches)}</dd>
+      </dl>
+      <span class="state"><span class="dot ${t.dataLoaded?"on":""}"></span>${t.dataLoaded?"Fixture data loaded":"No fixture data yet"}</span>
+    </div>`;
+  }).join("");
+  return `<main class="page"><div class="cards">${cards}</div>
+    <p class="foot">Each tournament opens its own page: fixture lists where the schedule is loaded, and the Figma rollout status either way.</p></main>`;
+}
+
+/* ---------- tournament overview ---------- */
+function overview(t){
+  const st=status(t);
+  return `<div class="panel"><h3>Overview</h3><dl class="facts">
+      <div><dt>Status</dt><dd>${st.label}</dd></div>
+      <div><dt>Dates</dt><dd>${esc(t.window)}</dd></div>
+      <div><dt>Host</dt><dd>${esc(t.host)}</dd></div>
+      <div><dt>Format</dt><dd>${esc(t.format)}</dd></div>
+      <div><dt>Matches</dt><dd>${esc(t.matches)}</dd></div>
+      <div><dt>Venues</dt><dd>${esc(t.venues)}</dd></div>
+      <div><dt>Broadcast</dt><dd>${esc(t.broadcast)}</dd></div>
+      <div><dt>Figma</dt><dd>${esc(t.figma)}</dd></div>
+      <div><dt>Source</dt><dd>${esc(t.source)}</dd></div>
+    </dl></div>
+    ${t.groups?`<div class="panel"><h3>Groups</h3><div class="groups">${
+      Object.entries(t.groups).map(([g,teams])=>`<div><h4>Group ${g}</h4><ol>${teams.map(x=>`<li>${esc(x)}</li>`).join("")}</ol></div>`).join("")
+    }</div></div>`:""}
+    ${t.flags&&t.flags.length?`<div class="panel"><h3>Watch out for</h3><ul class="plain">${t.flags.map(f=>`<li>${esc(f)}</li>`).join("")}</ul></div>`:""}`;
+}
+function emptyState(t){
+  return `<div class="empty"><b>No fixture data loaded yet</b>
+    Send the official match schedule for ${esc(t.short)} and this page fills in with the same team and week views as the National League, plus a CSV ready for the Figma agent.</div>`;
+}
+
+/* ---------- fixture views (NZ) ---------- */
+function teamsOf(c){
+  const s=new Set(); DATA[c].forEach(x=> x.bye ? s.add(x.bye) : (s.add(x.h), s.add(x.a)));
+  return [...s].sort();
+}
+function teamBlock(c,t){
+  const rows=DATA[c].filter(x=>x.bye===t||x.h===t||x.a===t).sort((a,b)=>a.r-b.r);
+  const games=rows.filter(x=>!x.bye), home=games.filter(x=>x.h===t).length;
+  let html=`<section class="block"><h2>${esc(t)}</h2>
+  <p class="meta">${games.length} matches, ${home} home and ${games.length-home} away, plus 1 bye${recordLine(games.map(x=>({score:x.s,pens:x.p,isHome:x.h===t})))}</p><div class="list">`;
+  rows.forEach(x=>{
+    if(x.bye){html+=`<div class="row bye"><div class="rnd">R${x.r}</div><div class="date">No match</div><div class="ko"></div><div></div><div class="opp">Bye round</div></div>`;return;}
+    const isHome=x.h===t, opp=isHome?x.a:x.h, dt=toDate(x.d);
+    html+=`<div class="row"><div class="rnd">R${x.r}</div>
+      <div class="date"><b>${DAYS[dt.getDay()]} ${dt.getDate()} ${MON[dt.getMonth()]}</b><span class="kom"> ${x.t}</span></div>
+      <div class="ko">${x.t}</div>
+      <div><span class="ha ${isHome?"home":"away"}">${isHome?"Home":"Away"}</span></div>
+      <div class="opp">${isHome?"vs":"at"} ${esc(opp)}<small>${venueTxt(c,x)}</small></div>${scoreCell(x.s,x.p,outcome(x.s,x.p,isHome),x._started)}</div>`;
+  });
+  html+=`<div class="row final"><div class="rnd">R${FINAL[c]}</div><div class="date"><b>Date TBC</b></div><div class="ko">TBC</div><div></div><div class="opp">Final: 1st vs 2nd<small>If qualified. Venue TBC</small></div></div>`;
+  return html+`</div></section>`;
+}
+function weekKey(dt){const m=new Date(dt);m.setDate(dt.getDate()-((dt.getDay()+6)%7));return m.getTime();}
+function buildWeeks(comps){
+  const map=new Map();
+  comps.forEach(c=>DATA[c].forEach(x=>{if(!x.bye){const dt=toDate(x.d),k=weekKey(dt);if(!map.has(k))map.set(k,{games:[],rounds:new Set()});const w=map.get(k);w.games.push({...x,c,dt});w.rounds.add(c+x.r);}}));
+  return [...map.entries()].sort((a,b)=>a[0]-b[0]).map(([k,w],i)=>{
+    w.n=i+1; w.games.sort((a,b)=>a.dt-b.dt||a.t.localeCompare(b.t)||a.c.localeCompare(b.c));
+    w.byes=[]; comps.forEach(c=>DATA[c].forEach(x=>{if(x.bye&&w.rounds.has(c+x.r))w.byes.push({c,team:x.bye});}));
+    const f=w.games[0].dt,l=w.games[w.games.length-1].dt;
+    w.range= f.getTime()===l.getTime()? `${f.getDate()} ${MON[f.getMonth()]}` : (f.getMonth()===l.getMonth()?`${f.getDate()}–${l.getDate()} ${MON[l.getMonth()]}`:`${f.getDate()} ${MON[f.getMonth()]} – ${l.getDate()} ${MON[l.getMonth()]}`);
+    return w;
+  });
+}
+function weekBlock(w,comps){
+  const both=comps.length>1;
+  const counts=comps.map(c=>{const n=w.games.filter(g=>g.c===c).length;return n?`${n} ${NAME[c].toLowerCase()}'s`:null}).filter(Boolean);
+  const rounds=comps.map(c=>{const r=[...new Set(w.games.filter(g=>g.c===c).map(g=>g.r))];return r.length?`${NAME[c]} round ${r.join(", ")}`:null}).filter(Boolean);
+  let html=`<section class="block" id="week-${w.n}"><h2>Week ${w.n}, ${w.range}</h2>
+    <p class="meta">${rounds.join(", ")}. ${w.games.length} matches${both?` (${counts.join(", ")})`:""}</p><div class="list">`;
+  let day=null;
+  w.games.forEach(g=>{
+    const ds=g.dt.getTime();
+    if(ds!==day){day=ds;html+=`<div class="day">${DAYL[g.dt.getDay()]} ${g.dt.getDate()} ${MONL[g.dt.getMonth()]}</div>`;}
+    html+=`<div class="wrow"><div class="ko">${g.t}</div><div class="tagc"><span class="tag ${g.c}">${NAME[g.c]}</span></div>
+      <div class="match">${esc(g.h)}<span class="v">v</span>${esc(g.a)}<small>${venueTxt(g.c,g)}</small></div>${scoreCell(g.s,g.p,null,g._started)}</div>`;
+  });
+  if(w.byes.length) html+=`<div class="byes">Bye: ${w.byes.map(b=>esc(b.team)+(both?` (${NAME[b.c].toLowerCase()})`:"")).join(", ")}</div>`;
+  return html+`</div></section>`;
+}
+function finalsBlock(comps){
+  return `<section class="block" id="week-finals"><h2>Finals</h2><p class="meta">Dates and venues to be confirmed</p><div class="list">`+
+    comps.map(c=>`<div class="row final" style="grid-template-columns:60px 78px 1fr"><div class="ko">TBC</div><div><span class="tag" style="color:inherit">${NAME[c]}</span></div><div class="match">First place<span class="v" style="color:inherit;opacity:.7">v</span>Second place<small>${NAME[c]} round ${FINAL[c]}. Venue TBC</small></div></div>`).join("")+`</div></section>`;
+}
+
+
+
+/* ---------- results ---------- */
+function parseScore(s){ const m=String(s||"").match(/(\d+)\s*[–-]\s*(\d+)/); return m?[+m[1],+m[2]]:null; }
+function outcome(score,pens,isHome){
+  const sc=parseScore(score); if(!sc) return null;
+  let [h,a]=sc;
+  if(h===a && pens){ const p=parseScore(pens); if(p){ h=p[0]; a=p[1]; } }
+  if(h===a) return "D";
+  return (h>a)===isHome ? "W" : "L";
+}
+function scoreCell(score,pens,res,started){
+  if(!score) return started
+    ? `<div class="sc none await" title="Kick-off has passed and no result has been recorded">awaiting</div>`
+    : `<div class="sc none" title="Not played yet">–</div>`;
+  return `<div class="sc">${res?`<span class="res ${res}" title="${{W:"Win",D:"Draw",L:"Loss"}[res]}">${res}</span>`:""}<span class="scv"><b>${esc(score)}</b><small>${pens?esc(pens)+" pens":"FT"}</small></span></div>`;
+}
+function recordLine(games){
+  // games: [{score,pens,isHome}]
+  const done=games.filter(g=>parseScore(g.score));
+  if(!done.length) return "";
+  let w=0,d=0,l=0,gf=0,ga=0;
+  done.forEach(g=>{ const [h,a]=parseScore(g.score); gf+=g.isHome?h:a; ga+=g.isHome?a:h;
+    const r=outcome(g.score,g.pens,g.isHome); if(r==="W")w++; else if(r==="D")d++; else l++; });
+  return `. Played ${done.length}: ${w}W ${d}D ${l}L, goals ${gf}–${ga}`;
+}
+
+/* ---------- generic tournament fixtures ---------- */
+const ISO=d=>new Date(d+"T00:00:00");
+const dLabel=d=>{const x=ISO(d);return `${DAYL[x.getDay()]} ${x.getDate()} ${MONL[x.getMonth()]}`};
+const dShort=d=>{const x=ISO(d);return `${DAYS[x.getDay()]} ${x.getDate()} ${MON[x.getMonth()]}`};
+function fixturesFor(t){
+  let f=(FIX[t.id]||[]).slice();
+  if(t.divisions && filt!=="all") f=f.filter(x=>x.division===filt);
+  return f;
+}
+function genericTeams(t){
+  const c={};
+  (FIX[t.id]||[]).forEach(x=>{[x.home,x.away].forEach(n=>c[n]=(c[n]||0)+1)});
+  return Object.keys(c).filter(n=>c[n]>1).sort();
+}
+function groupKey(x){ return x.date || x.stage; }
+function genericByDate(t){
+  const f=fixturesFor(t), keys=[];
+  const map=new Map();
+  f.forEach(x=>{const k=groupKey(x); if(!map.has(k)){map.set(k,[]);keys.push(k);} map.get(k).push(x);});
+  const blocks=keys.map((k,i)=>{
+    const list=map.get(k).slice().sort((a,b)=>(a.ko||"").localeCompare(b.ko||"")||a.no-b.no);
+    const dated=!!list[0].date;
+    const stages=[...new Set(list.map(x=>x.stage))];
+    const showTag=list.some(x=>x.group)||stages.length>1;
+    return `<section class="block" id="day-${i}"><h2>${esc(dated?dLabel(k):k)}</h2>
+      <p class="meta">${esc(stages.join(", "))}. ${list.length} match${list.length>1?"es":""}${dated?"":". Date to be confirmed"}</p>
+      <div class="list">${list.map(x=>`<div class="wrow${showTag?"":" notag"}"><div class="ko">${esc(x.ko||"TBC")}</div>
+        ${showTag?`<div class="tagc"><span class="tag ${x.stage==="Group stage"||x.stage.startsWith("Matchday")?"W":"M"}">${esc(x.group||x.stage)}</span></div>`:""}
+        <div class="match">${esc(x.home)}<span class="v">v</span>${esc(x.away)}<small>Match ${x.no}${x.division?", "+esc(x.division):""}. ${esc(x.venue)}${x.note?". "+esc(x.note):""}</small></div>${scoreCell(x.score,x.pens,null,x._started)}</div>`).join("")}</div></section>`;
+  }).join("");
+  const nav=keys.map((k,i)=>{
+    const list=map.get(k);
+    return `<button data-jump="day-${i}"><span>${esc(list[0].date?dShort(k):k)}</span><small>${list.length} match${list.length>1?"es":""}</small></button>`;
+  }).join("");
+  return {nav, body:blocks+`<p class="foot">All kick-off times are local. Schedules are subject to change.</p>`};
+}
+function genericByTeam(t){
+  const teams=genericTeams(t), f=fixturesFor(t);
+  const chosen=sel?[sel]:teams;
+  const body=chosen.map(team=>{
+    const rows=f.filter(x=>x.home===team||x.away===team).sort((a,b)=>(a.date||"9")>(b.date||"9")?1:-1||a.no-b.no);
+    return `<section class="block"><h2>${esc(team)}</h2>
+      <p class="meta">${rows.length} match${rows.length>1?"es":""} scheduled${rows[0]&&rows[0].group?", "+esc(rows[0].group):""}${recordLine(rows.map(x=>({score:x.score,pens:x.pens,isHome:x.home===team})))}</p>
+      <div class="list">${rows.map(x=>{
+        const opp=x.home===team?x.away:x.home;
+        return `<div class="row"><div class="rnd">M${x.no}</div>
+          <div class="date"><b>${x.date?esc(dShort(x.date)):"Date TBC"}</b><span class="kom"> ${esc(x.ko||"")}</span></div>
+          <div class="ko">${esc(x.ko||"TBC")}</div>
+          <div><span class="ha ${x.home===team?"home":"away"}">${x.home===team?"Listed 1st":"Listed 2nd"}</span></div>
+          <div class="opp">v ${esc(opp)}<small>${esc(x.stage)}. ${esc(x.venue)}</small></div>${scoreCell(x.score,x.pens,outcome(x.score,x.pens,x.home===team),x._started)}</div>`;
+      }).join("")}</div></section>`;
+  }).join("");
+  const nav=teams.map(x=>`<button data-team="${esc(x)}" aria-pressed="${sel===x}">${esc(x)}</button>`).join("")
+    +`<button class="all" data-team="" aria-pressed="${sel===null}">All teams</button>`;
+  return {nav, body:body+`<p class="foot">Neutral venues, so "listed 1st" is the schedule's first-named side, not a home team.</p>`};
+}
+
+/* ---------- render ---------- */
+function renderTabs(){
+  document.getElementById("tabs").innerHTML =
+    `<button data-open="dash" aria-pressed="${route==="dash"}">Dashboard</button>`+
+    TOURNAMENTS.map(t=>`<button data-open="${t.id}" aria-pressed="${route===t.id}">${esc(t.short)}</button>`).join("");
+}
+function controlsHTML(t){
+  if(t.id==="nzl"){
+    return `<div class="seg" role="group" aria-label="View">
+        <button data-view="team" aria-pressed="${view==="team"}">By team</button>
+        <button data-view="week" aria-pressed="${view==="week"}">By week</button>
+      </div>
+      <div class="seg" role="group" aria-label="Competition">
+        <button data-comp="W" aria-pressed="${comp==="W"}">Women</button>
+        <button data-comp="M" aria-pressed="${comp==="M"}">Men</button>
+        ${view==="week"?`<button data-comp="B" aria-pressed="${comp==="B"}">Both</button>`:""}
+      </div>`;
+  }
+  const teamView = t.teamView!==false;
+  return `<div class="seg" role="group" aria-label="View">
+      <button data-view="date" aria-pressed="${view!=="team"}">By date</button>
+      ${teamView?`<button data-view="team" aria-pressed="${view==="team"}">By team</button>`:""}
+    </div>`+
+    (t.divisions?`<div class="seg" role="group" aria-label="Division">
+      ${t.divisions.map(d=>`<button data-div="${esc(d)}" aria-pressed="${filt===d}">${esc(d)}</button>`).join("")}
+      <button data-div="all" aria-pressed="${filt==="all"}">Both</button>
+    </div>`:"");
+}
+function render(){
+  const app=document.getElementById("app");
+  const controls=document.getElementById("controls");
+  const back=document.getElementById("back");
+  renderTabs();
+  if(route==="dash"){
+    document.getElementById("eyebrow").textContent="Fixture hub";
+    document.getElementById("title").textContent="Tournament fixture hub";
+    document.getElementById("sub").textContent="Schedules, fixture data and Figma rollout status";
+    controls.hidden=true; controls.innerHTML=""; back.hidden=false;
+    back.hidden=true;
+    app.innerHTML=dashboard();
+    return;
+  }
+  const t=tOf(route);
+  document.getElementById("eyebrow").textContent=t.badge;
+  document.getElementById("title").textContent=t.name;
+  document.getElementById("sub").textContent=`${t.window}. ${t.host}`;
+  back.hidden=false;
+  controls.hidden=!t.dataLoaded;
+  controls.innerHTML=t.dataLoaded?controlsHTML(t):"";
+  if(!t.dataLoaded){ app.innerHTML=`<main class="page">${overview(t)}${emptyState(t)}</main>`; return; }
+
+  let side="", body="";
+  if(t.id==="nzl"){
+    if(view!=="week" && view!=="team") view="team";
+    if(view==="team" && comp==="B") comp="W";
+    if(view==="team"){
+      const teams=teamsOf(comp);
+      side=teams.map(x=>`<button data-team="${esc(x)}" aria-pressed="${sel===x}">${esc(x)}</button>`).join("")
+        +`<button class="all" data-team="" aria-pressed="${sel===null}">All teams</button>`;
+      body=(sel?[sel]:teams).map(x=>teamBlock(comp,x)).join("")
+        +`<p class="foot">Times are local NZ kick-off times. Home matches marked in green.</p>`;
+    } else {
+      const comps = comp==="B" ? ["W","M"] : [comp];
+      const weeks=buildWeeks(comps);
+      side=weeks.map(w=>`<button data-jump="week-${w.n}"><span>Week ${w.n}</span><small>${w.range}</small></button>`).join("")
+        +`<button data-jump="week-finals"><span>Finals</span><small>Dates TBC</small></button>`;
+      body=weeks.map(w=>weekBlock(w,comps)).join("")+finalsBlock(comps)
+        +`<p class="foot">Weeks run Monday to Sunday. Times are local NZ kick-off times.</p>`;
+    }
+  } else {
+    const out = (view==="team" && t.teamView!==false) ? genericByTeam(t) : genericByDate(t);
+    side=out.nav; body=out.body;
+  }
+  app.innerHTML=`<main class="page" style="padding-bottom:0">${overview(t)}</main>
+    <div class="layout"><nav class="side drag-scroll" aria-label="Sections">${side}</nav><main>${body}</main></div>`;
+}
+function go(id){ route=id; sel=null; filt="all"; const t=tOf(id); view=(t&&t.id!=="nzl")?"date":"team"; comp="W"; render(); window.scrollTo({top:0}); }
+document.getElementById("tabs").addEventListener("click",e=>{const b=e.target.closest("button"); if(b) go(b.dataset.open);});
+document.getElementById("back").addEventListener("click",()=>go("dash"));
+document.getElementById("controls").addEventListener("click",e=>{
+  const b=e.target.closest("button"); if(!b) return;
+  if(b.dataset.view!==undefined) view=b.dataset.view;
+  else if(b.dataset.comp!==undefined) comp=b.dataset.comp;
+  else if(b.dataset.div!==undefined) filt=b.dataset.div;
+  else return;
+  sel=null; render(); window.scrollTo({top:0});
+});
+document.getElementById("app").addEventListener("keydown",e=>{
+  const c=e.target.closest("[data-open]"); if(!c) return;
+  if(e.key==="Enter"||e.key===" "){ e.preventDefault(); go(c.dataset.open); }
+});
+document.getElementById("app").addEventListener("click",e=>{
+  const b=e.target.closest("[data-open],[data-jump],[data-team]"); if(!b) return;
+  if(b.dataset.open!==undefined){ go(b.dataset.open); return; }
+  if(b.dataset.jump!==undefined){ const el=document.getElementById(b.dataset.jump); if(el) el.scrollIntoView(); return; }
+  if(b.dataset.team!==undefined){ sel=b.dataset.team||null; render(); }
+});
+/* ---------- theme ---------- */
+(function(){
+  const KEY="pace-hub-theme", root=document.documentElement,
+        btn=document.getElementById("theme"), label=document.getElementById("themelabel"),
+        sun='<circle cx="12" cy="12" r="4.2"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.5 1.5M17.6 17.6l1.5 1.5M19.1 4.9l-1.5 1.5M6.4 17.6l-1.5 1.5"/>',
+        moon='<path d="M20 14.2A8.2 8.2 0 1 1 9.8 4a6.6 6.6 0 0 0 10.2 10.2Z"/>';
+  let theme="dark";
+  try{ const s=localStorage.getItem(KEY); if(s==="light"||s==="dark") theme=s; }catch(e){}
+  function apply(t){
+    theme=t;
+    root.setAttribute("data-theme",t);
+    const toLight = t==="dark";
+    label.textContent = toLight ? "Light" : "Dark";
+    btn.querySelector("svg").innerHTML = toLight ? sun : moon;
+    btn.setAttribute("aria-label", toLight ? "Switch to light mode" : "Switch to dark mode");
+    btn.setAttribute("aria-pressed", String(t==="light"));
+  }
+  apply(theme);
+  btn.addEventListener("click",()=>{
+    apply(theme==="dark" ? "light" : "dark");
+    try{ localStorage.setItem(KEY,theme); }catch(e){}
+  });
+})();
+/* ---------- drag to scroll ---------- */
+(function(){
+  let el=null, sx=0, sy=0, sl=0, st=0, moved=false;
+  document.addEventListener("pointerdown",e=>{
+    if(e.pointerType!=="mouse"||e.button!==0) return;
+    const t=e.target.closest(".drag-scroll"); if(!t) return;
+    if(t.scrollWidth<=t.clientWidth && t.scrollHeight<=t.clientHeight) return;
+    el=t; sx=e.clientX; sy=e.clientY; sl=t.scrollLeft; st=t.scrollTop; moved=false;
+  });
+  window.addEventListener("pointermove",e=>{
+    if(!el) return;
+    const dx=e.clientX-sx, dy=e.clientY-sy;
+    if(!moved && Math.hypot(dx,dy)>5){ moved=true; el.classList.add("dragging"); }
+    if(moved){ el.scrollLeft=sl-dx; el.scrollTop=st-dy; }
+  });
+  window.addEventListener("pointerup",()=>{
+    if(!el) return;
+    const t=el; el=null;
+    requestAnimationFrame(()=>t.classList.remove("dragging"));
+  });
+  // a drag should not also count as a click on whatever tab it started on
+  document.addEventListener("click",e=>{ if(moved){ e.stopPropagation(); e.preventDefault(); moved=false; } },true);
+
+  const strip=document.getElementById("tabs");
+  strip.addEventListener("wheel",e=>{
+    if(strip.scrollWidth>strip.clientWidth && Math.abs(e.deltaY)>Math.abs(e.deltaX)){ strip.scrollLeft+=e.deltaY; e.preventDefault(); }
+  },{passive:false});
+  function fades(){
+    const over=strip.scrollWidth>strip.clientWidth+1;
+    strip.classList.toggle("more-l", over && strip.scrollLeft>2);
+    strip.classList.toggle("more-r", over && strip.scrollLeft+strip.clientWidth<strip.scrollWidth-2);
+  }
+  strip.addEventListener("scroll",fades,{passive:true});
+  window.addEventListener("resize",fades);
+  // keep the active tab in view horizontally only, never scroll the page
+  new MutationObserver(()=>{
+    const on=strip.querySelector('[aria-pressed="true"]');
+    if(on){ const l=on.offsetLeft, r=l+on.offsetWidth;
+      if(l<strip.scrollLeft) strip.scrollLeft=l-24;
+      else if(r>strip.scrollLeft+strip.clientWidth) strip.scrollLeft=r-strip.clientWidth+24; }
+    fades();
+  }).observe(strip,{childList:true});
+  setTimeout(fades,0);
+})();
+
+/* ---------- data layer ----------
+   fixtures.json is the canonical schedule and the only thing the Figma rollout reads.
+   results.json is display-only and is what the scheduled fetcher writes.
+   Both are fetched at load; the constants above are the baked-in last-known fallback,
+   so a failed fetch degrades to the previous deploy rather than an empty page. */
+let STAMP=null, STALE=[];
+
+// venue-local wall time -> instant, via the zone's offset at that moment
+function zonedToUTC(date,time,tz){
+  if(!date||!time||!tz) return null;
+  const naive=new Date(`${date}T${time}:00Z`);
+  if(isNaN(naive)) return null;
+  try{
+    const parts=new Intl.DateTimeFormat("en-US",{timeZone:tz,hour12:false,
+      year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",second:"2-digit"})
+      .formatToParts(naive).filter(x=>x.type!=="literal");
+    const q=Object.fromEntries(parts.map(x=>[x.type,x.value]));
+    const asTz=Date.UTC(+q.year,+q.month-1,+q.day,q.hour==="24"?0:+q.hour,+q.minute,+q.second);
+    return new Date(naive.getTime()-(asTz-naive.getTime()));
+  }catch(e){ return null; }
+}
+// a match is "started" 150 min past kick-off — long enough that a full-time score should exist
+const STARTED_AFTER_MIN=150;
+function startedFlag(date,time,tz){
+  const ko=zonedToUTC(date,time,tz);
+  return ko ? Date.now() > ko.getTime()+STARTED_AFTER_MIN*60000 : false;
+}
+
+function adapt(f,r){
+  const res=r.results||{};
+  const D={W:[],M:[]}, X={};
+  for(const x of (f.fixtures.nzl||[])){
+    if(x.bye){ D[x.comp].push({r:x.round,bye:x.bye}); continue; }
+    const [y,m,d]=x.date.split("-"), hit=res[x.id];
+    const started=startedFlag(x.date,x.ko,x.tz);
+    D[x.comp].push({r:x.round,d:`${d}/${m}`,t:x.ko,h:x.home,a:x.away,v:x.venue,
+      s:hit?hit.score:undefined,p:hit&&hit.pens?hit.pens:undefined,_started:started,_id:x.id});
+    if(started&&!hit) STALE.push(x.id);
+  }
+  for(const [tid,list] of Object.entries(f.fixtures)){
+    if(tid==="nzl") continue;
+    X[tid]=list.map(x=>{
+      const {id,tz,...rest}=x, hit=res[id];
+      const started=startedFlag(x.date,x.ko,tz);
+      if(started&&!hit) STALE.push(id);
+      return {...rest,_id:id,_started:started,
+        score:hit?hit.score:null,pens:hit&&hit.pens?hit.pens:null,
+        note:hit&&hit.note?hit.note:(rest.note??null)};
+    });
+  }
+  return {DATA:D,FIX:X,TOURNAMENTS:f.tournaments};
+}
+
+function showStamp(){
+  const el=document.getElementById("stamp");
+  if(!el||!STAMP) return;
+  const d=new Date(STAMP);
+  if(isNaN(d)) return;
+  const when=d.toLocaleString(undefined,{day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"});
+  const zone=new Intl.DateTimeFormat(undefined,{timeZoneName:"short"})
+    .formatToParts(d).find(x=>x.type==="timeZoneName");
+  el.innerHTML=`Results current as of <b>${esc(when)}${zone?" "+esc(zone.value):""}</b>`
+    +(STALE.length?` &middot; <span class="warn">${STALE.length} ${STALE.length===1?"match":"matches"} awaiting a result</span>`:"");
+  el.hidden=false;
+}
+
+async function boot(){
+  const bust="?v="+Date.now();
+  try{
+    const [f,r]=await Promise.all([
+      fetch("fixtures.json"+bust).then(x=>{if(!x.ok)throw 0;return x.json()}),
+      fetch("results.json"+bust).then(x=>{if(!x.ok)throw 0;return x.json()})
+    ]);
+    const next=adapt(f,r);
+    DATA=next.DATA; FIX=next.FIX; TOURNAMENTS=next.TOURNAMENTS;
+    sortTournaments();
+    STAMP=r.updated;
+  }catch(e){
+    // keep the baked-in fallback; the page is still correct as of the last deploy
+    console.warn("[hub] live data unavailable, using the copy baked into this deploy",e);
+  }
+  render();
+  showStamp();
+}
+boot();
+</script>
+</body>
+</html>
