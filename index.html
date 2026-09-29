@@ -166,7 +166,8 @@ ul.plain li{margin:4px 0}
 .check small{display:block;color:var(--muted);font-size:.86rem}
 .mark{font-weight:900;color:var(--muted)}
 .mark.on{color:var(--accent-text)}
-.groups{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}
+.groups{display:grid;grid-template-columns:repeat(var(--cols,2),minmax(0,1fr));gap:14px}
+@media (max-width:640px){.groups{grid-template-columns:repeat(var(--mcols,2),minmax(0,1fr))}}
 .groups h4{margin:0 0 6px;font-family:var(--font-display);font-weight:900;font-size:.82rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
 .groups ol{margin:0;padding-left:18px}
 .empty{border:1.5px dashed var(--line);border-radius:var(--radius-card);padding:30px;text-align:center;color:var(--muted)}
@@ -263,6 +264,9 @@ section.block h2{margin:0;font-family:var(--font-display);font-weight:900;font-s
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
           <circle cx="12" cy="12" r="4.2"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.5 1.5M17.6 17.6l1.5 1.5M19.1 4.9l-1.5 1.5M6.4 17.6l-1.5 1.5"/>
         </svg><span id="themelabel">Light</span>
+      </button>
+      <button class="themebtn" id="csv" type="button" hidden aria-label="Download this tournament's fixtures as CSV">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M4 20h16"/></svg><span>CSV</span>
       </button>
     </div>
   </div>
@@ -512,11 +516,11 @@ function overview(t){
       <div><dt>Figma</dt><dd>${esc(t.figma)}</dd></div>
       <div><dt>Source</dt><dd>${esc(t.source)}</dd></div>
     </dl></div>
-    ${t.groups?`<div class="panel"><h3>Groups</h3><div class="groups">${
+    ${t.groups?`<div class="panel"><h3>Groups</h3><div class="groups" style="--cols:${evenCols(Object.keys(t.groups).length)};--mcols:${Object.keys(t.groups).length%2?1:2}">${
       Object.entries(t.groups).map(([g,teams])=>`<div><h4>Group ${g}</h4><ol>${teams.map(x=>`<li>${esc(x)}</li>`).join("")}</ol></div>`).join("")
-    }</div></div>`:""}
-    ${t.flags&&t.flags.length?`<div class="panel"><h3>Watch out for</h3><ul class="plain">${t.flags.map(f=>`<li>${esc(f)}</li>`).join("")}</ul></div>`:""}`;
+    }</div></div>`:""}`;
 }
+function evenCols(n){ return n%3===0?3 : n%4===0?4 : n%2===0?2 : n<=4?n:1; }
 function emptyState(t){
   return `<div class="empty"><b>No fixture data loaded yet</b>
     Send the official match schedule for ${esc(t.short)} and this page fills in with the same team and week views as the National League, plus a CSV ready for the Figma agent.</div>`;
@@ -698,12 +702,13 @@ function render(){
     document.getElementById("eyebrow").textContent="Fixture hub";
     document.getElementById("title").textContent="Tournament fixture hub";
     document.getElementById("sub").textContent="Schedules, fixture data and Figma rollout status";
-    controls.hidden=true; controls.innerHTML=""; back.hidden=false;
+    controls.hidden=true; controls.innerHTML=""; back.hidden=false; document.getElementById("csv").hidden=true;
     back.hidden=true;
     app.innerHTML=dashboard();
     return;
   }
   const t=tOf(route);
+  document.getElementById("csv").hidden=!t.dataLoaded;
   document.getElementById("eyebrow").textContent=t.badge;
   document.getElementById("title").textContent=t.name;
   document.getElementById("sub").textContent=`${t.window}. ${t.host}`;
@@ -737,6 +742,35 @@ function render(){
   app.innerHTML=`<main class="page" style="padding-bottom:0">${overview(t)}</main>
     <div class="layout"><nav class="side drag-scroll" aria-label="Sections">${side}</nav><main>${body}</main></div>`;
 }
+/* ---------- CSV export (fixtures only; scores never leave the hub) ---------- */
+function csvCell(v){ v=v==null?"":String(v); return /[",\n\r]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v; }
+function fixtureRows(t){
+  const rows=[];
+  if(t.id==="nzl"){
+    const yr=String(t.start||"2026").slice(0,4);
+    for(const c of ["W","M"]) for(const x of (DATA[c]||[])){
+      if(x.bye){ rows.push({comp:NAME[c],stage:"Round "+x.r,group:"",no:"",date:"",ko:"",tz:"",home:x.bye,away:"BYE",venue:"",note:"Bye"}); continue; }
+      const [d,m]=x.d.split("/");
+      rows.push({comp:NAME[c],stage:"Round "+x.r,group:"",no:"",date:x._date||`${yr}-${m}-${d}`,ko:x.t,tz:x._tz||"Pacific/Auckland",home:x.h,away:x.a,venue:x.v,note:""});
+    }
+  } else for(const x of (FIX[t.id]||[])){
+    rows.push({comp:x.division||"",stage:x.stage||"",group:x.group||"",no:x.no??"",date:x.date||"",ko:x.ko||"",tz:x._tz||"",home:x.home,away:x.away,venue:x.venue||"",note:x.note||""});
+  }
+  return rows;
+}
+function downloadCSV(t){
+  const H=["tournament","competition","stage","group","match_no","date","day","kickoff_local","timezone","home","away","venue","note"];
+  const lines=[H.join(",")];
+  for(const r of fixtureRows(t)){
+    const day=r.date?DAYL[ISO(r.date).getDay()]:"";
+    lines.push([t.name,r.comp,r.stage,r.group,r.no,r.date,day,r.ko,r.tz,r.home,r.away,r.venue,r.note].map(csvCell).join(","));
+  }
+  const blob=new Blob(["\ufeff"+lines.join("\r\n")+"\r\n"],{type:"text/csv;charset=utf-8"});
+  const a=document.createElement("a"); a.href=URL.createObjectURL(blob);
+  a.download=(t.id+"-fixtures.csv"); document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+}
+document.getElementById("csv").addEventListener("click",()=>{ const t=tOf(route); if(t&&t.dataLoaded) downloadCSV(t); });
 function go(id){ route=id; sel=null; filt="all"; const t=tOf(id); view=(t&&t.id!=="nzl")?"date":"team"; comp="W"; render(); window.scrollTo({top:0}); }
 document.getElementById("tabs").addEventListener("click",e=>{const b=e.target.closest("button"); if(b) go(b.dataset.open);});
 document.getElementById("back").addEventListener("click",()=>go("dash"));
@@ -861,7 +895,7 @@ function adapt(f,r){
     if(x.bye){ D[x.comp].push({r:x.round,bye:x.bye}); continue; }
     const [y,m,d]=x.date.split("-"), hit=res[x.id];
     const started=startedFlag(x.date,x.ko,x.tz);
-    D[x.comp].push({r:x.round,d:`${d}/${m}`,t:x.ko,h:x.home,a:x.away,v:x.venue,
+    D[x.comp].push({r:x.round,d:`${d}/${m}`,t:x.ko,h:x.home,a:x.away,v:x.venue,_date:x.date,_tz:x.tz,
       s:hit?hit.score:undefined,p:hit&&hit.pens?hit.pens:undefined,_started:started,_id:x.id});
     if(started&&!hit) STALE.push(x.id);
   }
@@ -871,7 +905,7 @@ function adapt(f,r){
       const {id,tz,...rest}=x, hit=res[id];
       const started=startedFlag(x.date,x.ko,tz);
       if(started&&!hit) STALE.push(id);
-      return {...rest,_id:id,_started:started,
+      return {...rest,_id:id,_tz:tz,_started:started,
         score:hit?hit.score:null,pens:hit&&hit.pens?hit.pens:null,
         note:hit&&hit.note?hit.note:(rest.note??null)};
     });
