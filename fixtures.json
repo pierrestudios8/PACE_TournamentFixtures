@@ -1,7 +1,7 @@
 {
  "version": 1,
  "note": "Canonical schedule. Human-approved only — this file feeds the Figma rollout. The results fetcher must never write here.",
- "updated": "2026-09-28T10:14:19Z",
+ "updated": "2026-09-29T06:22:08Z",
  "tournaments": [
   {
    "id": "nzl",
@@ -18,10 +18,9 @@
    "broadcast": "DAZN and FIFA+",
    "dataLoaded": true,
    "figma": "Round 1 built (Women V/H, Men V). Rounds 2–12 to roll out",
-   "source": "Match schedule PDF, 8 September 2026. Amended 21 Sep: Phoenix v Pride (W, R1) now 13:00",
+   "source": "Match schedule PDF, 8 September 2026. Amended 21 Sep: Phoenix v Pride (W, R1) now 13:00. Amended 29 Sep: West Coast Rangers v CF Waterside Karori (W, R2) now 14:00. Club names per the league's Club Names and Logos sheet, 29 Sep",
    "flags": [
-    "Men Round 1 row 4 shows Auckland United, schedule says Auckland FC",
-    "Wellington United (Women) home venues all TBC",
+    "CF Wellington United (Women) home venues TBC, except Round 2 at Newtown Park",
     "Two men's home venues listed at the opponent's ground (R4, R8)"
    ],
    "tz": "Pacific/Auckland"
@@ -220,7 +219,7 @@
     "date": "2026-09-26",
     "ko": "14:00",
     "tz": "Pacific/Auckland",
-    "home": "Waterside Karori",
+    "home": "CF Waterside Karori",
     "away": "Fencibles United",
     "venue": "Martin Luckie Park"
    },
@@ -243,7 +242,7 @@
     "ko": "12:30",
     "tz": "Pacific/Auckland",
     "home": "Auckland United",
-    "away": "SU Uni of Otago",
+    "away": "SU Otago University",
     "venue": "Keith Hay Park"
    },
    {
@@ -253,24 +252,24 @@
     "date": "2026-09-27",
     "ko": "13:00",
     "tz": "Pacific/Auckland",
-    "home": "Wellington Phoenix",
-    "away": "Canterbury Utd Pride",
+    "home": "Wellington Phoenix Reserves",
+    "away": "Canterbury United Pride",
     "venue": "NZCIS"
    },
    {
     "comp": "W",
     "round": 1,
-    "bye": "Wellington United"
+    "bye": "CF Wellington United"
    },
    {
     "id": "nzl-w-05",
     "comp": "W",
     "round": 2,
     "date": "2026-10-03",
-    "ko": "15:00",
+    "ko": "14:00",
     "tz": "Pacific/Auckland",
     "home": "West Coast Rangers",
-    "away": "Waterside Karori",
+    "away": "CF Waterside Karori",
     "venue": "Fred Taylor Park"
    },
    {
@@ -280,9 +279,9 @@
     "date": "2026-10-04",
     "ko": "15:00",
     "tz": "Pacific/Auckland",
-    "home": "Wellington United",
+    "home": "CF Wellington United",
     "away": "Auckland United",
-    "venue": "TBC"
+    "venue": "Newtown Park"
    },
    {
     "id": "nzl-w-07",
@@ -291,7 +290,7 @@
     "date": "2026-10-04",
     "ko": "15:00",
     "tz": "Pacific/Auckland",
-    "home": "SU Uni of Otago",
+    "home": "SU Otago University",
     "away": "Fencibles United",
     "venue": "Logan Park"
    },
@@ -303,13 +302,13 @@
     "ko": "16:30",
     "tz": "Pacific/Auckland",
     "home": "Eastern Suburbs",
-    "away": "Wellington Phoenix",
+    "away": "Wellington Phoenix Reserves",
     "venue": "Madills Farm"
    },
    {
     "comp": "W",
     "round": 2,
-    "bye": "Canterbury Utd Pride"
+    "bye": "Canterbury United Pride"
    },
    {
     "id": "nzl-w-09",
@@ -318,8 +317,8 @@
     "date": "2026-10-11",
     "ko": "14:00",
     "tz": "Pacific/Auckland",
-    "home": "SU Uni of Otago",
-    "away": "Waterside Karori",
+    "home": "SU Otago University",
+    "away": "CF Waterside Karori",
     "venue": "Logan Park"
    },
    {
@@ -330,7 +329,7 @@
     "ko": "14:30",
     "tz": "Pacific/Auckland",
     "home": "Fencibles United",
-    "away": "Wellington United",
+    "away": "CF Wellington United",
     "venue": "Riverhills Park"
    },
    {
@@ -341,7 +340,7 @@
     "ko": "15:00",
     "tz": "Pacific/Auckland",
     "home": "Auckland United",
-    "away": "Canterbury Utd Pride",
+    "away": "Canterbury United Pride",
     "venue": "Keith Hay Park"
    },
    {
@@ -351,7 +350,7 @@
     "date": "2026-10-11",
     "ko": "16:00",
     "tz": "Pacific/Auckland",
-    "home": "Wellington Phoenix",
+    "home": "Wellington Phoenix Reserves",
     "away": "West Coast Rangers",
     "venue": "Fraser Park"
    },
@@ -367,8 +366,8 @@
     "date": "2026-10-16",
     "ko": "19:00",
     "tz": "Pacific/Auckland",
-    "home": "Waterside Karori",
-    "away": "Wellington Phoenix",
+    "home": "CF Waterside Karori",
+    "away": "Wellington Phoenix Reserves",
     "venue": "Martin Luckie Park"
    },
    {
@@ -378,7 +377,7 @@
     "date": "2026-10-17",
     "ko": "14:30",
     "tz": "Pacific/Auckland",
-    "home": "Canterbury Utd Pride",
+    "home": "Canterbury United Pride",
     "away": "Fencibles United",
     "venue": "English Park"
    },
@@ -400,8 +399,8 @@
     "date": "2026-10-18",
     "ko": "12:00",
     "tz": "Pacific/Auckland",
-    "home": "Wellington United",
-    "away": "SU Uni of Otago",
+    "home": "CF Wellington United",
+    "away": "SU Otago University",
     "venue": "TBC"
    },
    {
@@ -416,8 +415,8 @@
     "date": "2026-10-24",
     "ko": "15:00",
     "tz": "Pacific/Auckland",
-    "home": "Wellington United",
-    "away": "Waterside Karori",
+    "home": "CF Wellington United",
+    "away": "CF Waterside Karori",
     "venue": "TBC"
    },
    {
@@ -427,8 +426,8 @@
     "date": "2026-10-25",
     "ko": "14:00",
     "tz": "Pacific/Auckland",
-    "home": "SU Uni of Otago",
-    "away": "Canterbury Utd Pride",
+    "home": "SU Otago University",
+    "away": "Canterbury United Pride",
     "venue": "Logan Park"
    },
    {
@@ -456,7 +455,7 @@
    {
     "comp": "W",
     "round": 5,
-    "bye": "Wellington Phoenix"
+    "bye": "Wellington Phoenix Reserves"
    },
    {
     "id": "nzl-w-21",
@@ -465,8 +464,8 @@
     "date": "2026-10-31",
     "ko": "14:00",
     "tz": "Pacific/Auckland",
-    "home": "Canterbury Utd Pride",
-    "away": "Wellington United",
+    "home": "Canterbury United Pride",
+    "away": "CF Wellington United",
     "venue": "English Park"
    },
    {
@@ -477,7 +476,7 @@
     "ko": "12:00",
     "tz": "Pacific/Auckland",
     "home": "Eastern Suburbs",
-    "away": "SU Uni of Otago",
+    "away": "SU Otago University",
     "venue": "Madills Farm"
    },
    {
@@ -498,14 +497,14 @@
     "date": "2026-11-01",
     "ko": "16:00",
     "tz": "Pacific/Auckland",
-    "home": "Wellington Phoenix",
+    "home": "Wellington Phoenix Reserves",
     "away": "Auckland United",
     "venue": "Fraser Park"
    },
    {
     "comp": "W",
     "round": 6,
-    "bye": "Waterside Karori"
+    "bye": "CF Waterside Karori"
    },
    {
     "id": "nzl-w-25",
@@ -514,8 +513,8 @@
     "date": "2026-11-07",
     "ko": "14:00",
     "tz": "Pacific/Auckland",
-    "home": "Canterbury Utd Pride",
-    "away": "Waterside Karori",
+    "home": "Canterbury United Pride",
+    "away": "CF Waterside Karori",
     "venue": "English Park"
    },
    {
@@ -525,7 +524,7 @@
     "date": "2026-11-07",
     "ko": "14:00",
     "tz": "Pacific/Auckland",
-    "home": "Wellington United",
+    "home": "CF Wellington United",
     "away": "Eastern Suburbs",
     "venue": "TBC"
    },
@@ -536,7 +535,7 @@
     "date": "2026-11-08",
     "ko": "14:00",
     "tz": "Pacific/Auckland",
-    "home": "SU Uni of Otago",
+    "home": "SU Otago University",
     "away": "West Coast Rangers",
     "venue": "Logan Park"
    },
@@ -548,7 +547,7 @@
     "ko": "16:00",
     "tz": "Pacific/Auckland",
     "home": "Fencibles United",
-    "away": "Wellington Phoenix",
+    "away": "Wellington Phoenix Reserves",
     "venue": "Riverhills Park"
    },
    {
@@ -563,7 +562,7 @@
     "date": "2026-11-14",
     "ko": "14:00",
     "tz": "Pacific/Auckland",
-    "home": "Waterside Karori",
+    "home": "CF Waterside Karori",
     "away": "Auckland United",
     "venue": "Martin Luckie Park"
    },
@@ -574,8 +573,8 @@
     "date": "2026-11-15",
     "ko": "12:00",
     "tz": "Pacific/Auckland",
-    "home": "Wellington Phoenix",
-    "away": "SU Uni of Otago",
+    "home": "Wellington Phoenix Reserves",
+    "away": "SU Otago University",
     "venue": "Fraser Park"
    },
    {
@@ -586,7 +585,7 @@
     "ko": "14:00",
     "tz": "Pacific/Auckland",
     "home": "West Coast Rangers",
-    "away": "Wellington United",
+    "away": "CF Wellington United",
     "venue": "Fred Taylor Park"
    },
    {
@@ -597,7 +596,7 @@
     "ko": "16:00",
     "tz": "Pacific/Auckland",
     "home": "Eastern Suburbs",
-    "away": "Canterbury Utd Pride",
+    "away": "Canterbury United Pride",
     "venue": "Madills Farm"
    },
    {
@@ -624,7 +623,7 @@
     "ko": "14:00",
     "tz": "Pacific/Auckland",
     "home": "Eastern Suburbs",
-    "away": "Waterside Karori",
+    "away": "CF Waterside Karori",
     "venue": "Madills Farm"
    },
    {
@@ -634,7 +633,7 @@
     "date": "2026-11-22",
     "ko": "14:00",
     "tz": "Pacific/Auckland",
-    "home": "Canterbury Utd Pride",
+    "home": "Canterbury United Pride",
     "away": "West Coast Rangers",
     "venue": "English Park"
    },
@@ -645,14 +644,14 @@
     "date": "2026-11-22",
     "ko": "14:00",
     "tz": "Pacific/Auckland",
-    "home": "Wellington United",
-    "away": "Wellington Phoenix",
+    "home": "CF Wellington United",
+    "away": "Wellington Phoenix Reserves",
     "venue": "TBC"
    },
    {
     "comp": "W",
     "round": 9,
-    "bye": "SU Uni of Otago"
+    "bye": "SU Otago University"
    },
    {
     "id": "nzl-m-01",
@@ -661,7 +660,7 @@
     "date": "2026-09-26",
     "ko": "14:30",
     "tz": "Pacific/Auckland",
-    "home": "Wellington Phoenix",
+    "home": "Wellington Phoenix Reserves",
     "away": "Auckland United",
     "venue": "NZCIS"
    },
@@ -694,7 +693,7 @@
     "date": "2026-09-27",
     "ko": "14:00",
     "tz": "Pacific/Auckland",
-    "home": "Auckland FC",
+    "home": "Auckland FC Reserves",
     "away": "Wellington Olympic",
     "venue": "Fred Taylor Park"
    },
@@ -722,7 +721,7 @@
     "ko": "14:00",
     "tz": "Pacific/Auckland",
     "home": "Miramar Rangers",
-    "away": "Auckland FC",
+    "away": "Auckland FC Reserves",
     "venue": "David Farrington"
    },
    {
@@ -766,7 +765,7 @@
     "ko": "14:00",
     "tz": "Pacific/Auckland",
     "home": "Cashmere Technical",
-    "away": "Wellington Phoenix",
+    "away": "Wellington Phoenix Reserves",
     "venue": "Garrick Memorial"
    },
    {
@@ -781,7 +780,7 @@
     "date": "2026-10-10",
     "ko": "14:30",
     "tz": "Pacific/Auckland",
-    "home": "Wellington Phoenix",
+    "home": "Wellington Phoenix Reserves",
     "away": "Birkenhead United",
     "venue": "Fraser Park"
    },
@@ -814,7 +813,7 @@
     "date": "2026-10-11",
     "ko": "12:00",
     "tz": "Pacific/Auckland",
-    "home": "Auckland FC",
+    "home": "Auckland FC Reserves",
     "away": "Auckland United",
     "venue": "Fred Taylor Park"
    },
@@ -864,7 +863,7 @@
     "ko": "14:00",
     "tz": "Pacific/Auckland",
     "home": "Cashmere Technical",
-    "away": "Auckland FC",
+    "away": "Auckland FC Reserves",
     "venue": "Garrick Memorial"
    },
    {
@@ -892,7 +891,7 @@
    {
     "comp": "M",
     "round": 4,
-    "bye": "Wellington Phoenix"
+    "bye": "Wellington Phoenix Reserves"
    },
    {
     "id": "nzl-m-21",
@@ -934,7 +933,7 @@
     "date": "2026-10-25",
     "ko": "12:00",
     "tz": "Pacific/Auckland",
-    "home": "Auckland FC",
+    "home": "Auckland FC Reserves",
     "away": "Birkenhead United",
     "venue": "Fred Taylor Park"
    },
@@ -946,7 +945,7 @@
     "ko": "12:30",
     "tz": "Pacific/Auckland",
     "home": "Napier City Rovers",
-    "away": "Wellington Phoenix",
+    "away": "Wellington Phoenix Reserves",
     "venue": "Blue Water Stadium"
    },
    {
@@ -972,8 +971,8 @@
     "date": "2026-10-31",
     "ko": "15:00",
     "tz": "Pacific/Auckland",
-    "home": "Wellington Phoenix",
-    "away": "Auckland FC",
+    "home": "Wellington Phoenix Reserves",
+    "away": "Auckland FC Reserves",
     "venue": "Fraser Park"
    },
    {
@@ -1044,7 +1043,7 @@
     "ko": "16:00",
     "tz": "Pacific/Auckland",
     "home": "Ferrymead Bays",
-    "away": "Wellington Phoenix",
+    "away": "Wellington Phoenix Reserves",
     "venue": "Ferrymead Park"
    },
    {
@@ -1054,7 +1053,7 @@
     "date": "2026-11-08",
     "ko": "14:00",
     "tz": "Pacific/Auckland",
-    "home": "Auckland FC",
+    "home": "Auckland FC Reserves",
     "away": "Napier City Rovers",
     "venue": "Fred Taylor Park"
    },
@@ -1081,7 +1080,7 @@
     "date": "2026-11-14",
     "ko": "14:00",
     "tz": "Pacific/Auckland",
-    "home": "Wellington Phoenix",
+    "home": "Wellington Phoenix Reserves",
     "away": "Auckland City FC",
     "venue": "Fraser Park"
    },
@@ -1132,7 +1131,7 @@
    {
     "comp": "M",
     "round": 8,
-    "bye": "Auckland FC"
+    "bye": "Auckland FC Reserves"
    },
    {
     "id": "nzl-m-41",
@@ -1164,7 +1163,7 @@
     "ko": "15:00",
     "tz": "Pacific/Auckland",
     "home": "Ferrymead Bays",
-    "away": "Auckland FC",
+    "away": "Auckland FC Reserves",
     "venue": "Ferrymead Park"
    },
    {
@@ -1186,7 +1185,7 @@
     "ko": "16:00",
     "tz": "Pacific/Auckland",
     "home": "Eastern Suburbs",
-    "away": "Wellington Phoenix",
+    "away": "Wellington Phoenix Reserves",
     "venue": "Madills Farm"
    },
    {
@@ -1201,7 +1200,7 @@
     "date": "2026-11-28",
     "ko": "14:00",
     "tz": "Pacific/Auckland",
-    "home": "Wellington Phoenix",
+    "home": "Wellington Phoenix Reserves",
     "away": "Wellington Olympic",
     "venue": "Fraser Park"
    },
@@ -1212,7 +1211,7 @@
     "date": "2026-11-29",
     "ko": "12:00",
     "tz": "Pacific/Auckland",
-    "home": "Auckland FC",
+    "home": "Auckland FC Reserves",
     "away": "Auckland City FC",
     "venue": "Fred Taylor Park"
    },
@@ -1284,7 +1283,7 @@
     "ko": "14:00",
     "tz": "Pacific/Auckland",
     "home": "Miramar Rangers",
-    "away": "Wellington Phoenix",
+    "away": "Wellington Phoenix Reserves",
     "venue": "David Farrington"
    },
    {
@@ -1306,7 +1305,7 @@
     "ko": "14:00",
     "tz": "Pacific/Auckland",
     "home": "Eastern Suburbs",
-    "away": "Auckland FC",
+    "away": "Auckland FC Reserves",
     "venue": "Madills Farm"
    },
    {
