@@ -1,7 +1,7 @@
 {
  "version": 1,
  "note": "Canonical schedule. Human-approved only — this file feeds the Figma rollout. The results fetcher must never write here.",
- "updated": "2026-09-29T06:22:08Z",
+ "updated": "2026-09-30",
  "tournaments": [
   {
    "id": "nzl",
@@ -208,6 +208,34 @@
     "Biggest build of the three: 104 fixtures"
    ],
    "tz": "Asia/Qatar"
+  },
+  {
+   "id": "futve2",
+   "name": "Liga FUTVE 2 2026 Venezuela",
+   "short": "Liga FUTVE 2",
+   "badge": "Venezuela 2026",
+   "host": "Venezuela",
+   "start": "2026-09-30",
+   "end": "2026-10-04",
+   "window": "30 Sep – 4 Oct 2026 (regular season batch)",
+   "format": "Two groups, Centro-Occidental (9 clubs) and Centro-Oriental (8 on paper, 6 active). Groups number their rounds separately. Final phase of 8 teams follows",
+   "matches": "11 matches in this batch",
+   "venues": "Not published yet",
+   "broadcast": "To be confirmed",
+   "dataLoaded": true,
+   "divisions": [
+    "Centro-Occidental",
+    "Centro-Oriental"
+   ],
+   "figma": "Not started",
+   "source": "Soccerway fixtures, 30 Sep 2026 (times converted from SAST to Caracas time). Not yet confirmed with the client",
+   "flags": [
+    "Kick-offs shown in Caracas time (UTC-4), the location of the matches. The client's sheet appears to be on UTC+1, so confirm which zone the graphics use",
+    "Venues are not published by either source",
+    "Marítimo de La Guaira and Ávila FC withdrew from the third round, so games involving them may be 0-3 walkovers",
+    "Club names use the league's forms for now: Deportivo Miranda (not Deportivo Italia), Club Atlético Barinas (not Inter de Barinas), reserve sides shown as B"
+   ],
+   "tz": "America/Caracas"
   }
  ],
  "fixtures": {
@@ -2469,6 +2497,162 @@
     "away": "DPR Korea",
     "venue": "Stadion Miejski ŁKS, Łódź",
     "tz": "Europe/Warsaw"
+   }
+  ],
+  "futve2": [
+   {
+    "id": "futve2-01",
+    "no": 1,
+    "division": "Centro-Occidental",
+    "stage": "Round 32",
+    "group": null,
+    "date": "2026-09-30",
+    "ko": "15:30",
+    "home": "Club Atlético Barinas",
+    "away": "Barquisimeto SC",
+    "venue": "Venue TBC",
+    "tz": "America/Caracas",
+    "note": null
+   },
+   {
+    "id": "futve2-02",
+    "no": 2,
+    "division": "Centro-Occidental",
+    "stage": "Round 32",
+    "group": null,
+    "date": "2026-09-30",
+    "ko": "15:30",
+    "home": "El Vigía FC",
+    "away": "Zamora FC B",
+    "venue": "Venue TBC",
+    "tz": "America/Caracas",
+    "note": null
+   },
+   {
+    "id": "futve2-03",
+    "no": 3,
+    "division": "Centro-Occidental",
+    "stage": "Round 32",
+    "group": null,
+    "date": "2026-09-30",
+    "ko": "16:00",
+    "home": "Yaracuyanos FC",
+    "away": "Academia Puerto Cabello B",
+    "venue": "Venue TBC",
+    "tz": "America/Caracas",
+    "note": null
+   },
+   {
+    "id": "futve2-04",
+    "no": 4,
+    "division": "Centro-Occidental",
+    "stage": "Round 32",
+    "group": null,
+    "date": "2026-09-30",
+    "ko": "19:00",
+    "home": "Deportivo Lara",
+    "away": "Real Frontera",
+    "venue": "Venue TBC",
+    "tz": "America/Caracas",
+    "note": null
+   },
+   {
+    "id": "futve2-05",
+    "no": 5,
+    "division": "Centro-Occidental",
+    "stage": "Round 33",
+    "group": null,
+    "date": "2026-10-03",
+    "ko": "16:30",
+    "home": "Barquisimeto SC",
+    "away": "El Vigía FC",
+    "venue": "Venue TBC",
+    "tz": "America/Caracas",
+    "note": null
+   },
+   {
+    "id": "futve2-06",
+    "no": 6,
+    "division": "Centro-Occidental",
+    "stage": "Round 33",
+    "group": null,
+    "date": "2026-10-04",
+    "ko": "15:30",
+    "home": "Academia Puerto Cabello B",
+    "away": "Deportivo Lara",
+    "venue": "Venue TBC",
+    "tz": "America/Caracas",
+    "note": null
+   },
+   {
+    "id": "futve2-07",
+    "no": 7,
+    "division": "Centro-Occidental",
+    "stage": "Round 33",
+    "group": null,
+    "date": "2026-10-04",
+    "ko": "15:30",
+    "home": "Ureña SC",
+    "away": "Club Atlético Barinas",
+    "venue": "Venue TBC",
+    "tz": "America/Caracas",
+    "note": null
+   },
+   {
+    "id": "futve2-08",
+    "no": 8,
+    "division": "Centro-Occidental",
+    "stage": "Round 33",
+    "group": null,
+    "date": "2026-10-04",
+    "ko": "15:30",
+    "home": "Zamora FC B",
+    "away": "Yaracuyanos FC",
+    "venue": "Venue TBC",
+    "tz": "America/Caracas",
+    "note": null
+   },
+   {
+    "id": "futve2-09",
+    "no": 9,
+    "division": "Centro-Oriental",
+    "stage": "Round 25",
+    "group": null,
+    "date": "2026-10-04",
+    "ko": "15:00",
+    "home": "Bolívar SC",
+    "away": "Monagas SC B",
+    "venue": "Venue TBC",
+    "tz": "America/Caracas",
+    "note": null
+   },
+   {
+    "id": "futve2-10",
+    "no": 10,
+    "division": "Centro-Oriental",
+    "stage": "Round 25",
+    "group": null,
+    "date": "2026-10-04",
+    "ko": "15:30",
+    "home": "Ávila FC",
+    "away": "Dynamo Puerto FC",
+    "venue": "Venue TBC",
+    "tz": "America/Caracas",
+    "note": "Ávila FC has withdrawn from the third round. Confirm this is being played"
+   },
+   {
+    "id": "futve2-11",
+    "no": 11,
+    "division": "Centro-Oriental",
+    "stage": "Round 25",
+    "group": null,
+    "date": "2026-10-04",
+    "ko": "15:30",
+    "home": "Mineros de Guayana",
+    "away": "Deportivo Miranda",
+    "venue": "Venue TBC",
+    "tz": "America/Caracas",
+    "note": null
    }
   ]
  }
