@@ -100,6 +100,8 @@ h1{margin:0;font-family:var(--font-display);font-weight:900;font-size:clamp(1.55
 .seg button{background:none;border:0;border-radius:999px;padding:7px 18px;font-weight:700;font-size:.86rem;cursor:pointer;color:var(--muted)}
 .seg button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
 .seg button[hidden],[hidden]{display:none}
+.seg button{padding:6px 14px}
+#tzseg{background:transparent}
 .back{background:none;border:0;padding:6px 0;margin:0 0 8px;font-weight:700;font-size:.88rem;cursor:pointer;opacity:.75}
 
 .tabs{background:var(--chrome);color:var(--ink);border-bottom:1px solid var(--line);
@@ -260,6 +262,11 @@ section.block h2{margin:0;font-family:var(--font-display);font-weight:900;font-s
     </div>
     <div class="headright">
       <div class="controls" id="controls" hidden></div>
+      <div class="seg" id="tzseg" role="group" aria-label="Time zone" hidden>
+        <button type="button" data-tz="local" title="Time zone of the event">Local</button>
+        <button type="button" data-tz="uk" title="UK time (GMT/BST)">UK</button>
+        <button type="button" data-tz="sa" title="South Africa time (SAST)">SA</button>
+      </div>
       <button class="themebtn" id="theme" type="button" aria-pressed="false">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
           <circle cx="12" cy="12" r="4.2"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.5 1.5M17.6 17.6l1.5 1.5M19.1 4.9l-1.5 1.5M6.4 17.6l-1.5 1.5"/>
@@ -499,6 +506,9 @@ const TODAY = new Date();
 function sortTournaments(){TOURNAMENTS.sort((a,b)=>a.end.localeCompare(b.end)||a.start.localeCompare(b.start));}
 sortTournaments();
 let route="dash", view="team", comp="W", filt="all", sel=null;
+const TZ_KEY="pace-hub-tz", TZ_ZONES={uk:"Europe/London",sa:"Africa/Johannesburg"};
+let TZMODE="local";
+try{ const z=localStorage.getItem(TZ_KEY); if(z==="uk"||z==="sa"||z==="local") TZMODE=z; }catch(e){}
 
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const toDate=d=>{const [dd,mm]=d.split("/").map(Number);return new Date(2026,mm-1,dd)};
@@ -693,7 +703,7 @@ function genericByDate(t){
     const list=map.get(k);
     return `<button data-jump="day-${i}"><span>${esc(list[0].date?dShort(k):k)}</span><small>${list.length} match${list.length>1?"es":""}</small></button>`;
   }).join("");
-  return {nav, body:blocks+`<p class="foot">All kick-off times are local. Schedules are subject to change.</p>`};
+  return {nav, body:blocks+`<p class="foot">All kick-off times are ${tzWords("local")}. Schedules are subject to change.</p>`};
 }
 function genericByTeam(t){
   const teams=genericTeams(t), f=fixturesFor(t);
@@ -753,13 +763,14 @@ function render(){
     document.getElementById("eyebrow").textContent="Fixture hub";
     document.getElementById("title").textContent="Tournament fixture hub";
     document.getElementById("sub").textContent="Schedules, fixture data and Figma rollout status";
-    controls.hidden=true; controls.innerHTML=""; back.hidden=false; document.getElementById("csv").hidden=true;
+    controls.hidden=true; controls.innerHTML=""; back.hidden=false; document.getElementById("csv").hidden=true; document.getElementById("tzseg").hidden=true;
     back.hidden=true;
     app.innerHTML=dashboard();
     return;
   }
   const t=tOf(route);
   document.getElementById("csv").hidden=!t.dataLoaded;
+  document.getElementById("tzseg").hidden=!t.dataLoaded; syncTZ();
   document.getElementById("eyebrow").textContent=t.badge;
   document.getElementById("title").textContent=t.name;
   document.getElementById("sub").textContent=`${t.window}. ${t.host}`;
@@ -777,14 +788,14 @@ function render(){
       side=teams.map(x=>`<button data-team="${esc(x)}" aria-pressed="${sel===x}">${esc(x)}</button>`).join("")
         +`<button class="all" data-team="" aria-pressed="${sel===null}">All teams</button>`;
       body=(sel?[sel]:teams).map(x=>teamBlock(comp,x)).join("")
-        +`<p class="foot">Times are local NZ kick-off times. Home matches marked in green.</p>`;
+        +`<p class="foot">Times are ${tzWords("local NZ kick-off times")}. Home matches marked in green.</p>`;
     } else {
       const comps = comp==="B" ? ["W","M"] : [comp];
       const weeks=buildWeeks(comps);
       side=weeks.map(w=>`<button data-jump="week-${w.n}"><span>Week ${w.n}</span><small>${w.range}</small></button>`).join("")
         +`<button data-jump="week-finals"><span>Finals</span><small>Dates TBC</small></button>`;
       body=weeks.map(w=>weekBlock(w,comps)).join("")+finalsBlock(comps)
-        +`<p class="foot">Weeks run Monday to Sunday. Times are local NZ kick-off times.</p>`;
+        +`<p class="foot">Weeks run Monday to Sunday. Times are ${tzWords("local NZ kick-off times")}.</p>`;
     }
   } else {
     const out = (view==="team" && t.teamView!==false) ? genericByTeam(t) : genericByDate(t);
@@ -796,32 +807,74 @@ function render(){
 /* ---------- CSV export (fixtures only; scores never leave the hub) ---------- */
 function csvCell(v){ v=v==null?"":String(v); return /[",\n\r]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v; }
 function fixtureRows(t){
-  const rows=[];
+  const rows=[], zone=t.tz||"";
+  const shownTz=z=>TZMODE==="local"?z:TZ_ZONES[TZMODE];
   if(t.id==="nzl"){
     const yr=String(t.start||"2026").slice(0,4);
     for(const c of ["W","M"]) for(const x of (DATA[c]||[])){
-      if(x.bye){ rows.push({comp:NAME[c],stage:"Round "+x.r,group:"",no:"",date:"",ko:"",tz:"",home:x.bye,away:"BYE",venue:"",note:"Bye"}); continue; }
-      const [d,m]=x.d.split("/");
-      rows.push({comp:NAME[c],stage:"Round "+x.r,group:"",no:"",date:x._date||`${yr}-${m}-${d}`,ko:x.t,tz:x._tz||"Pacific/Auckland",home:x.h,away:x.a,venue:x.v,note:""});
+      if(x.bye){ rows.push({comp:NAME[c],stage:"Round "+x.r,group:"",no:"",date:"",ko:"",tz:"",ldate:"",lko:"",ltz:"",home:x.bye,away:"BYE",venue:"",note:"Bye"}); continue; }
+      const [d,m]=x.d.split("/"), ltz=x._tz||zone||"Pacific/Auckland";
+      rows.push({comp:NAME[c],stage:"Round "+x.r,group:"",no:"",date:`${yr}-${m}-${d}`,ko:x.t,tz:shownTz(ltz),ldate:x._d0||x._date||"",lko:x._k0||x.t,ltz,home:x.h,away:x.a,venue:x.v,note:""});
     }
   } else for(const x of (FIX[t.id]||[])){
-    rows.push({comp:x.division||"",stage:x.stage||"",group:x.group||"",no:x.no??"",date:x.date||"",ko:x.ko||"",tz:x._tz||"",home:x.home,away:x.away,venue:x.venue||"",note:x.note||""});
+    const ltz=x._tz||zone;
+    rows.push({comp:x.division||"",stage:x.stage||"",group:x.group||"",no:x.no??"",date:x.date||"",ko:x.ko||"",tz:x.date&&x.ko?shownTz(ltz):ltz,ldate:x._d0||x.date||"",lko:x._k0||x.ko||"",ltz,home:x.home,away:x.away,venue:x.venue||"",note:x.note||""});
   }
   return rows;
 }
 function downloadCSV(t){
-  const H=["tournament","competition","stage","group","match_no","date","day","kickoff_local","timezone","home","away","venue","note"];
+  const H=["tournament","competition","stage","group","match_no","date","day","kickoff","timezone","local_date","local_kickoff","local_timezone","home","away","venue","note"];
   const lines=[H.join(",")];
   for(const r of fixtureRows(t)){
     const day=r.date?DAYL[ISO(r.date).getDay()]:"";
-    lines.push([t.name,r.comp,r.stage,r.group,r.no,r.date,day,r.ko,r.tz,r.home,r.away,r.venue,r.note].map(csvCell).join(","));
+    lines.push([t.name,r.comp,r.stage,r.group,r.no,r.date,day,r.ko,r.tz,r.ldate,r.lko,r.ltz,r.home,r.away,r.venue,r.note].map(csvCell).join(","));
   }
   const blob=new Blob(["\ufeff"+lines.join("\r\n")+"\r\n"],{type:"text/csv;charset=utf-8"});
   const a=document.createElement("a"); a.href=URL.createObjectURL(blob);
-  a.download=(t.id+"-fixtures.csv"); document.body.appendChild(a); a.click(); a.remove();
+  a.download=(t.id+"-fixtures"+(TZMODE==="local"?"":"-"+TZMODE)+".csv"); document.body.appendChild(a); a.click(); a.remove();
   setTimeout(()=>URL.revokeObjectURL(a.href),1000);
 }
 document.getElementById("csv").addEventListener("click",()=>{ const t=tOf(route); if(t&&t.dataLoaded) downloadCSV(t); });
+/* ---------- time zone switch: Local (event) / UK / SA ---------- */
+function tzWords(local){
+  return TZMODE==="uk" ? "shown in UK time (GMT/BST)" : TZMODE==="sa" ? "shown in South Africa time (SAST)" : local;
+}
+function shiftTime(date,ko,from,to){
+  const u=zonedToUTC(date,ko,from); if(!u) return null;
+  const q=Object.fromEntries(new Intl.DateTimeFormat("en-GB",{timeZone:to,hour12:false,year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit"})
+    .formatToParts(u).filter(x=>x.type!=="literal").map(x=>[x.type,x.value]));
+  return {date:`${q.year}-${q.month}-${q.day}`, ko:`${q.hour==="24"?"00":q.hour}:${q.minute}`};
+}
+function applyTZ(){
+  const to=TZMODE==="local"?null:TZ_ZONES[TZMODE];
+  for(const t of TOURNAMENTS){
+    if(t.id==="nzl"){
+      const yr=String(t.start||"2026").slice(0,4);
+      for(const c of ["W","M"]) for(const x of (DATA[c]||[])){
+        if(x.bye) continue;
+        if(!x._d0){ const [d,m]=x.d.split("/"); x._d0=x._date||`${yr}-${m}-${d}`; x._k0=x.t; }
+        let d0=x._d0, k0=x._k0;
+        if(to){ const r=shiftTime(d0,k0,x._tz||t.tz||"Pacific/Auckland",to); if(r){ d0=r.date; k0=r.ko; } }
+        x.d=d0.slice(8)+"/"+d0.slice(5,7); x.t=k0;
+      }
+    } else for(const x of (FIX[t.id]||[])){
+      if(!x.date&&!x._d0) continue;
+      if(!x._d0){ x._d0=x.date; x._k0=x.ko; }
+      if(!x._d0||!x._k0){ continue; }
+      let d0=x._d0, k0=x._k0;
+      if(to){ const r=shiftTime(d0,k0,x._tz||t.tz,to); if(r){ d0=r.date; k0=r.ko; } }
+      x.date=d0; x.ko=k0;
+    }
+  }
+}
+function syncTZ(){
+  document.querySelectorAll("#tzseg button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.tz===TZMODE)));
+}
+document.getElementById("tzseg").addEventListener("click",e=>{
+  const b=e.target.closest("button[data-tz]"); if(!b||b.dataset.tz===TZMODE) return;
+  TZMODE=b.dataset.tz; try{ localStorage.setItem(TZ_KEY,TZMODE); }catch(e){}
+  applyTZ(); render();
+});
 function go(id){ route=id; sel=null; filt="all"; const t=tOf(id); view=(t&&t.id!=="nzl")?"date":"team"; comp="W"; render(); window.scrollTo({top:0}); }
 document.getElementById("tabs").addEventListener("click",e=>{const b=e.target.closest("button"); if(b) go(b.dataset.open);});
 document.getElementById("back").addEventListener("click",()=>go("dash"));
@@ -992,6 +1045,7 @@ async function boot(){
     // keep the baked-in fallback; the page is still correct as of the last deploy
     console.warn("[hub] live data unavailable, using the copy baked into this deploy",e);
   }
+  applyTZ();
   render();
   showStamp();
 }
