@@ -500,7 +500,7 @@ const DAYS=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"], DAYL=["Sunday","Monday",
 const MON=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 const MONL=["January","February","March","April","May","June","July","August","September","October","November","December"];
 const TODAY = new Date();
-function sortTournaments(){TOURNAMENTS.sort((a,b)=>a.end.localeCompare(b.end)||a.start.localeCompare(b.start));}
+function sortTournaments(){TOURNAMENTS.sort((a,b)=>a.start.localeCompare(b.start)||a.end.localeCompare(b.end));}
 sortTournaments();
 let route="dash", view="team", comp="W", filt="all", sel=null;
 const TZ_KEY="pace-hub-tz", TZ_ZONES={uk:"Europe/London",sa:"Africa/Johannesburg"};
