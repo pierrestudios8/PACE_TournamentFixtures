@@ -103,11 +103,11 @@
    "broadcast": "FIFA+",
    "dataLoaded": true,
    "figma": "Not started",
-   "source": "FIFA match schedule v6, 9 October 2026 (kick-offs in Morocco time). Checked against the hub with no changes",
+   "source": "FIFA match schedule v7, 26 October 2026 (kick-offs in Morocco time). Round of 16 teams confirmed; matches 37 and 39 swapped pitch and time against v6",
    "flags": [
     "Centralised format means several matches per day, so day grouping matters more than rounds",
     "4 matches a day on 4 pitches, so cards work per day rather than per round",
-    "Knockout fixtures are placeholders (1A v 3C/D/E, W37 v W38) until qualification is settled"
+    "Round of 16 now carries real teams (v7). Quarter-finals onward show W## until played"
    ],
    "tz": "Africa/Casablanca"
   },
@@ -1857,10 +1857,10 @@
     "stage": "Round of 16",
     "group": null,
     "date": "2026-10-28",
-    "ko": "15:00",
-    "home": "1B",
-    "away": "3A/C/D",
-    "venue": "Women's Football Complex, Pitch 2",
+    "ko": "18:00",
+    "home": "DPR Korea",
+    "away": "Morocco",
+    "venue": "Women's Football Complex, Pitch 3",
     "tz": "Africa/Casablanca"
    },
    {
@@ -1870,8 +1870,8 @@
     "group": null,
     "date": "2026-10-28",
     "ko": "15:00",
-    "home": "1A",
-    "away": "3C/D/E",
+    "home": "Germany",
+    "away": "Venezuela",
     "venue": "Women's Football Complex, Pitch 1",
     "tz": "Africa/Casablanca"
    },
@@ -1881,10 +1881,10 @@
     "stage": "Round of 16",
     "group": null,
     "date": "2026-10-28",
-    "ko": "18:00",
-    "home": "2A",
-    "away": "2C",
-    "venue": "Women's Football Complex, Pitch 3",
+    "ko": "15:00",
+    "home": "Argentina",
+    "away": "Ghana",
+    "venue": "Women's Football Complex, Pitch 2",
     "tz": "Africa/Casablanca"
    },
    {
@@ -1894,8 +1894,8 @@
     "group": null,
     "date": "2026-10-28",
     "ko": "18:00",
-    "home": "1C",
-    "away": "3A/B/F",
+    "home": "Brazil",
+    "away": "Poland",
     "venue": "Women's Football Complex, Pitch 4",
     "tz": "Africa/Casablanca"
    },
@@ -1906,8 +1906,8 @@
     "group": null,
     "date": "2026-10-29",
     "ko": "15:00",
-    "home": "1E",
-    "away": "2D",
+    "home": "China PR",
+    "away": "France",
     "venue": "Women's Football Complex, Pitch 1",
     "tz": "Africa/Casablanca"
    },
@@ -1918,8 +1918,8 @@
     "group": null,
     "date": "2026-10-29",
     "ko": "15:00",
-    "home": "2B",
-    "away": "2F",
+    "home": "Nigeria",
+    "away": "Mexico",
     "venue": "Women's Football Complex, Pitch 2",
     "tz": "Africa/Casablanca"
    },
@@ -1930,8 +1930,8 @@
     "group": null,
     "date": "2026-10-29",
     "ko": "18:00",
-    "home": "1D",
-    "away": "3B/E/F",
+    "home": "Japan",
+    "away": "Kenya",
     "venue": "Women's Football Complex, Pitch 3",
     "tz": "Africa/Casablanca"
    },
@@ -1942,8 +1942,8 @@
     "group": null,
     "date": "2026-10-29",
     "ko": "18:00",
-    "home": "1F",
-    "away": "2E",
+    "home": "Spain",
+    "away": "USA",
     "venue": "Women's Football Complex, Pitch 4",
     "tz": "Africa/Casablanca"
    },
