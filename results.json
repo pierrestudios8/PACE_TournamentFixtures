@@ -1,7 +1,7 @@
 {
  "version": 1,
  "note": "Display-only scores, keyed by fixture id. Written by the scheduled fetcher. Never feeds Figma assets.",
- "updated": "2026-10-28T12:00:00Z",
+ "updated": "2026-10-28T19:30:00Z",
  "results": {
   "icc-01": {
    "score": "1–0",
@@ -5210,6 +5210,766 @@
    "confirmed": false,
    "at": "2026-10-28T12:00:00Z",
    "pens": "2–4"
+  },
+  "u15wc-620": {
+   "score": "2–2",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z",
+   "pens": "4–3"
+  },
+  "u15wc-621": {
+   "score": "0–4",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-622": {
+   "score": "3–5",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-623": {
+   "score": "3–6",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-624": {
+   "score": "5–0",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-625": {
+   "score": "1–2",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-628": {
+   "score": "2–3",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-629": {
+   "score": "0–0",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z",
+   "pens": "4–3"
+  },
+  "u15wc-630": {
+   "score": "4–2",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-631": {
+   "score": "1–8",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-632": {
+   "score": "2–6",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-633": {
+   "score": "5–1",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-626": {
+   "score": "2–7",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-627": {
+   "score": "2–1",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-634": {
+   "score": "5–1",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-635": {
+   "score": "3–5",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-636": {
+   "score": "2–1",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-637": {
+   "score": "2–0",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-638": {
+   "score": "2–1",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-639": {
+   "score": "6–1",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-640": {
+   "score": "5–1",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-641": {
+   "score": "2–4",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-642": {
+   "score": "3–2",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-643": {
+   "score": "1–4",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-644": {
+   "score": "3–4",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-645": {
+   "score": "1–3",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-646": {
+   "score": "2–4",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-647": {
+   "score": "1–5",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-648": {
+   "score": "0–1",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-649": {
+   "score": "2–3",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-650": {
+   "score": "3–2",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-651": {
+   "score": "1–1",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z",
+   "pens": "4–3"
+  },
+  "u15wc-652": {
+   "score": "0–0",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z",
+   "pens": "11–10"
+  },
+  "u15wc-653": {
+   "score": "4–1",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-654": {
+   "score": "0–1",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-655": {
+   "score": "1–1",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z",
+   "pens": "4–2"
+  },
+  "u15wc-656": {
+   "score": "3–5",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-657": {
+   "score": "5–3",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-658": {
+   "score": "5–2",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-659": {
+   "score": "2–4",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-660": {
+   "score": "3–2",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-661": {
+   "score": "4–0",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-662": {
+   "score": "2–1",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-663": {
+   "score": "2–1",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-664": {
+   "score": "2–1",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-665": {
+   "score": "4–1",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-666": {
+   "score": "1–4",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-667": {
+   "score": "4–1",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-572": {
+   "score": "3–0",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-573": {
+   "score": "1–2",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-574": {
+   "score": "5–1",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-575": {
+   "score": "2–1",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-576": {
+   "score": "6–0",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-577": {
+   "score": "4–2",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-578": {
+   "score": "0–0",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z",
+   "pens": "4–3"
+  },
+  "u15wc-579": {
+   "score": "3–2",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-583": {
+   "score": "3–4",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-584": {
+   "score": "2–0",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-585": {
+   "score": "1–1",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z",
+   "pens": "3–4"
+  },
+  "u15wc-586": {
+   "score": "2–0",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-587": {
+   "score": "5–0",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-588": {
+   "score": "0–3",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-589": {
+   "score": "3–3",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z",
+   "pens": "4–2"
+  },
+  "u15wc-596": {
+   "score": "1–3",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-597": {
+   "score": "6–0",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-590": {
+   "score": "4–2",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-591": {
+   "score": "4–2",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-592": {
+   "score": "3–0",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-593": {
+   "score": "1–1",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z",
+   "pens": "3–4"
+  },
+  "u15wc-594": {
+   "score": "1–1",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z",
+   "pens": "5–6"
+  },
+  "u15wc-595": {
+   "score": "0–4",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-598": {
+   "score": "2–0",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-599": {
+   "score": "1–1",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z",
+   "pens": "1–4"
+  },
+  "u15wc-600": {
+   "score": "2–3",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-601": {
+   "score": "0–3",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-602": {
+   "score": "3–1",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-603": {
+   "score": "3–3",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z",
+   "pens": "4–2"
+  },
+  "u15wc-604": {
+   "score": "6–1",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-605": {
+   "score": "2–2",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z",
+   "pens": "3–0"
+  },
+  "u15wc-606": {
+   "score": "1–2",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-607": {
+   "score": "7–3",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-612": {
+   "score": "0–3",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-613": {
+   "score": "1–2",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-614": {
+   "score": "1–4",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-615": {
+   "score": "5–0",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-608": {
+   "score": "1–2",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-609": {
+   "score": "1–0",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-610": {
+   "score": "0–2",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-611": {
+   "score": "3–0",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
+  },
+  "u15wc-616": {
+   "score": "1–1",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z",
+   "pens": "4–2"
+  },
+  "u15wc-617": {
+   "score": "3–3",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z",
+   "pens": "4–5"
+  },
+  "u15wc-618": {
+   "score": "0–0",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z",
+   "pens": "5–6"
+  },
+  "u15wc-619": {
+   "score": "6–1",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/u-15-world-cup/azerbaijan-2026/scores-fixtures",
+   "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
+   "confirmed": false,
+   "at": "2026-10-28T19:30:00Z"
   }
  }
 }
