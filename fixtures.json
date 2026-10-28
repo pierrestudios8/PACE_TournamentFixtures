@@ -1,7 +1,7 @@
 {
  "version": 1,
  "note": "Canonical schedule. Human-approved only — this file feeds the Figma rollout. The results fetcher must never write here.",
- "updated": "2026-10-27",
+ "updated": "2026-10-28",
  "tournaments": [
   {
    "id": "nzl",
@@ -297,19 +297,20 @@
    "end": "2026-10-31",
    "window": "22 – 31 Oct 2026",
    "format": "192 teams in 32 groups of 6 (Groups A to AF). Qualification stage over three match days (24 to 26 Oct), a rest day, then tournament stage with tier finals on 28 to 30 Oct. Opening match Azerbaijan v Timor-Leste on 24 Oct",
-   "matches": "944 matches over six match days (92, 186, 186, 192, 192 and 96, the last including 6 tier finals)",
+   "matches": "938 matches over six match days (92, 186, 186, 186, 192 and 96, the last including 6 tier finals)",
    "venues": "Hovsan Competition Complex, 20 pitches. Opening and closing ceremonies in Crystal Hall",
    "broadcast": "TBC",
    "dataLoaded": true,
    "figma": "Not started",
-   "source": "FIFA match schedule v14, 15 October 2026 (kick-offs in Azerbaijan time). Tier round 1 teams from the FIFA scores & fixtures page, 27 October 2026",
+   "source": "FIFA match schedule v16, 27 October 2026 (kick-offs in Azerbaijan time). Teams in later rounds filled from the FIFA scores & fixtures page, 28 October 2026",
    "flags": [
     "22 Oct is arrival day and 23 Oct a training day. Matches run 24 to 30 Oct, first kick-off 09:00 and last 20:45 local. 27 Oct is a rest day, 31 Oct departure",
     "The opening ceremony and the Azerbaijan v Timor-Leste opening match (24 Oct, Crystal Hall, FIFA lists it as played, 6-0) are on the schedule without a kick-off time, so that match is not loaded. Azerbaijan's group match against Andorra is match 189",
-    "Qualification stage is 32 groups of 6 (A to AF) on 24 to 26 Oct. Tournament stage on 28 to 30 Oct runs in six tiers (A to F). Tier round 1 now carries the real teams (set once qualification ended on 26 Oct); later rounds show 'Winner M###' and 'Loser M###' until played (match numbers are FIFA's)",
     "Six tier finals (one per tier) are played in Crystal Hall on 30 Oct at 09:00, 10:30, 12:00, 13:30, 15:00 and 18:00",
-    "Match numbers are FIFA's and skip 11 numbers (for example 63 and 80), so 944 matches carry numbers 1 to 955",
-    "Pitches are 1A to 10B (20 pitches). Use the By pitch view to see each pitch's day"
+    "Match numbers are FIFA's and skip 17 numbers (for example 63 and 80, and 476-478 and 580-582 since v16), so 938 matches carry numbers 1 to 955",
+    "Pitches are 1A to 10B (20 pitches). Use the By pitch view to see each pitch's day",
+    "Matches 476-478 (bye matches for New Zealand, Curaçao, Fiji) removed in v16; matches 580-582 (Loser of those) shown as cancelled by FIFA and removed",
+    "Later rounds show real teams once FIFA has them, otherwise Winner M### / Loser M###"
    ],
    "tz": "Asia/Baku"
   }
@@ -9753,42 +9754,6 @@
     "tz": "Asia/Baku"
    },
    {
-    "id": "u15wc-476",
-    "no": 476,
-    "stage": "Tournament stage",
-    "group": "Tier F",
-    "date": "2026-10-28",
-    "ko": "09:00",
-    "home": "New Zealand",
-    "away": "TF seed 30",
-    "venue": "Hovsan Competition Complex, Pitch 1A",
-    "tz": "Asia/Baku"
-   },
-   {
-    "id": "u15wc-477",
-    "no": 477,
-    "stage": "Tournament stage",
-    "group": "Tier F",
-    "date": "2026-10-28",
-    "ko": "09:00",
-    "home": "Curaçao",
-    "away": "TF seed 31",
-    "venue": "Hovsan Competition Complex, Pitch 1B",
-    "tz": "Asia/Baku"
-   },
-   {
-    "id": "u15wc-478",
-    "no": 478,
-    "stage": "Tournament stage",
-    "group": "Tier F",
-    "date": "2026-10-28",
-    "ko": "09:00",
-    "home": "Fiji",
-    "away": "TF seed 32",
-    "venue": "Hovsan Competition Complex, Pitch 2A",
-    "tz": "Asia/Baku"
-   },
-   {
     "id": "u15wc-479",
     "no": 479,
     "stage": "Tournament stage",
@@ -10397,7 +10362,7 @@
     "ko": "11:30",
     "home": "Chile",
     "away": "Azerbaijan",
-    "venue": "Hovsan Competition Complex, Pitch 7B",
+    "venue": "Hovsan Competition Complex, Pitch 10A",
     "tz": "Asia/Baku"
    },
    {
@@ -10481,7 +10446,7 @@
     "ko": "11:30",
     "home": "Thailand",
     "away": "Afghanistan",
-    "venue": "Hovsan Competition Complex, Pitch 10A",
+    "venue": "Hovsan Competition Complex, Pitch 7B",
     "tz": "Asia/Baku"
    },
    {
@@ -10911,8 +10876,8 @@
     "group": "Tier F",
     "date": "2026-10-28",
     "ko": "15:45",
-    "home": "Winner M476",
-    "away": "Winner M484",
+    "home": "New Zealand",
+    "away": "Cook Islands",
     "venue": "Hovsan Competition Complex, Pitch 1A",
     "tz": "Asia/Baku"
    },
@@ -10923,8 +10888,8 @@
     "group": "Tier F",
     "date": "2026-10-28",
     "ko": "15:45",
-    "home": "Winner M477",
-    "away": "Winner M485",
+    "home": "Curaçao",
+    "away": "Samoa",
     "venue": "Hovsan Competition Complex, Pitch 1B",
     "tz": "Asia/Baku"
    },
@@ -10935,8 +10900,8 @@
     "group": "Tier F",
     "date": "2026-10-28",
     "ko": "15:45",
-    "home": "Winner M478",
-    "away": "Winner M486",
+    "home": "Fiji",
+    "away": "Bahamas",
     "venue": "Hovsan Competition Complex, Pitch 2A",
     "tz": "Asia/Baku"
    },
@@ -10947,8 +10912,8 @@
     "group": "Tier F",
     "date": "2026-10-28",
     "ko": "15:45",
-    "home": "Winner M479",
-    "away": "Winner M487",
+    "home": "Vanuatu",
+    "away": "Montserrat",
     "venue": "Hovsan Competition Complex, Pitch 2B",
     "tz": "Asia/Baku"
    },
@@ -10959,8 +10924,8 @@
     "group": "Tier F",
     "date": "2026-10-28",
     "ko": "15:45",
-    "home": "Winner M480",
-    "away": "Winner M488",
+    "home": "Malta",
+    "away": "São Tomé and Príncipe",
     "venue": "Hovsan Competition Complex, Pitch 3A",
     "tz": "Asia/Baku"
    },
@@ -10971,8 +10936,8 @@
     "group": "Tier F",
     "date": "2026-10-28",
     "ko": "15:45",
-    "home": "Winner M481",
-    "away": "Winner M489",
+    "home": "Ethiopia",
+    "away": "Djibouti",
     "venue": "Hovsan Competition Complex, Pitch 3B",
     "tz": "Asia/Baku"
    },
@@ -10983,8 +10948,8 @@
     "group": "Tier F",
     "date": "2026-10-28",
     "ko": "15:45",
-    "home": "Winner M482",
-    "away": "Winner M490",
+    "home": "Nepal",
+    "away": "Pakistan",
     "venue": "Hovsan Competition Complex, Pitch 4A",
     "tz": "Asia/Baku"
    },
@@ -10995,45 +10960,9 @@
     "group": "Tier F",
     "date": "2026-10-28",
     "ko": "15:45",
-    "home": "Winner M483",
-    "away": "Winner M491",
+    "home": "Grenada",
+    "away": "Timor-Leste",
     "venue": "Hovsan Competition Complex, Pitch 4B",
-    "tz": "Asia/Baku"
-   },
-   {
-    "id": "u15wc-580",
-    "no": 580,
-    "stage": "Tournament stage",
-    "group": "Tier F",
-    "date": "2026-10-28",
-    "ko": "15:45",
-    "home": "Loser M476",
-    "away": "Loser M484",
-    "venue": "Hovsan Competition Complex, Pitch 5A",
-    "tz": "Asia/Baku"
-   },
-   {
-    "id": "u15wc-581",
-    "no": 581,
-    "stage": "Tournament stage",
-    "group": "Tier F",
-    "date": "2026-10-28",
-    "ko": "15:45",
-    "home": "Loser M477",
-    "away": "Loser M485",
-    "venue": "Hovsan Competition Complex, Pitch 5B",
-    "tz": "Asia/Baku"
-   },
-   {
-    "id": "u15wc-582",
-    "no": 582,
-    "stage": "Tournament stage",
-    "group": "Tier F",
-    "date": "2026-10-28",
-    "ko": "15:45",
-    "home": "Loser M478",
-    "away": "Loser M486",
-    "venue": "Hovsan Competition Complex, Pitch 6A",
     "tz": "Asia/Baku"
    },
    {
@@ -11043,8 +10972,8 @@
     "group": "Tier F",
     "date": "2026-10-28",
     "ko": "15:45",
-    "home": "Loser M479",
-    "away": "Loser M487",
+    "home": "Anguilla",
+    "away": "Bhutan",
     "venue": "Hovsan Competition Complex, Pitch 6B",
     "tz": "Asia/Baku"
    },
@@ -11055,8 +10984,8 @@
     "group": "Tier F",
     "date": "2026-10-28",
     "ko": "15:45",
-    "home": "Loser M480",
-    "away": "Loser M488",
+    "home": "Suriname",
+    "away": "Brunei Darussalam",
     "venue": "Hovsan Competition Complex, Pitch 7A",
     "tz": "Asia/Baku"
    },
@@ -11067,8 +10996,8 @@
     "group": "Tier F",
     "date": "2026-10-28",
     "ko": "15:45",
-    "home": "Loser M481",
-    "away": "Loser M489",
+    "home": "Cambodia",
+    "away": "Cayman Islands",
     "venue": "Hovsan Competition Complex, Pitch 7B",
     "tz": "Asia/Baku"
    },
@@ -11079,8 +11008,8 @@
     "group": "Tier F",
     "date": "2026-10-28",
     "ko": "15:45",
-    "home": "Loser M482",
-    "away": "Loser M490",
+    "home": "Solomon Islands",
+    "away": "Tonga",
     "venue": "Hovsan Competition Complex, Pitch 8A",
     "tz": "Asia/Baku"
    },
@@ -11091,8 +11020,8 @@
     "group": "Tier F",
     "date": "2026-10-28",
     "ko": "15:45",
-    "home": "Loser M483",
-    "away": "Loser M491",
+    "home": "Barbados",
+    "away": "US Virgin Islands",
     "venue": "Hovsan Competition Complex, Pitch 8B",
     "tz": "Asia/Baku"
    },
@@ -11103,8 +11032,8 @@
     "group": "Tier E",
     "date": "2026-10-28",
     "ko": "15:45",
-    "home": "Winner M492",
-    "away": "Winner M500",
+    "home": "Israel",
+    "away": "Puerto Rico",
     "venue": "Hovsan Competition Complex, Pitch 9A",
     "tz": "Asia/Baku"
    },
@@ -11115,8 +11044,8 @@
     "group": "Tier E",
     "date": "2026-10-28",
     "ko": "15:45",
-    "home": "Winner M493",
-    "away": "Winner M501",
+    "home": "Montenegro",
+    "away": "Hong Kong, China",
     "venue": "Hovsan Competition Complex, Pitch 9B",
     "tz": "Asia/Baku"
    },
@@ -11127,8 +11056,8 @@
     "group": "Tier E",
     "date": "2026-10-28",
     "ko": "17:00",
-    "home": "Winner M494",
-    "away": "Winner M502",
+    "home": "Palestine",
+    "away": "Eswatini",
     "venue": "Hovsan Competition Complex, Pitch 1A",
     "tz": "Asia/Baku"
    },
@@ -11139,8 +11068,8 @@
     "group": "Tier E",
     "date": "2026-10-28",
     "ko": "17:00",
-    "home": "Winner M495",
-    "away": "Winner M503",
+    "home": "Kuwait",
+    "away": "StVincent and the Grenadines",
     "venue": "Hovsan Competition Complex, Pitch 1B",
     "tz": "Asia/Baku"
    },
@@ -11151,8 +11080,8 @@
     "group": "Tier E",
     "date": "2026-10-28",
     "ko": "17:00",
-    "home": "Winner M496",
-    "away": "Winner M504",
+    "home": "Central African Republic",
+    "away": "Equatorial Guinea",
     "venue": "Hovsan Competition Complex, Pitch 2A",
     "tz": "Asia/Baku"
    },
@@ -11163,8 +11092,8 @@
     "group": "Tier E",
     "date": "2026-10-28",
     "ko": "17:00",
-    "home": "Winner M497",
-    "away": "Winner M505",
+    "home": "Singapore",
+    "away": "Bangladesh",
     "venue": "Hovsan Competition Complex, Pitch 2B",
     "tz": "Asia/Baku"
    },
@@ -11175,8 +11104,8 @@
     "group": "Tier E",
     "date": "2026-10-28",
     "ko": "17:00",
-    "home": "Winner M498",
-    "away": "Winner M506",
+    "home": "Gambia",
+    "away": "Chad",
     "venue": "Hovsan Competition Complex, Pitch 3A",
     "tz": "Asia/Baku"
    },
@@ -11187,8 +11116,8 @@
     "group": "Tier E",
     "date": "2026-10-28",
     "ko": "17:00",
-    "home": "Winner M499",
-    "away": "Winner M507",
+    "home": "Sudan",
+    "away": "Gabon",
     "venue": "Hovsan Competition Complex, Pitch 3B",
     "tz": "Asia/Baku"
    },
@@ -11199,8 +11128,8 @@
     "group": "Tier E",
     "date": "2026-10-28",
     "ko": "15:45",
-    "home": "Loser M492",
-    "away": "Loser M500",
+    "home": "Laos",
+    "away": "Guinea-Bissau",
     "venue": "Hovsan Competition Complex, Pitch 10A",
     "tz": "Asia/Baku"
    },
@@ -11211,8 +11140,8 @@
     "group": "Tier E",
     "date": "2026-10-28",
     "ko": "15:45",
-    "home": "Loser M493",
-    "away": "Loser M501",
+    "home": "Mongolia",
+    "away": "Antigua and Barbuda",
     "venue": "Hovsan Competition Complex, Pitch 10B",
     "tz": "Asia/Baku"
    },
@@ -11223,8 +11152,8 @@
     "group": "Tier E",
     "date": "2026-10-28",
     "ko": "17:00",
-    "home": "Loser M494",
-    "away": "Loser M502",
+    "home": "Guam",
+    "away": "Maldives",
     "venue": "Hovsan Competition Complex, Pitch 4A",
     "tz": "Asia/Baku"
    },
@@ -11235,8 +11164,8 @@
     "group": "Tier E",
     "date": "2026-10-28",
     "ko": "17:00",
-    "home": "Loser M495",
-    "away": "Loser M503",
+    "home": "Comoros",
+    "away": "Chinese Taipei",
     "venue": "Hovsan Competition Complex, Pitch 4B",
     "tz": "Asia/Baku"
    },
@@ -11247,8 +11176,8 @@
     "group": "Tier E",
     "date": "2026-10-28",
     "ko": "17:00",
-    "home": "Loser M496",
-    "away": "Loser M504",
+    "home": "Turks and Caicos Islands",
+    "away": "Belize",
     "venue": "Hovsan Competition Complex, Pitch 5A",
     "tz": "Asia/Baku"
    },
@@ -11259,8 +11188,8 @@
     "group": "Tier E",
     "date": "2026-10-28",
     "ko": "17:00",
-    "home": "Loser M497",
-    "away": "Loser M505",
+    "home": "British Virgin Islands",
+    "away": "Seychelles",
     "venue": "Hovsan Competition Complex, Pitch 5B",
     "tz": "Asia/Baku"
    },
@@ -11271,8 +11200,8 @@
     "group": "Tier E",
     "date": "2026-10-28",
     "ko": "17:00",
-    "home": "Loser M498",
-    "away": "Loser M506",
+    "home": "Guyana",
+    "away": "Dominica",
     "venue": "Hovsan Competition Complex, Pitch 6A",
     "tz": "Asia/Baku"
    },
@@ -11283,8 +11212,8 @@
     "group": "Tier E",
     "date": "2026-10-28",
     "ko": "17:00",
-    "home": "Loser M499",
-    "away": "Loser M507",
+    "home": "St Kitts and Nevis",
+    "away": "Sri Lanka",
     "venue": "Hovsan Competition Complex, Pitch 6B",
     "tz": "Asia/Baku"
    },
@@ -11295,8 +11224,8 @@
     "group": "Tier D",
     "date": "2026-10-28",
     "ko": "17:00",
-    "home": "Winner M508",
-    "away": "Winner M516",
+    "home": "Canada",
+    "away": "Andorra",
     "venue": "Hovsan Competition Complex, Pitch 7A",
     "tz": "Asia/Baku"
    },
@@ -11307,8 +11236,8 @@
     "group": "Tier D",
     "date": "2026-10-28",
     "ko": "17:00",
-    "home": "Winner M509",
-    "away": "Winner M517",
+    "home": "Dominican Republic",
+    "away": "Aruba",
     "venue": "Hovsan Competition Complex, Pitch 7B",
     "tz": "Asia/Baku"
    },
@@ -11319,8 +11248,8 @@
     "group": "Tier D",
     "date": "2026-10-28",
     "ko": "17:00",
-    "home": "Winner M510",
-    "away": "Winner M518",
+    "home": "Saudi Arabia",
+    "away": "Somalia",
     "venue": "Hovsan Competition Complex, Pitch 8A",
     "tz": "Asia/Baku"
    },
@@ -11331,8 +11260,8 @@
     "group": "Tier D",
     "date": "2026-10-28",
     "ko": "17:00",
-    "home": "Winner M511",
-    "away": "Winner M519",
+    "home": "Lithuania",
+    "away": "Zimbabwe",
     "venue": "Hovsan Competition Complex, Pitch 8B",
     "tz": "Asia/Baku"
    },
@@ -11343,8 +11272,8 @@
     "group": "Tier D",
     "date": "2026-10-28",
     "ko": "18:15",
-    "home": "Winner M512",
-    "away": "Winner M520",
+    "home": "Cabo Verde",
+    "away": "Burundi",
     "venue": "Hovsan Competition Complex, Pitch 1A",
     "tz": "Asia/Baku"
    },
@@ -11355,8 +11284,8 @@
     "group": "Tier D",
     "date": "2026-10-28",
     "ko": "18:15",
-    "home": "Winner M513",
-    "away": "Winner M521",
+    "home": "Kosovo",
+    "away": "Sierra Leone",
     "venue": "Hovsan Competition Complex, Pitch 1B",
     "tz": "Asia/Baku"
    },
@@ -11367,8 +11296,8 @@
     "group": "Tier D",
     "date": "2026-10-28",
     "ko": "18:15",
-    "home": "Winner M514",
-    "away": "Winner M522",
+    "home": "Oman",
+    "away": "Congo DR",
     "venue": "Hovsan Competition Complex, Pitch 2A",
     "tz": "Asia/Baku"
    },
@@ -11379,8 +11308,8 @@
     "group": "Tier D",
     "date": "2026-10-28",
     "ko": "18:15",
-    "home": "Winner M515",
-    "away": "Winner M523",
+    "home": "Tajikistan",
+    "away": "Philippines",
     "venue": "Hovsan Competition Complex, Pitch 2B",
     "tz": "Asia/Baku"
    },
@@ -11391,8 +11320,8 @@
     "group": "Tier D",
     "date": "2026-10-28",
     "ko": "17:00",
-    "home": "Loser M508",
-    "away": "Loser M516",
+    "home": "Turkmenistan",
+    "away": "Syria",
     "venue": "Hovsan Competition Complex, Pitch 9A",
     "tz": "Asia/Baku"
    },
@@ -11403,8 +11332,8 @@
     "group": "Tier D",
     "date": "2026-10-28",
     "ko": "17:00",
-    "home": "Loser M509",
-    "away": "Loser M517",
+    "home": "Burkina Faso",
+    "away": "Bahrain",
     "venue": "Hovsan Competition Complex, Pitch 9B",
     "tz": "Asia/Baku"
    },
@@ -11415,8 +11344,8 @@
     "group": "Tier D",
     "date": "2026-10-28",
     "ko": "17:00",
-    "home": "Loser M510",
-    "away": "Loser M518",
+    "home": "Botswana",
+    "away": "Tanzania",
     "venue": "Hovsan Competition Complex, Pitch 10A",
     "tz": "Asia/Baku"
    },
@@ -11427,8 +11356,8 @@
     "group": "Tier D",
     "date": "2026-10-28",
     "ko": "17:00",
-    "home": "Loser M511",
-    "away": "Loser M519",
+    "home": "North Macedonia",
+    "away": "Mauritania",
     "venue": "Hovsan Competition Complex, Pitch 10B",
     "tz": "Asia/Baku"
    },
@@ -11439,8 +11368,8 @@
     "group": "Tier D",
     "date": "2026-10-28",
     "ko": "18:15",
-    "home": "Loser M512",
-    "away": "Loser M520",
+    "home": "Jordan",
+    "away": "Togo",
     "venue": "Hovsan Competition Complex, Pitch 3A",
     "tz": "Asia/Baku"
    },
@@ -11451,8 +11380,8 @@
     "group": "Tier D",
     "date": "2026-10-28",
     "ko": "18:15",
-    "home": "Loser M513",
-    "away": "Loser M521",
+    "home": "Tahiti",
+    "away": "Lesotho",
     "venue": "Hovsan Competition Complex, Pitch 3B",
     "tz": "Asia/Baku"
    },
@@ -11463,8 +11392,8 @@
     "group": "Tier D",
     "date": "2026-10-28",
     "ko": "18:15",
-    "home": "Loser M514",
-    "away": "Loser M522",
+    "home": "Myanmar",
+    "away": "Mauritius",
     "venue": "Hovsan Competition Complex, Pitch 4A",
     "tz": "Asia/Baku"
    },
@@ -11475,8 +11404,8 @@
     "group": "Tier D",
     "date": "2026-10-28",
     "ko": "18:15",
-    "home": "Loser M515",
-    "away": "Loser M523",
+    "home": "Bermuda",
+    "away": "Macau, China",
     "venue": "Hovsan Competition Complex, Pitch 4B",
     "tz": "Asia/Baku"
    },
@@ -11487,8 +11416,8 @@
     "group": "Tier C",
     "date": "2026-10-28",
     "ko": "18:15",
-    "home": "Winner M524",
-    "away": "Winner M532",
+    "home": "France",
+    "away": "Honduras",
     "venue": "Hovsan Competition Complex, Pitch 5A",
     "tz": "Asia/Baku"
    },
@@ -11499,8 +11428,8 @@
     "group": "Tier C",
     "date": "2026-10-28",
     "ko": "18:15",
-    "home": "Winner M525",
-    "away": "Winner M533",
+    "home": "Japan",
+    "away": "Uganda",
     "venue": "Hovsan Competition Complex, Pitch 5B",
     "tz": "Asia/Baku"
    },
@@ -11511,8 +11440,8 @@
     "group": "Tier C",
     "date": "2026-10-28",
     "ko": "18:15",
-    "home": "Winner M526",
-    "away": "Winner M534",
+    "home": "Panama",
+    "away": "Indonesia",
     "venue": "Hovsan Competition Complex, Pitch 6A",
     "tz": "Asia/Baku"
    },
@@ -11523,8 +11452,8 @@
     "group": "Tier C",
     "date": "2026-10-28",
     "ko": "18:15",
-    "home": "Winner M527",
-    "away": "Winner M535",
+    "home": "Nigeria",
+    "away": "Benin",
     "venue": "Hovsan Competition Complex, Pitch 6B",
     "tz": "Asia/Baku"
    },
@@ -11535,8 +11464,8 @@
     "group": "Tier C",
     "date": "2026-10-28",
     "ko": "18:15",
-    "home": "Winner M528",
-    "away": "Winner M536",
+    "home": "Tunisia",
+    "away": "Thailand",
     "venue": "Hovsan Competition Complex, Pitch 7A",
     "tz": "Asia/Baku"
    },
@@ -11547,9 +11476,9 @@
     "group": "Tier C",
     "date": "2026-10-28",
     "ko": "18:15",
-    "home": "Winner M529",
-    "away": "Winner M537",
-    "venue": "Hovsan Competition Complex, Pitch 7B",
+    "home": "Chile",
+    "away": "Belarus",
+    "venue": "Hovsan Competition Complex, Pitch 10B",
     "tz": "Asia/Baku"
    },
    {
@@ -11559,8 +11488,8 @@
     "group": "Tier C",
     "date": "2026-10-28",
     "ko": "19:30",
-    "home": "Winner M530",
-    "away": "Winner M538",
+    "home": "Malawi",
+    "away": "Luxembourg",
     "venue": "Hovsan Competition Complex, Pitch 1A",
     "tz": "Asia/Baku"
    },
@@ -11571,8 +11500,8 @@
     "group": "Tier C",
     "date": "2026-10-28",
     "ko": "19:30",
-    "home": "Winner M531",
-    "away": "Winner M539",
+    "home": "Scotland",
+    "away": "Rwanda",
     "venue": "Hovsan Competition Complex, Pitch 1B",
     "tz": "Asia/Baku"
    },
@@ -11583,8 +11512,8 @@
     "group": "Tier C",
     "date": "2026-10-28",
     "ko": "18:15",
-    "home": "Loser M524",
-    "away": "Loser M532",
+    "home": "Trinidad and Tobago",
+    "away": "India",
     "venue": "Hovsan Competition Complex, Pitch 8A",
     "tz": "Asia/Baku"
    },
@@ -11595,8 +11524,8 @@
     "group": "Tier C",
     "date": "2026-10-28",
     "ko": "18:15",
-    "home": "Loser M525",
-    "away": "Loser M533",
+    "home": "Mozambique",
+    "away": "Yemen",
     "venue": "Hovsan Competition Complex, Pitch 8B",
     "tz": "Asia/Baku"
    },
@@ -11607,8 +11536,8 @@
     "group": "Tier C",
     "date": "2026-10-28",
     "ko": "18:15",
-    "home": "Loser M526",
-    "away": "Loser M534",
+    "home": "Kazakhstan",
+    "away": "Moldova",
     "venue": "Hovsan Competition Complex, Pitch 9A",
     "tz": "Asia/Baku"
    },
@@ -11619,8 +11548,8 @@
     "group": "Tier C",
     "date": "2026-10-28",
     "ko": "18:15",
-    "home": "Loser M527",
-    "away": "Loser M535",
+    "home": "New Caledonia",
+    "away": "Cuba",
     "venue": "Hovsan Competition Complex, Pitch 9B",
     "tz": "Asia/Baku"
    },
@@ -11631,9 +11560,9 @@
     "group": "Tier C",
     "date": "2026-10-28",
     "ko": "18:15",
-    "home": "Loser M528",
-    "away": "Loser M536",
-    "venue": "Hovsan Competition Complex, Pitch 10A",
+    "home": "Namibia",
+    "away": "Afghanistan",
+    "venue": "Hovsan Competition Complex, Pitch 7B",
     "tz": "Asia/Baku"
    },
    {
@@ -11643,9 +11572,9 @@
     "group": "Tier C",
     "date": "2026-10-28",
     "ko": "18:15",
-    "home": "Loser M529",
-    "away": "Loser M537",
-    "venue": "Hovsan Competition Complex, Pitch 10B",
+    "home": "Azerbaijan",
+    "away": "Gibraltar",
+    "venue": "Hovsan Competition Complex, Pitch 10A",
     "tz": "Asia/Baku"
    },
    {
@@ -11655,8 +11584,8 @@
     "group": "Tier C",
     "date": "2026-10-28",
     "ko": "19:30",
-    "home": "Loser M530",
-    "away": "Loser M538",
+    "home": "Hungary",
+    "away": "Liberia",
     "venue": "Hovsan Competition Complex, Pitch 2A",
     "tz": "Asia/Baku"
    },
@@ -11667,8 +11596,8 @@
     "group": "Tier C",
     "date": "2026-10-28",
     "ko": "19:30",
-    "home": "Loser M531",
-    "away": "Loser M539",
+    "home": "Nicaragua",
+    "away": "Vietnam",
     "venue": "Hovsan Competition Complex, Pitch 2B",
     "tz": "Asia/Baku"
    },
@@ -11679,8 +11608,8 @@
     "group": "Tier B",
     "date": "2026-10-28",
     "ko": "19:30",
-    "home": "Winner M540",
-    "away": "Winner M548",
+    "home": "Argentina",
+    "away": "Côte d'Ivoire",
     "venue": "Hovsan Competition Complex, Pitch 3A",
     "tz": "Asia/Baku"
    },
@@ -11691,8 +11620,8 @@
     "group": "Tier B",
     "date": "2026-10-28",
     "ko": "19:30",
-    "home": "Winner M541",
-    "away": "Winner M549",
+    "home": "Zambia",
+    "away": "Niger",
     "venue": "Hovsan Competition Complex, Pitch 3B",
     "tz": "Asia/Baku"
    },
@@ -11703,8 +11632,8 @@
     "group": "Tier B",
     "date": "2026-10-28",
     "ko": "19:30",
-    "home": "Winner M542",
-    "away": "Winner M550",
+    "home": "Portugal",
+    "away": "South Africa",
     "venue": "Hovsan Competition Complex, Pitch 4A",
     "tz": "Asia/Baku"
    },
@@ -11715,8 +11644,8 @@
     "group": "Tier B",
     "date": "2026-10-28",
     "ko": "19:30",
-    "home": "Winner M543",
-    "away": "Winner M551",
+    "home": "Senegal",
+    "away": "Costa Rica",
     "venue": "Hovsan Competition Complex, Pitch 4B",
     "tz": "Asia/Baku"
    },
@@ -11727,8 +11656,8 @@
     "group": "Tier B",
     "date": "2026-10-28",
     "ko": "19:30",
-    "home": "Winner M544",
-    "away": "Winner M552",
+    "home": "Croatia",
+    "away": "South Sudan",
     "venue": "Hovsan Competition Complex, Pitch 5A",
     "tz": "Asia/Baku"
    },
@@ -11739,8 +11668,8 @@
     "group": "Tier B",
     "date": "2026-10-28",
     "ko": "19:30",
-    "home": "Winner M545",
-    "away": "Winner M553",
+    "home": "Mali",
+    "away": "Slovakia",
     "venue": "Hovsan Competition Complex, Pitch 5B",
     "tz": "Asia/Baku"
    },
@@ -11751,8 +11680,8 @@
     "group": "Tier B",
     "date": "2026-10-28",
     "ko": "19:30",
-    "home": "Winner M546",
-    "away": "Winner M554",
+    "home": "IR Iran",
+    "away": "United Arab Emirates",
     "venue": "Hovsan Competition Complex, Pitch 6A",
     "tz": "Asia/Baku"
    },
@@ -11763,8 +11692,8 @@
     "group": "Tier B",
     "date": "2026-10-28",
     "ko": "19:30",
-    "home": "Winner M547",
-    "away": "Winner M555",
+    "home": "Uzbekistan",
+    "away": "Madagascar",
     "venue": "Hovsan Competition Complex, Pitch 6B",
     "tz": "Asia/Baku"
    },
@@ -11775,8 +11704,8 @@
     "group": "Tier B",
     "date": "2026-10-28",
     "ko": "19:30",
-    "home": "Loser M540",
-    "away": "Loser M548",
+    "home": "Bolivia",
+    "away": "Kyrgyz Republic",
     "venue": "Hovsan Competition Complex, Pitch 7A",
     "tz": "Asia/Baku"
    },
@@ -11787,8 +11716,8 @@
     "group": "Tier B",
     "date": "2026-10-28",
     "ko": "19:30",
-    "home": "Loser M541",
-    "away": "Loser M549",
+    "home": "England",
+    "away": "Türkiye",
     "venue": "Hovsan Competition Complex, Pitch 7B",
     "tz": "Asia/Baku"
    },
@@ -11799,8 +11728,8 @@
     "group": "Tier B",
     "date": "2026-10-28",
     "ko": "19:30",
-    "home": "Loser M542",
-    "away": "Loser M550",
+    "home": "Jamaica",
+    "away": "Malaysia",
     "venue": "Hovsan Competition Complex, Pitch 8A",
     "tz": "Asia/Baku"
    },
@@ -11811,8 +11740,8 @@
     "group": "Tier B",
     "date": "2026-10-28",
     "ko": "19:30",
-    "home": "Loser M543",
-    "away": "Loser M551",
+    "home": "Georgia",
+    "away": "Latvia",
     "venue": "Hovsan Competition Complex, Pitch 8B",
     "tz": "Asia/Baku"
    },
@@ -11823,8 +11752,8 @@
     "group": "Tier B",
     "date": "2026-10-28",
     "ko": "19:30",
-    "home": "Loser M544",
-    "away": "Loser M552",
+    "home": "Haiti",
+    "away": "Qatar",
     "venue": "Hovsan Competition Complex, Pitch 9A",
     "tz": "Asia/Baku"
    },
@@ -11835,8 +11764,8 @@
     "group": "Tier B",
     "date": "2026-10-28",
     "ko": "19:30",
-    "home": "Loser M545",
-    "away": "Loser M553",
+    "home": "El Salvador",
+    "away": "Lebanon",
     "venue": "Hovsan Competition Complex, Pitch 9B",
     "tz": "Asia/Baku"
    },
@@ -11847,8 +11776,8 @@
     "group": "Tier B",
     "date": "2026-10-28",
     "ko": "19:30",
-    "home": "Loser M546",
-    "away": "Loser M554",
+    "home": "China PR",
+    "away": "Congo",
     "venue": "Hovsan Competition Complex, Pitch 10A",
     "tz": "Asia/Baku"
    },
@@ -11859,8 +11788,8 @@
     "group": "Tier B",
     "date": "2026-10-28",
     "ko": "19:30",
-    "home": "Loser M547",
-    "away": "Loser M555",
+    "home": "Guatemala",
+    "away": "Iraq",
     "venue": "Hovsan Competition Complex, Pitch 10B",
     "tz": "Asia/Baku"
    },
@@ -11871,9 +11800,9 @@
     "group": "Tier A",
     "date": "2026-10-28",
     "ko": "20:45",
-    "home": "Winner M556",
-    "away": "Winner M564",
-    "venue": "Hovsan Competition Complex, Pitch 9A",
+    "home": "Brazil",
+    "away": "Venezuela",
+    "venue": "Hovsan Competition Complex, Pitch 10A",
     "tz": "Asia/Baku"
    },
    {
@@ -11883,9 +11812,9 @@
     "group": "Tier A",
     "date": "2026-10-28",
     "ko": "20:45",
-    "home": "Winner M557",
-    "away": "Winner M565",
-    "venue": "Hovsan Competition Complex, Pitch 9B",
+    "home": "Spain",
+    "away": "Ecuador",
+    "venue": "Hovsan Competition Complex, Pitch 10B",
     "tz": "Asia/Baku"
    },
    {
@@ -11895,8 +11824,8 @@
     "group": "Tier A",
     "date": "2026-10-28",
     "ko": "20:45",
-    "home": "Winner M558",
-    "away": "Winner M566",
+    "home": "Morocco",
+    "away": "Paraguay",
     "venue": "Hovsan Competition Complex, Pitch 2A",
     "tz": "Asia/Baku"
    },
@@ -11907,8 +11836,8 @@
     "group": "Tier A",
     "date": "2026-10-28",
     "ko": "20:45",
-    "home": "Winner M559",
-    "away": "Winner M567",
+    "home": "Greece",
+    "away": "Uruguay",
     "venue": "Hovsan Competition Complex, Pitch 2B",
     "tz": "Asia/Baku"
    },
@@ -11919,8 +11848,8 @@
     "group": "Tier A",
     "date": "2026-10-28",
     "ko": "20:45",
-    "home": "Winner M560",
-    "away": "Winner M568",
+    "home": "Italy",
+    "away": "Czechia",
     "venue": "Hovsan Competition Complex, Pitch 3A",
     "tz": "Asia/Baku"
    },
@@ -11931,8 +11860,8 @@
     "group": "Tier A",
     "date": "2026-10-28",
     "ko": "20:45",
-    "home": "Winner M561",
-    "away": "Winner M569",
+    "home": "Colombia",
+    "away": "Poland",
     "venue": "Hovsan Competition Complex, Pitch 3B",
     "tz": "Asia/Baku"
    },
@@ -11943,9 +11872,9 @@
     "group": "Tier A",
     "date": "2026-10-28",
     "ko": "20:45",
-    "home": "Winner M562",
-    "away": "Winner M570",
-    "venue": "Hovsan Competition Complex, Pitch 4A",
+    "home": "Ghana",
+    "away": "Mexico",
+    "venue": "Hovsan Competition Complex, Pitch 5A",
     "tz": "Asia/Baku"
    },
    {
@@ -11955,9 +11884,9 @@
     "group": "Tier A",
     "date": "2026-10-28",
     "ko": "20:45",
-    "home": "Winner M563",
-    "away": "Winner M571",
-    "venue": "Hovsan Competition Complex, Pitch 4B",
+    "home": "Egypt",
+    "away": "Guinea",
+    "venue": "Hovsan Competition Complex, Pitch 5B",
     "tz": "Asia/Baku"
    },
    {
@@ -11967,9 +11896,9 @@
     "group": "Tier A",
     "date": "2026-10-28",
     "ko": "20:45",
-    "home": "Loser M556",
-    "away": "Loser M564",
-    "venue": "Hovsan Competition Complex, Pitch 5A",
+    "home": "Republic of Ireland",
+    "away": "Northern Ireland",
+    "venue": "Hovsan Competition Complex, Pitch 4A",
     "tz": "Asia/Baku"
    },
    {
@@ -11979,9 +11908,9 @@
     "group": "Tier A",
     "date": "2026-10-28",
     "ko": "20:45",
-    "home": "Loser M557",
-    "away": "Loser M565",
-    "venue": "Hovsan Competition Complex, Pitch 5B",
+    "home": "Wales",
+    "away": "Bulgaria",
+    "venue": "Hovsan Competition Complex, Pitch 4B",
     "tz": "Asia/Baku"
    },
    {
@@ -11991,9 +11920,9 @@
     "group": "Tier A",
     "date": "2026-10-28",
     "ko": "20:45",
-    "home": "Loser M558",
-    "away": "Loser M566",
-    "venue": "Hovsan Competition Complex, Pitch 10A",
+    "home": "Cameroon",
+    "away": "Cyprus",
+    "venue": "Hovsan Competition Complex, Pitch 9A",
     "tz": "Asia/Baku"
    },
    {
@@ -12003,9 +11932,9 @@
     "group": "Tier A",
     "date": "2026-10-28",
     "ko": "20:45",
-    "home": "Loser M559",
-    "away": "Loser M567",
-    "venue": "Hovsan Competition Complex, Pitch 10B",
+    "home": "Australia",
+    "away": "Estonia",
+    "venue": "Hovsan Competition Complex, Pitch 9B",
     "tz": "Asia/Baku"
    },
    {
@@ -12015,8 +11944,8 @@
     "group": "Tier A",
     "date": "2026-10-28",
     "ko": "20:45",
-    "home": "Loser M560",
-    "away": "Loser M568",
+    "home": "Peru",
+    "away": "Angola",
     "venue": "Hovsan Competition Complex, Pitch 7A",
     "tz": "Asia/Baku"
    },
@@ -12027,8 +11956,8 @@
     "group": "Tier A",
     "date": "2026-10-28",
     "ko": "20:45",
-    "home": "Loser M561",
-    "away": "Loser M569",
+    "home": "Bosnia and Herzegovina",
+    "away": "Kenya",
     "venue": "Hovsan Competition Complex, Pitch 7B",
     "tz": "Asia/Baku"
    },
@@ -12039,8 +11968,8 @@
     "group": "Tier A",
     "date": "2026-10-28",
     "ko": "20:45",
-    "home": "Loser M562",
-    "away": "Loser M570",
+    "home": "Korea Republic",
+    "away": "Russia",
     "venue": "Hovsan Competition Complex, Pitch 8A",
     "tz": "Asia/Baku"
    },
@@ -12051,8 +11980,8 @@
     "group": "Tier A",
     "date": "2026-10-28",
     "ko": "20:45",
-    "home": "Loser M563",
-    "away": "Loser M571",
+    "home": "Albania",
+    "away": "Algeria",
     "venue": "Hovsan Competition Complex, Pitch 8B",
     "tz": "Asia/Baku"
    },
@@ -13025,7 +12954,7 @@
     "ko": "11:30",
     "home": "Winner M652",
     "away": "Winner M656",
-    "venue": "Hovsan Competition Complex, Pitch 3A",
+    "venue": "Hovsan Competition Complex, Pitch 5B",
     "tz": "Asia/Baku"
    },
    {
@@ -13037,7 +12966,7 @@
     "ko": "11:30",
     "home": "Winner M653",
     "away": "Winner M657",
-    "venue": "Hovsan Competition Complex, Pitch 3B",
+    "venue": "Hovsan Competition Complex, Pitch 10A",
     "tz": "Asia/Baku"
    },
    {
@@ -13061,7 +12990,7 @@
     "ko": "11:30",
     "home": "Winner M655",
     "away": "Winner M659",
-    "venue": "Hovsan Competition Complex, Pitch 4B",
+    "venue": "Hovsan Competition Complex, Pitch 9A",
     "tz": "Asia/Baku"
    },
    {
@@ -13085,7 +13014,7 @@
     "ko": "11:30",
     "home": "Loser M653",
     "away": "Loser M657",
-    "venue": "Hovsan Competition Complex, Pitch 5B",
+    "venue": "Hovsan Competition Complex, Pitch 3A",
     "tz": "Asia/Baku"
    },
    {
@@ -13169,7 +13098,7 @@
     "ko": "11:30",
     "home": "Loser M660",
     "away": "Loser M664",
-    "venue": "Hovsan Competition Complex, Pitch 9A",
+    "venue": "Hovsan Competition Complex, Pitch 4B",
     "tz": "Asia/Baku"
    },
    {
@@ -13193,7 +13122,7 @@
     "ko": "11:30",
     "home": "Loser M662",
     "away": "Loser M666",
-    "venue": "Hovsan Competition Complex, Pitch 10A",
+    "venue": "Hovsan Competition Complex, Pitch 3B",
     "tz": "Asia/Baku"
    },
    {
