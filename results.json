@@ -1,7 +1,7 @@
 {
  "version": 1,
  "note": "Display-only scores, keyed by fixture id. Written by the scheduled fetcher. Never feeds Figma assets.",
- "updated": "2026-10-29T20:00:00Z",
+ "updated": "2026-10-29T20:30:00Z",
  "results": {
   "icc-01": {
    "score": "1–0",
@@ -7495,6 +7495,72 @@
    "corroboration": "FIFA scores page only (organiser source; FT status) - no independent second source exists for U-15",
    "confirmed": false,
    "at": "2026-10-29T20:00:00Z"
+  },
+  "u17w-37": {
+   "score": "1–1",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/womens/u17womensworldcup/morocco-2026/scores-fixtures",
+   "corroboration": "none; Ghana advance per FIFA QF bracket, penalty score not published",
+   "confirmed": false,
+   "at": "2026-10-29T20:30:00Z"
+  },
+  "u17w-44": {
+   "score": "0–1",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/womens/u17womensworldcup/morocco-2026/scores-fixtures",
+   "corroboration": "none yet",
+   "confirmed": false,
+   "at": "2026-10-29T20:30:00Z"
+  },
+  "u17w-39": {
+   "score": "6–0",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/womens/u17womensworldcup/morocco-2026/scores-fixtures",
+   "corroboration": "https://en.hespress.com (Morocco bow out, 6-0)",
+   "confirmed": false,
+   "at": "2026-10-29T20:30:00Z"
+  },
+  "u17w-42": {
+   "score": "3–3",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/womens/u17womensworldcup/morocco-2026/scores-fixtures",
+   "corroboration": "https://en.hespress.com (3-3, Brazil 8-7 on pens; FIFA page shows a partial pen tally)",
+   "confirmed": false,
+   "at": "2026-10-29T20:30:00Z",
+   "pens": "8–7"
+  },
+  "u17w-41": {
+   "score": "0–0",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/womens/u17womensworldcup/morocco-2026/scores-fixtures",
+   "corroboration": "none yet",
+   "confirmed": false,
+   "at": "2026-10-29T20:30:00Z",
+   "pens": "4–3"
+  },
+  "u17w-43": {
+   "score": "2–1",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/womens/u17womensworldcup/morocco-2026/scores-fixtures",
+   "corroboration": "none yet",
+   "confirmed": false,
+   "at": "2026-10-29T20:30:00Z"
+  },
+  "u17w-38": {
+   "score": "3–1",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/womens/u17womensworldcup/morocco-2026/scores-fixtures",
+   "corroboration": "none yet",
+   "confirmed": false,
+   "at": "2026-10-29T20:30:00Z"
+  },
+  "u17w-40": {
+   "score": "1–2",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/tournaments/womens/u17womensworldcup/morocco-2026/scores-fixtures",
+   "corroboration": "none yet",
+   "confirmed": false,
+   "at": "2026-10-29T20:30:00Z"
   }
  }
 }
