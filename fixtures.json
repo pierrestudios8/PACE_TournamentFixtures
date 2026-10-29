@@ -297,7 +297,7 @@
    "end": "2026-10-31",
    "window": "22 – 31 Oct 2026",
    "format": "192 teams in 32 groups of 6 (Groups A to AF). Qualification stage over three match days (24 to 26 Oct), a rest day, then tournament stage with tier finals on 28 to 30 Oct. Opening match Azerbaijan v Timor-Leste on 24 Oct",
-   "matches": "935 matches over six match days (92, 186, 186, 186, 189 and 96, the last including 6 tier finals)",
+   "matches": "933 matches over six match days (92, 186, 186, 186, 187 and 96, the last including 6 tier finals)",
    "venues": "Hovsan Competition Complex, 20 pitches. Opening and closing ceremonies in Crystal Hall",
    "broadcast": "TBC",
    "dataLoaded": true,
@@ -307,7 +307,7 @@
     "22 Oct is arrival day and 23 Oct a training day. Matches run 24 to 30 Oct, first kick-off 09:00 and last 20:45 local. 27 Oct is a rest day, 31 Oct departure",
     "The opening ceremony and the Azerbaijan v Timor-Leste opening match (24 Oct, Crystal Hall, FIFA lists it as played, 6-0) are on the schedule without a kick-off time, so that match is not loaded. Azerbaijan's group match against Andorra is match 189",
     "Six tier finals (one per tier) are played in Crystal Hall on 30 Oct at 09:00, 10:30, 12:00, 13:30, 15:00 and 18:00",
-    "Match numbers are FIFA's and skip 20 numbers (for example 63 and 80, and 476-478, 580-582 and 680-682), so 935 matches carry numbers 1 to 955",
+    "Match numbers are FIFA's and skip 20 numbers (for example 63 and 80, and 476-478, 580-582, 680-682 and 778-779), so 933 matches carry numbers 1 to 955",
     "Pitches are 1A to 10B (20 pitches). Use the By pitch view to see each pitch's day",
     "Matches 476-478 (bye matches for New Zealand, Curaçao, Fiji) removed in v16; matches 580-582 and 680-682 (Loser of those, and their quarter-finals) shown as cancelled by FIFA and removed",
     "Later rounds show real teams once FIFA has them, otherwise Winner M### / Loser M###"
@@ -13267,30 +13267,6 @@
     "home": "Cambodia",
     "away": "Anguilla",
     "venue": "Hovsan Competition Complex, Pitch 7B",
-    "tz": "Asia/Baku"
-   },
-   {
-    "id": "u15wc-778",
-    "no": 778,
-    "stage": "Tournament stage",
-    "group": "Tier F",
-    "date": "2026-10-29",
-    "ko": "20:45",
-    "home": "Loser M680",
-    "away": "Loser M682",
-    "venue": "Hovsan Competition Complex, Pitch 8A",
-    "tz": "Asia/Baku"
-   },
-   {
-    "id": "u15wc-779",
-    "no": 779,
-    "stage": "Tournament stage",
-    "group": "Tier F",
-    "date": "2026-10-29",
-    "ko": "20:45",
-    "home": "Loser M681",
-    "away": "Loser M683",
-    "venue": "Hovsan Competition Complex, Pitch 8B",
     "tz": "Asia/Baku"
    },
    {
