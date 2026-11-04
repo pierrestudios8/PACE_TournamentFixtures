@@ -18,7 +18,7 @@
    "broadcast": "DAZN and FIFA+",
    "dataLoaded": true,
    "figma": "Round 1 built (Women V/H, Men V). Rounds 2–12 to roll out",
-   "source": "Match schedule PDF, 8 September 2026. Amended 21 Sep: Phoenix v Pride (W, R1) now 13:00. Amended 29 Sep: West Coast Rangers v CF Waterside Karori (W, R2) now 14:00. Club names per the league's Club Names and Logos sheet, 29 Sep",
+   "source": "Match schedule PDF, 8 September 2026. Amended 21 Sep: Phoenix v Pride (W, R1) now 13:00. Amended 29 Sep: West Coast Rangers v CF Waterside Karori (W, R2) now 14:00. Club names per the league's Club Names and Logos sheet, 29 Sep. Amended 4 Nov: Fencibles United v Wellington Phoenix Reserves (W, R7) now 16:30",
    "flags": [
     "CF Wellington United (Women) home venues TBC, except Round 2 at Newtown Park",
     "Two men's home venues listed at the opponent's ground (R4, R8)"
@@ -665,7 +665,7 @@
     "comp": "W",
     "round": 7,
     "date": "2026-11-08",
-    "ko": "16:00",
+    "ko": "16:30",
     "tz": "Pacific/Auckland",
     "home": "Fencibles United",
     "away": "Wellington Phoenix Reserves",
