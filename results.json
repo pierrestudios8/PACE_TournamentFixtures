@@ -1,7 +1,7 @@
 {
  "version": 1,
  "note": "Display-only scores, keyed by fixture id. Written by the scheduled fetcher. Never feeds Figma assets.",
- "updated": "2026-11-02T08:30:00Z",
+ "updated": "2026-11-04T19:00:00Z",
  "results": {
   "icc-01": {
    "score": "1–0",
@@ -8467,6 +8467,15 @@
    "corroboration": "Flashscore standings page: goals for/against and games played reconcile for every club against all scorelines (2 Nov)",
    "confirmed": false,
    "at": "2026-11-02T08:30:00Z"
+  },
+  "u17w-49": {
+   "score": "1–1",
+   "pens": "4–1",
+   "status": "FT",
+   "source": "FIFA match centre card (screenshot supplied by Pierre, 4 Nov)",
+   "corroboration": "none yet",
+   "confirmed": false,
+   "at": "2026-11-04T19:00:00Z"
   }
  }
 }
