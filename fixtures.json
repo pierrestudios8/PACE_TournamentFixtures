@@ -86,7 +86,11 @@
     "Group stage not included. Knockouts run from the round of 16",
     "Argentina v Korea Republic venue still to confirm"
    ],
-   "tz": "Europe/Warsaw"
+   "tz": "Europe/Warsaw",
+   "winner": {
+    "team": "Spain",
+    "detail": "0–0 v DPR Korea, won 4–3 on pens"
+   }
   },
   {
    "id": "u17w",
@@ -161,7 +165,11 @@
     "Which venue hosts which group also needs confirming",
     "Two divisions in two countries, so local kick-off times run in different time zones"
    ],
-   "tz": "Asia/Jakarta"
+   "tz": "Asia/Jakarta",
+   "winner": {
+    "team": "Indonesia",
+    "detail": "Division 1, beat Thailand on pens"
+   }
   },
   {
    "id": "wwc27",
@@ -285,7 +293,11 @@
     "Per-match dates, kick-off times and club tricodes are not published in the sources found, so no fixtures are loaded. Circuits are staged in one host city each, so there are no club home venues",
     "South Melbourne FC is an Australian (AFC) club; the champion goes to the FIFA Intercontinental Cup"
    ],
-   "tz": "Pacific/Auckland"
+   "tz": "Pacific/Auckland",
+   "winner": {
+    "team": "Auckland FC",
+    "detail": "Final at Eden Park, 24 May"
+   }
   },
   {
    "id": "u15wc",
@@ -312,7 +324,11 @@
     "Matches 476-478 (bye matches for New Zealand, Curaçao, Fiji) removed in v16; matches 580-582 and 680-682 (Loser of those, and their quarter-finals) shown as cancelled by FIFA and removed",
     "Later rounds show real teams once FIFA has them, otherwise Winner M### / Loser M###"
    ],
-   "tz": "Asia/Baku"
+   "tz": "Asia/Baku",
+   "winner": {
+    "team": "Spain",
+    "detail": "Tier A final, 3–0 v Czechia"
+   }
   }
  ],
  "fixtures": {

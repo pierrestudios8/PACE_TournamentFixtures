@@ -149,6 +149,11 @@ nav.side .all{margin-top:10px;color:var(--muted);font-weight:500}
 .pill.stage{color:var(--neutral-text)}
 .pill.stage.inline{margin-left:6px;vertical-align:1px;font-size:.62rem;padding:2px 9px}
 .state{font-size:.86rem;font-weight:700;color:var(--muted);display:flex;align-items:center;gap:8px;margin-top:auto;padding-top:10px;border-top:1px solid var(--line)}
+.win{margin:0;display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;font-size:.95rem}
+.win span{font-size:.66rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;border-radius:999px;background:var(--accent);color:var(--accent-ink)}
+.win b{font-family:var(--font-display);font-weight:900;text-transform:uppercase;letter-spacing:-0.01em}
+.win em{font-style:normal;color:var(--muted);font-size:.86rem}
+.head-win{margin-top:12px;font-size:1.1rem}
 .dot{width:9px;height:9px;border-radius:50%;background:var(--muted);flex:none}
 .dot.on{background:var(--accent)}
 
@@ -259,6 +264,7 @@ section.block h2{margin:0;font-family:var(--font-display);font-weight:900;font-s
       <button class="back" id="back" hidden>← All tournaments</button>
       <p class="eyebrow" id="eyebrow">Fixture hub</p>
       <h1 id="title">Tournament fixture hub</h1>
+      <p class="win head-win" id="winner" hidden></p>
       <p class="sub" id="sub">Schedules, fixture data and Figma rollout status</p>
       <p class="stamp" id="stamp" hidden></p>
     </div>
@@ -310,6 +316,7 @@ let TOURNAMENTS = [
     id: "u20w",
     name: "FIFA U-20 Women's World Cup Poland 2026",
     short: "U-20 Women's WC",
+    winner: {team: "Spain", detail: "0–0 v DPR Korea, won 4–3 on pens"},
     badge: "Stars in the Making",
     host: "Poland",
     start: "2026-09-05", end: "2026-09-27",
@@ -385,6 +392,7 @@ let TOURNAMENTS = [
     id: "asean",
     name: "FIFA ASEAN Cup 2026",
     short: "ASEAN Cup",
+    winner: {team: "Indonesia", detail: "Division 1, beat Thailand on pens"},
     badge: "ASEAN Cup",
     host: "Indonesia and Hong Kong, China",
     start: "2026-09-24", end: "2026-10-05",
@@ -499,6 +507,7 @@ let TOURNAMENTS = [
     "id": "ofcpro",
     "name": "OFC Professional League 2026",
     "short": "OFC Pro League",
+    "winner": {"team": "Auckland FC", "detail": "Final at Eden Park, 24 May"},
     "badge": "Oceania 2026",
     "host": "Oceania. Five host cities: Auckland, Port Moresby, Melbourne, Honiara, Ba and Suva",
     "start": "2026-01-17",
@@ -523,6 +532,7 @@ let TOURNAMENTS = [
     "id": "u15wc",
     "name": "FIFA U-15 World Cup & Festival 2026",
     "short": "U-15 WC & Festival",
+    "winner": {"team": "Spain", "detail": "Tier A final, 3–0 v Czechia"},
     "badge": "Azerbaijan 2026",
     "host": "Azerbaijan",
     "start": "2026-10-22",
@@ -595,6 +605,7 @@ function currentStage(t){
 }
 
 /* ---------- dashboard ---------- */
+function brief(s){ return String(s||"").split(/\. |\s\(/)[0]; }
 function dashboard(){
   const cards=TOURNAMENTS.map(t=>{
     const st=status(t), stage=currentStage(t);
@@ -603,11 +614,10 @@ function dashboard(){
         stage?`<span class="pill stage">${esc(stage)}</span>`:""}</div>
       <h3>${esc(t.name)}</h3>
       <dl>
-        <dt>Dates</dt><dd>${esc(t.window)}</dd>
-        <dt>Host</dt><dd>${esc(t.host)}</dd>
-        <dt>Format</dt><dd>${esc(t.format)}</dd>
-        <dt>Matches</dt><dd>${esc(t.matches)}</dd>
+        <dt>Dates</dt><dd>${esc(brief(t.window))}</dd>
+        <dt>Host</dt><dd>${esc(brief(t.host))}</dd>
       </dl>
+      ${t.winner?`<p class="win"><span>Winner</span><b>${esc(t.winner.team)}</b></p>`:""}
       <span class="state"><span class="dot ${t.dataLoaded?"on":""}"></span>${t.dataLoaded?"Fixture data loaded":"No fixture data yet"}</span>
     </div>`;
   }).join("");
@@ -842,7 +852,7 @@ function render(){
     document.getElementById("title").textContent="Tournament fixture hub";
     document.getElementById("sub").textContent="Schedules, fixture data and Figma rollout status";
     controls.hidden=true; controls.innerHTML=""; back.hidden=false; document.getElementById("csv").hidden=true; document.getElementById("tzseg").hidden=true;
-    back.hidden=true;
+    back.hidden=true; document.getElementById("winner").hidden=true;
     app.innerHTML=dashboard();
     return;
   }
@@ -852,6 +862,9 @@ function render(){
   document.getElementById("eyebrow").textContent=t.badge;
   document.getElementById("title").textContent=t.name;
   document.getElementById("sub").textContent=`${t.window}. ${t.host}`;
+  const wEl=document.getElementById("winner");
+  wEl.hidden=!t.winner;
+  wEl.innerHTML=t.winner?`<span>Winner</span><b>${esc(t.winner.team)}</b>${t.winner.detail?`<em>${esc(t.winner.detail)}</em>`:""}`:"";
   back.hidden=false;
   controls.hidden=!t.dataLoaded;
   controls.innerHTML=t.dataLoaded?controlsHTML(t):"";
