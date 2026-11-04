@@ -28,6 +28,8 @@
   --band-ink:#FFFFFF;
   --muted:rgba(255,255,255,.62);
   --neutral-text:rgba(255,255,255,.80);
+  --stage:#5AAEFF;
+  --win:#3DD68C;
   --line:rgba(255,255,255,.20);       /* internal hairlines, row dividers */
   --line-card:rgba(255,255,255,.32);  /* outer edge of a card/panel/list — ~2.9:1 */
   --line-strong:rgba(255,255,255,.38);
@@ -58,6 +60,8 @@
   --band-ink:var(--pace-dark-blue);
   --muted:rgba(3,17,25,.62);
   --neutral-text:rgba(3,17,25,.72);
+  --stage:#1F6FD1;
+  --win:#13884A;
   --line:rgba(3,17,25,.14);
   --line-card:rgba(3,17,25,.22);
   --line-strong:rgba(3,17,25,.30);
@@ -146,12 +150,12 @@ nav.side .all{margin-top:10px;color:var(--muted);font-weight:500}
 .pill.soon{color:var(--accent-text)}
 .pill.done{color:var(--muted)}
 .pills{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-.pill.stage{color:var(--neutral-text)}
+.pill.stage{color:var(--stage)}
 .pill.stage.inline{margin-left:6px;vertical-align:1px;font-size:.62rem;padding:2px 9px}
 .state{font-size:.86rem;font-weight:700;color:var(--muted);display:flex;align-items:center;gap:8px;margin-top:auto;padding-top:10px;border-top:1px solid var(--line)}
 .win{margin:0;display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;font-size:.95rem}
-.win span{font-size:.66rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;border-radius:999px;background:var(--accent);color:var(--accent-ink)}
-.win b{font-family:var(--font-display);font-weight:900;text-transform:uppercase;letter-spacing:-0.01em}
+.win span{font-size:.66rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;border-radius:999px;background:var(--win);color:#031119}
+.win b{color:var(--win);font-family:var(--font-display);font-weight:900;text-transform:uppercase;letter-spacing:-0.01em}
 .win em{font-style:normal;color:var(--muted);font-size:.86rem}
 .head-win{margin-top:12px;font-size:1.1rem}
 .dot{width:9px;height:9px;border-radius:50%;background:var(--muted);flex:none}
