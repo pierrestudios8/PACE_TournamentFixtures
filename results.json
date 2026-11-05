@@ -1,7 +1,7 @@
 {
  "version": 1,
  "note": "Display-only scores, keyed by fixture id. Written by the scheduled fetcher. Never feeds Figma assets.",
- "updated": "2026-11-04T19:00:00Z",
+ "updated": "2026-11-05T07:00:00Z",
  "results": {
   "icc-01": {
    "score": "1–0",
@@ -8476,6 +8476,14 @@
    "corroboration": "none yet",
    "confirmed": false,
    "at": "2026-11-04T19:00:00Z"
+  },
+  "u17w-50": {
+   "score": "1–3",
+   "status": "FT",
+   "source": "https://www.tvcnews.tv/flamingos-beat-brazil-3-1-reach-historic-u-17-womens-world-cup-final/",
+   "corroboration": "https://www.ademolasports.com/blog/nigeria-make-history-beat-brazil-3-1-to-reach-first-ever-fifa-u-17-womens-world-cup-final",
+   "confirmed": false,
+   "at": "2026-11-05T07:00:00Z"
   }
  }
 }
