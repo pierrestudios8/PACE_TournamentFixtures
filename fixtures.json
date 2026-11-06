@@ -122,19 +122,19 @@
    "badge": "Intercontinental Cup",
    "host": "Multiple hosts",
    "start": "2026-08-26",
-   "end": "2026-12-31",
-   "window": "From 26 Aug 2026",
+   "end": "2026-12-16",
+   "window": "26 Aug – 16 Dec 2026",
    "format": "6 clubs, single-match knockout ladder into the final",
    "matches": "5 matches",
-   "venues": "Jeddah and Pretoria confirmed. Later rounds TBC",
+   "venues": "Jeddah, Pretoria, then Doha: Jassim bin Hamad Stadium (matches 3, 4), Ahmad bin Ali Stadium (final)",
    "broadcast": "DAZN and FIFA+",
    "dataLoaded": true,
    "teamView": false,
    "figma": "Not started",
-   "source": "Match schedule v2, 2 September 2026. Results updated 21 Sep",
+   "source": "Match schedule v4, 15 October 2026. Results updated 21 Sep",
    "flags": [
     "Mamelodi Sundowns won the African-Asian-Pacific Cup and go through to the Challenger Cup",
-    "Matches 3 to 5 are all in one host country, still to be confirmed, with no dates yet",
+    "Matches 3 to 5 in Doha, Qatar: 9, 12 and 16 Dec. Kick-off times not yet published",
     "Derby of the Americas opponent for Toluca is set by the Libertadores final in Montevideo on 28 November",
     "A ladder graphic may suit this better than a fixture list"
    ],
@@ -206,11 +206,11 @@
    "window": "19 Nov – 13 Dec 2026",
    "format": "48 teams, 12 groups of 4, then a round of 32",
    "matches": "104 matches",
-   "venues": "Aspire Zone, Doha. Final at Khalifa International Stadium",
+   "venues": "Aspire Zone, Doha. Final at Ahmad bin Ali Stadium",
    "broadcast": "FIFA+",
    "dataLoaded": true,
    "figma": "Not started",
-   "source": "FIFA match schedule v5, 8 October 2026 (kick-offs in Qatar time). Checked against the hub with no changes",
+   "source": "FIFA match schedule v7, 3 November 2026 (kick-offs in Qatar time). Only change from v5: final moved to Ahmad bin Ali Stadium",
    "flags": [
     "8 matches per day in the group stage, so the weekly card will need a daily variant",
     "Knockout fixtures (matches 73 to 104) are placeholders until the group stage settles. Teams show as TBD, and FIFA still lists the knockout dates as to be confirmed",
@@ -2415,36 +2415,36 @@
     "no": 3,
     "stage": "Derby of the Americas",
     "group": null,
-    "date": null,
+    "date": "2026-12-09",
     "ko": null,
     "home": "CONMEBOL Libertadores winner",
     "away": "Toluca FC",
-    "venue": "TBC",
-    "tz": null
+    "venue": "Jassim bin Hamad Stadium, Doha",
+    "tz": "Asia/Qatar"
    },
    {
     "id": "icc-04",
     "no": 4,
     "stage": "Challenger Cup",
     "group": null,
-    "date": null,
+    "date": "2026-12-12",
     "ko": null,
     "home": "Winner match 3",
     "away": "Mamelodi Sundowns FC",
-    "venue": "TBC",
-    "tz": null
+    "venue": "Jassim bin Hamad Stadium, Doha",
+    "tz": "Asia/Qatar"
    },
    {
     "id": "icc-05",
     "no": 5,
     "stage": "Intercontinental Cup Final",
     "group": null,
-    "date": null,
+    "date": "2026-12-16",
     "ko": null,
     "home": "Paris Saint-Germain",
     "away": "Winner match 4",
-    "venue": "TBC",
-    "tz": null
+    "venue": "Ahmad bin Ali Stadium, Doha",
+    "tz": "Asia/Qatar"
    }
   ],
   "u20w": [
@@ -4245,7 +4245,7 @@
     "ko": "19:00",
     "home": "Winner SF1",
     "away": "Winner SF2",
-    "venue": "Khalifa International Stadium",
+    "venue": "Ahmad bin Ali Stadium",
     "tz": "Asia/Qatar"
    }
   ],
