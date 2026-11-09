@@ -113,7 +113,11 @@
     "4 matches a day on 4 pitches, so cards work per day rather than per round",
     "Round of 16 now carries real teams (v7). Quarter-finals onward show W## until played"
    ],
-   "tz": "Africa/Casablanca"
+   "tz": "Africa/Casablanca",
+   "winner": {
+    "team": "Nigeria",
+    "detail": "2–1 v Japan in the final, 7 Nov"
+   }
   },
   {
    "id": "icc",

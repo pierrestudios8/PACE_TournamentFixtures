@@ -1,7 +1,7 @@
 {
  "version": 1,
  "note": "Display-only scores, keyed by fixture id. Written by the scheduled fetcher. Never feeds Figma assets.",
- "updated": "2026-11-05T07:00:00Z",
+ "updated": "2026-11-09T08:00:00Z",
  "results": {
   "icc-01": {
    "score": "1–0",
@@ -8484,6 +8484,22 @@
    "corroboration": "https://www.ademolasports.com/blog/nigeria-make-history-beat-brazil-3-1-to-reach-first-ever-fifa-u-17-womens-world-cup-final",
    "confirmed": false,
    "at": "2026-11-05T07:00:00Z"
+  },
+  "u17w-51": {
+   "score": "6–0",
+   "status": "FT",
+   "source": "https://www.fifa.com/en/match-centre/match/516/292977/292985/400022571",
+   "corroboration": "https://www.espn.com/soccer/match/_/gameId/401916257",
+   "confirmed": false,
+   "at": "2026-11-09T08:00:00Z"
+  },
+  "u17w-52": {
+   "score": "1–2",
+   "status": "FT",
+   "source": "https://www.vanguardngr.com/2026/11/breaking-flamingos-beat-japan-2-1-to-win-first-u-17-womens-world-cup/",
+   "corroboration": "https://thenigerialawyer.com/flamingos-are-world-champions-nigeria-defeat-japan-2-1-to-win-historic-first-fifa-u-17-womens-world-cup/",
+   "confirmed": false,
+   "at": "2026-11-09T08:00:00Z"
   }
  }
 }
