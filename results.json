@@ -1,7 +1,7 @@
 {
  "version": 1,
  "note": "Display-only scores, keyed by fixture id. Written by the scheduled fetcher. Never feeds Figma assets.",
- "updated": "2026-11-09T08:00:00Z",
+ "updated": "2026-11-15T10:00:00Z",
  "results": {
   "icc-01": {
    "score": "1–0",
@@ -8500,6 +8500,14 @@
    "corroboration": "https://thenigerialawyer.com/flamingos-are-world-champions-nigeria-defeat-japan-2-1-to-win-historic-first-fifa-u-17-womens-world-cup/",
    "confirmed": false,
    "at": "2026-11-09T08:00:00Z"
+  },
+  "yoft-m-16": {
+   "score": "1–2",
+   "status": "FT",
+   "source": "https://newsroom.olympics.com/record/3935",
+   "corroboration": "https://www.nbcolympics.com/videos/argentina-beats-portugal-futsal-gold-youth-olympics",
+   "confirmed": false,
+   "at": "2026-11-15T10:00:00Z"
   }
  }
 }

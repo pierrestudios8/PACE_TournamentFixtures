@@ -377,11 +377,15 @@
     ]
    },
    "flags": [
-    "Women's semi-finals already set in v7: IR Iran v Venezuela and Ukraine v Italy (8 Nov)",
+    "Knockout teams filled from match reports (15 Nov). Group-stage results not loaded",
     "Group stage at Complexe Iba Mar Diop, Dakar; from 7 Nov at Dakar Arena, Diamniadio",
     "Rest days 6 and 10 Nov. Group results not loaded"
    ],
-   "tz": "Africa/Dakar"
+   "tz": "Africa/Dakar",
+   "winner": {
+    "team": "Ukraine (W) · Argentina (M)",
+    "detail": "Women: Ukraine beat Venezuela after extra time · Men: Argentina 2–1 Portugal"
+   }
   }
  ],
  "fixtures": {
@@ -15798,8 +15802,8 @@
     "group": null,
     "date": "2026-11-09",
     "ko": "11:02",
-    "home": "Winner Group B",
-    "away": "Runner-up Group A",
+    "home": "Portugal",
+    "away": "Afghanistan",
     "venue": "Dakar Arena, Diamniadio",
     "tz": "Africa/Dakar"
    },
@@ -15811,8 +15815,8 @@
     "group": null,
     "date": "2026-11-09",
     "ko": "15:32",
-    "home": "Winner Group A",
-    "away": "Runner-up Group B",
+    "home": "Argentina",
+    "away": "Morocco",
     "venue": "Dakar Arena, Diamniadio",
     "tz": "Africa/Dakar"
    },
@@ -15824,8 +15828,8 @@
     "group": null,
     "date": "2026-11-11",
     "ko": "11:02",
-    "home": "Loser SF1",
-    "away": "Loser SF2",
+    "home": "IR Iran",
+    "away": "Italy",
     "venue": "Dakar Arena, Diamniadio",
     "tz": "Africa/Dakar"
    },
@@ -15837,8 +15841,8 @@
     "group": null,
     "date": "2026-11-11",
     "ko": "15:32",
-    "home": "Winner SF1",
-    "away": "Winner SF2",
+    "home": "Venezuela",
+    "away": "Ukraine",
     "venue": "Dakar Arena, Diamniadio",
     "tz": "Africa/Dakar"
    },
@@ -15850,8 +15854,8 @@
     "group": null,
     "date": "2026-11-12",
     "ko": "11:02",
-    "home": "Loser SF1",
-    "away": "Loser SF2",
+    "home": "Afghanistan",
+    "away": "Morocco",
     "venue": "Dakar Arena, Diamniadio",
     "tz": "Africa/Dakar"
    },
@@ -15863,8 +15867,8 @@
     "group": null,
     "date": "2026-11-12",
     "ko": "15:32",
-    "home": "Winner SF1",
-    "away": "Winner SF2",
+    "home": "Portugal",
+    "away": "Argentina",
     "venue": "Dakar Arena, Diamniadio",
     "tz": "Africa/Dakar"
    }
