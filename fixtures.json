@@ -214,7 +214,7 @@
    "broadcast": "FIFA+",
    "dataLoaded": true,
    "figma": "Not started",
-   "source": "FIFA match schedule v7, 3 November 2026 (kick-offs in Qatar time). Only change from v5: final moved to Ahmad bin Ali Stadium",
+   "source": "FIFA match schedule v8, 12 November 2026 (kick-offs in Qatar time). v8: Dominican Republic replace USA (matches 19, 43, 67). v7: final moved to Ahmad bin Ali Stadium",
    "flags": [
     "8 matches per day in the group stage, so the weekly card will need a daily variant",
     "Knockout fixtures (matches 73 to 104) are placeholders until the group stage settles. Teams show as TBD, and FIFA still lists the knockout dates as to be confirmed",
@@ -3231,7 +3231,7 @@
     "group": "Group J",
     "date": "2026-11-21",
     "ko": "17:30",
-    "home": "USA",
+    "home": "Dominican Republic",
     "away": "Montenegro",
     "venue": "Aspire Zone, Pitch 3",
     "tz": "Asia/Qatar"
@@ -3519,7 +3519,7 @@
     "group": "Group J",
     "date": "2026-11-24",
     "ko": "17:30",
-    "home": "USA",
+    "home": "Dominican Republic",
     "away": "Chile",
     "venue": "Aspire Zone, Pitch 3",
     "tz": "Asia/Qatar"
@@ -3808,7 +3808,7 @@
     "date": "2026-11-27",
     "ko": "18:00",
     "home": "Algeria",
-    "away": "USA",
+    "away": "Dominican Republic",
     "venue": "Aspire Zone, Pitch 2",
     "tz": "Asia/Qatar"
    },
