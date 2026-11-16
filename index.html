@@ -261,6 +261,32 @@ section.block h2{margin:0;font-family:var(--font-display);font-weight:900;font-s
 }
 .daysep{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted,#8a94a3);padding:12px 4px 4px;grid-column:1/-1}
 .daysep:first-child{padding-top:2px}
+/* fixed-height masthead: every slot is always reserved, so the header is the same
+   height on the dashboard and on every tournament */
+.head{display:block;height:var(--head-h);box-sizing:border-box;padding:18px 20px 14px}
+:root{--head-h:236px}
+.head>div:first-child{min-width:0}
+.brand{margin:0 0 4px}
+.back{display:inline-flex;margin:0 0 2px;padding:2px 0;height:22px;align-items:center}
+.back[hidden]{display:inline-flex;visibility:hidden}
+.eyebrow{margin:0 0 6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+h1{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:clamp(1.4rem,3.2vw,2.3rem);line-height:1.05}
+.metaline{display:flex;align-items:center;gap:12px;height:28px;margin-top:10px;min-width:0;overflow:hidden;white-space:nowrap}
+.metaline .head-win{margin:0;flex:none;font-size:.95rem;flex-wrap:nowrap}
+.metaline .head-win[hidden]{display:none}
+.metaline .sub{margin:0;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.stamp{height:1.3em;margin:4px 0 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.stamp[hidden]{display:block;visibility:hidden}
+.headright{margin:10px 0 0;width:100%;height:42px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;justify-content:flex-end}
+.headright::-webkit-scrollbar{display:none}
+.headright>*{flex:none}
+.controls{flex-wrap:nowrap}
+@media (max-width:760px){
+  :root{--head-h:268px}
+  h1{white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;height:2.1em}
+  .metaline .head-win em{display:none}
+  .headright{justify-content:flex-start}
+}
 </style>
 </head>
 <body>
@@ -271,8 +297,8 @@ section.block h2{margin:0;font-family:var(--font-display);font-weight:900;font-s
       <button class="back" id="back" hidden>← All tournaments</button>
       <p class="eyebrow" id="eyebrow">Fixture hub</p>
       <h1 id="title">Tournament fixture hub</h1>
-      <p class="win head-win" id="winner" hidden></p>
-      <p class="sub" id="sub">Schedules, fixture data and Figma rollout status</p>
+      <div class="metaline"><p class="win head-win" id="winner" hidden></p>
+      <p class="sub" id="sub">Schedules, fixture data and Figma rollout status</p></div>
       <p class="stamp" id="stamp" hidden></p>
     </div>
     <div class="headright">
