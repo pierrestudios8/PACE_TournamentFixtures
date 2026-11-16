@@ -386,6 +386,29 @@
     "team": "Ukraine (W) · Argentina (M)",
     "detail": "Women: Ukraine beat Venezuela after extra time · Men: Argentina 2–1 Portugal"
    }
+  },
+  {
+   "id": "wwcpo",
+   "name": "FIFA Women's World Cup 2027 Play-Off Tournament",
+   "short": "WWC 2027 Play-Offs",
+   "badge": "Rabat 2026",
+   "host": "Morocco",
+   "start": "2026-11-28",
+   "end": "2026-12-05",
+   "window": "28 Nov – 5 Dec 2026",
+   "format": "6 teams, preliminary phase in Rabat (each team plays 3)",
+   "matches": "9 matches",
+   "venues": "Mohammed VI Football Complex, Rabat (Pitches 1–3)",
+   "broadcast": "FIFA+",
+   "dataLoaded": true,
+   "figma": "Not started",
+   "source": "FIFA scores & fixtures page, 16 November 2026 (kick-offs converted to Rabat time)",
+   "flags": [
+    "Teams: Chinese Taipei, South Africa, Uzbekistan, Papua New Guinea, Ghana, Ecuador",
+    "Final matchday (5 Dec): all three games kick off together at 17:00 Rabat time",
+    "Feeds the last places at the Women's World Cup Brazil 2027"
+   ],
+   "tz": "Africa/Casablanca"
   }
  ],
  "fixtures": {
@@ -15871,6 +15894,116 @@
     "away": "Argentina",
     "venue": "Dakar Arena, Diamniadio",
     "tz": "Africa/Dakar"
+   }
+  ],
+  "wwcpo": [
+   {
+    "id": "wwcpo-01",
+    "no": 1,
+    "stage": "Preliminary phase",
+    "group": null,
+    "date": "2026-11-28",
+    "ko": "14:00",
+    "home": "Chinese Taipei",
+    "away": "South Africa",
+    "venue": "Mohammed VI Football Complex, Pitch 2",
+    "tz": "Africa/Casablanca"
+   },
+   {
+    "id": "wwcpo-02",
+    "no": 2,
+    "stage": "Preliminary phase",
+    "group": null,
+    "date": "2026-11-28",
+    "ko": "16:30",
+    "home": "Uzbekistan",
+    "away": "Papua New Guinea",
+    "venue": "Mohammed VI Football Complex, Pitch 1",
+    "tz": "Africa/Casablanca"
+   },
+   {
+    "id": "wwcpo-03",
+    "no": 3,
+    "stage": "Preliminary phase",
+    "group": null,
+    "date": "2026-11-28",
+    "ko": "19:00",
+    "home": "Ghana",
+    "away": "Ecuador",
+    "venue": "Mohammed VI Football Complex, Pitch 3",
+    "tz": "Africa/Casablanca"
+   },
+   {
+    "id": "wwcpo-04",
+    "no": 4,
+    "stage": "Preliminary phase",
+    "group": null,
+    "date": "2026-12-01",
+    "ko": "14:00",
+    "home": "Papua New Guinea",
+    "away": "Chinese Taipei",
+    "venue": "Mohammed VI Football Complex, Pitch 3",
+    "tz": "Africa/Casablanca"
+   },
+   {
+    "id": "wwcpo-05",
+    "no": 5,
+    "stage": "Preliminary phase",
+    "group": null,
+    "date": "2026-12-01",
+    "ko": "16:30",
+    "home": "Uzbekistan",
+    "away": "Ghana",
+    "venue": "Mohammed VI Football Complex, Pitch 2",
+    "tz": "Africa/Casablanca"
+   },
+   {
+    "id": "wwcpo-06",
+    "no": 6,
+    "stage": "Preliminary phase",
+    "group": null,
+    "date": "2026-12-01",
+    "ko": "19:00",
+    "home": "South Africa",
+    "away": "Ecuador",
+    "venue": "Mohammed VI Football Complex, Pitch 1",
+    "tz": "Africa/Casablanca"
+   },
+   {
+    "id": "wwcpo-07",
+    "no": 7,
+    "stage": "Preliminary phase",
+    "group": null,
+    "date": "2026-12-05",
+    "ko": "17:00",
+    "home": "South Africa",
+    "away": "Uzbekistan",
+    "venue": "Mohammed VI Football Complex, Pitch 3",
+    "tz": "Africa/Casablanca"
+   },
+   {
+    "id": "wwcpo-08",
+    "no": 8,
+    "stage": "Preliminary phase",
+    "group": null,
+    "date": "2026-12-05",
+    "ko": "17:00",
+    "home": "Chinese Taipei",
+    "away": "Ecuador",
+    "venue": "Mohammed VI Football Complex, Pitch 2",
+    "tz": "Africa/Casablanca"
+   },
+   {
+    "id": "wwcpo-09",
+    "no": 9,
+    "stage": "Preliminary phase",
+    "group": null,
+    "date": "2026-12-05",
+    "ko": "17:00",
+    "home": "Papua New Guinea",
+    "away": "Ghana",
+    "venue": "Mohammed VI Football Complex, Pitch 1",
+    "tz": "Africa/Casablanca"
    }
   ]
  }
