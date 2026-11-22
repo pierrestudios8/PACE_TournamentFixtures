@@ -1,7 +1,7 @@
 {
   "version": 1,
   "note": "Display-only scores, keyed by fixture id. Written by the scheduled fetcher. Never feeds Figma assets.",
-  "updated": "2026-11-22T06:01:06Z",
+  "updated": "2026-11-22T06:07:29Z",
   "results": {
     "icc-01": {
       "score": "1–0",
@@ -8445,12 +8445,12 @@
       "at": "2026-11-02T08:30:00Z"
     },
     "nzl-w-22": {
-      "score": "2–0",
+      "score": "4–0",
       "status": "FT",
       "source": "https://www.flashscore.com/football/new-zealand/national-league-women/results/",
-      "corroboration": "Flashscore standings page: goals for/against and games played reconcile for every club against all scorelines (2 Nov)",
+      "corroboration": "https://us.soccerway.com/new-zealand/national-league-women/standings (table reconciles W/D/L, GF/GA for all 9 clubs)",
       "confirmed": false,
-      "at": "2026-11-02T08:30:00Z"
+      "at": "2026-11-22T06:07:29Z"
     },
     "nzl-w-23": {
       "score": "3–2",
@@ -8700,6 +8700,230 @@
       "corroboration": "https://www.espn.com/soccer/standings/_/league/fifa.world.u17 (group table reconciles F/A)",
       "confirmed": false,
       "at": "2026-11-22T06:01:06Z"
+    },
+    "nzl-m-45": {
+      "score": "1–1",
+      "status": "FT",
+      "source": "https://www.flashscore.com/football/new-zealand/national-league/results/",
+      "corroboration": "https://www.fotmob.com/teams/8523/table/auckland-city-fc (table reconciles W/D/L, GF/GA for all 11 clubs)",
+      "confirmed": false,
+      "at": "2026-11-22T06:07:29Z"
+    },
+    "nzl-m-43": {
+      "score": "0–0",
+      "status": "FT",
+      "source": "https://www.flashscore.com/football/new-zealand/national-league/results/",
+      "corroboration": "https://www.fotmob.com/teams/8523/table/auckland-city-fc (table reconciles W/D/L, GF/GA for all 11 clubs)",
+      "confirmed": false,
+      "at": "2026-11-22T06:07:29Z"
+    },
+    "nzl-m-42": {
+      "score": "1–0",
+      "status": "FT",
+      "source": "https://www.flashscore.com/football/new-zealand/national-league/results/",
+      "corroboration": "https://www.fotmob.com/teams/8523/table/auckland-city-fc (table reconciles W/D/L, GF/GA for all 11 clubs)",
+      "confirmed": false,
+      "at": "2026-11-22T06:07:29Z"
+    },
+    "nzl-m-44": {
+      "score": "2–0",
+      "status": "FT",
+      "source": "https://www.flashscore.com/football/new-zealand/national-league/results/",
+      "corroboration": "https://www.fotmob.com/teams/8523/table/auckland-city-fc (table reconciles W/D/L, GF/GA for all 11 clubs)",
+      "confirmed": false,
+      "at": "2026-11-22T06:07:29Z"
+    },
+    "nzl-m-41": {
+      "score": "7–1",
+      "status": "FT",
+      "source": "https://www.flashscore.com/football/new-zealand/national-league/results/",
+      "corroboration": "https://www.fotmob.com/teams/8523/table/auckland-city-fc (table reconciles W/D/L, GF/GA for all 11 clubs)",
+      "confirmed": false,
+      "at": "2026-11-22T06:07:29Z"
+    },
+    "nzl-m-40": {
+      "score": "1–2",
+      "status": "FT",
+      "source": "https://www.flashscore.com/football/new-zealand/national-league/results/",
+      "corroboration": "https://www.fotmob.com/teams/8523/table/auckland-city-fc (table reconciles W/D/L, GF/GA for all 11 clubs)",
+      "confirmed": false,
+      "at": "2026-11-22T06:07:29Z"
+    },
+    "nzl-m-39": {
+      "score": "1–3",
+      "status": "FT",
+      "source": "https://www.flashscore.com/football/new-zealand/national-league/results/",
+      "corroboration": "https://www.fotmob.com/teams/8523/table/auckland-city-fc (table reconciles W/D/L, GF/GA for all 11 clubs)",
+      "confirmed": false,
+      "at": "2026-11-22T06:07:29Z"
+    },
+    "nzl-m-37": {
+      "score": "2–2",
+      "status": "FT",
+      "source": "https://www.flashscore.com/football/new-zealand/national-league/results/",
+      "corroboration": "https://www.fotmob.com/teams/8523/table/auckland-city-fc (table reconciles W/D/L, GF/GA for all 11 clubs)",
+      "confirmed": false,
+      "at": "2026-11-22T06:07:29Z"
+    },
+    "nzl-m-38": {
+      "score": "3–0",
+      "status": "FT",
+      "source": "https://www.flashscore.com/football/new-zealand/national-league/results/",
+      "corroboration": "https://www.fotmob.com/teams/8523/table/auckland-city-fc (table reconciles W/D/L, GF/GA for all 11 clubs)",
+      "confirmed": false,
+      "at": "2026-11-22T06:07:29Z"
+    },
+    "nzl-m-36": {
+      "score": "1–1",
+      "status": "FT",
+      "source": "https://www.flashscore.com/football/new-zealand/national-league/results/",
+      "corroboration": "https://www.fotmob.com/teams/8523/table/auckland-city-fc (table reconciles W/D/L, GF/GA for all 11 clubs)",
+      "confirmed": false,
+      "at": "2026-11-22T06:07:29Z"
+    },
+    "nzl-m-35": {
+      "score": "2–0",
+      "status": "FT",
+      "source": "https://www.flashscore.com/football/new-zealand/national-league/results/",
+      "corroboration": "https://www.fotmob.com/teams/8523/table/auckland-city-fc (table reconciles W/D/L, GF/GA for all 11 clubs)",
+      "confirmed": false,
+      "at": "2026-11-22T06:07:29Z"
+    },
+    "nzl-m-34": {
+      "score": "1–6",
+      "status": "FT",
+      "source": "https://www.flashscore.com/football/new-zealand/national-league/results/",
+      "corroboration": "https://www.fotmob.com/teams/8523/table/auckland-city-fc (table reconciles W/D/L, GF/GA for all 11 clubs)",
+      "confirmed": false,
+      "at": "2026-11-22T06:07:29Z"
+    },
+    "nzl-m-33": {
+      "score": "1–0",
+      "status": "FT",
+      "source": "https://www.flashscore.com/football/new-zealand/national-league/results/",
+      "corroboration": "https://www.fotmob.com/teams/8523/table/auckland-city-fc (table reconciles W/D/L, GF/GA for all 11 clubs)",
+      "confirmed": false,
+      "at": "2026-11-22T06:07:29Z"
+    },
+    "nzl-m-31": {
+      "score": "2–2",
+      "status": "FT",
+      "source": "https://www.flashscore.com/football/new-zealand/national-league/results/",
+      "corroboration": "https://www.fotmob.com/teams/8523/table/auckland-city-fc (table reconciles W/D/L, GF/GA for all 11 clubs)",
+      "confirmed": false,
+      "at": "2026-11-22T06:07:29Z"
+    },
+    "nzl-m-32": {
+      "score": "4–2",
+      "status": "FT",
+      "source": "https://www.flashscore.com/football/new-zealand/national-league/results/",
+      "corroboration": "https://www.fotmob.com/teams/8523/table/auckland-city-fc (table reconciles W/D/L, GF/GA for all 11 clubs)",
+      "confirmed": false,
+      "at": "2026-11-22T06:07:29Z"
+    },
+    "nzl-w-35": {
+      "score": "2–4",
+      "status": "FT",
+      "source": "https://www.flashscore.com/football/new-zealand/national-league-women/results/",
+      "corroboration": "https://us.soccerway.com/new-zealand/national-league-women/standings (table reconciles W/D/L, GF/GA for all 9 clubs)",
+      "confirmed": false,
+      "at": "2026-11-22T06:07:29Z"
+    },
+    "nzl-w-33": {
+      "score": "1–2",
+      "status": "FT",
+      "source": "https://www.flashscore.com/football/new-zealand/national-league-women/results/",
+      "corroboration": "https://us.soccerway.com/new-zealand/national-league-women/standings (table reconciles W/D/L, GF/GA for all 9 clubs)",
+      "confirmed": false,
+      "at": "2026-11-22T06:07:29Z"
+    },
+    "nzl-w-36": {
+      "score": "3–0",
+      "status": "FT",
+      "source": "https://www.flashscore.com/football/new-zealand/national-league-women/results/",
+      "corroboration": "https://us.soccerway.com/new-zealand/national-league-women/standings (table reconciles W/D/L, GF/GA for all 9 clubs)",
+      "confirmed": false,
+      "at": "2026-11-22T06:07:29Z"
+    },
+    "nzl-w-34": {
+      "score": "6–0",
+      "status": "FT",
+      "source": "https://www.flashscore.com/football/new-zealand/national-league-women/results/",
+      "corroboration": "https://us.soccerway.com/new-zealand/national-league-women/standings (table reconciles W/D/L, GF/GA for all 9 clubs)",
+      "confirmed": false,
+      "at": "2026-11-22T06:07:29Z"
+    },
+    "nzl-w-32": {
+      "score": "8–0",
+      "status": "FT",
+      "source": "https://www.flashscore.com/football/new-zealand/national-league-women/results/",
+      "corroboration": "https://us.soccerway.com/new-zealand/national-league-women/standings (table reconciles W/D/L, GF/GA for all 9 clubs)",
+      "confirmed": false,
+      "at": "2026-11-22T06:07:29Z"
+    },
+    "nzl-w-31": {
+      "score": "2–1",
+      "status": "FT",
+      "source": "https://www.flashscore.com/football/new-zealand/national-league-women/results/",
+      "corroboration": "https://us.soccerway.com/new-zealand/national-league-women/standings (table reconciles W/D/L, GF/GA for all 9 clubs)",
+      "confirmed": false,
+      "at": "2026-11-22T06:07:29Z"
+    },
+    "nzl-w-30": {
+      "score": "3–1",
+      "status": "FT",
+      "source": "https://www.flashscore.com/football/new-zealand/national-league-women/results/",
+      "corroboration": "https://us.soccerway.com/new-zealand/national-league-women/standings (table reconciles W/D/L, GF/GA for all 9 clubs)",
+      "confirmed": false,
+      "at": "2026-11-22T06:07:29Z"
+    },
+    "nzl-w-29": {
+      "score": "0–4",
+      "status": "FT",
+      "source": "https://www.flashscore.com/football/new-zealand/national-league-women/results/",
+      "corroboration": "https://us.soccerway.com/new-zealand/national-league-women/standings (table reconciles W/D/L, GF/GA for all 9 clubs)",
+      "confirmed": false,
+      "at": "2026-11-22T06:07:29Z"
+    },
+    "nzl-w-28": {
+      "score": "5–1",
+      "status": "FT",
+      "source": "https://www.flashscore.com/football/new-zealand/national-league-women/results/",
+      "corroboration": "https://us.soccerway.com/new-zealand/national-league-women/standings (table reconciles W/D/L, GF/GA for all 9 clubs)",
+      "confirmed": false,
+      "at": "2026-11-22T06:07:29Z"
+    },
+    "nzl-w-27": {
+      "score": "1–2",
+      "status": "FT",
+      "source": "https://www.flashscore.com/football/new-zealand/national-league-women/results/",
+      "corroboration": "https://us.soccerway.com/new-zealand/national-league-women/standings (table reconciles W/D/L, GF/GA for all 9 clubs)",
+      "confirmed": false,
+      "at": "2026-11-22T06:07:29Z"
+    },
+    "nzl-w-25": {
+      "score": "2–1",
+      "status": "FT",
+      "source": "https://www.flashscore.com/football/new-zealand/national-league-women/results/",
+      "corroboration": "https://us.soccerway.com/new-zealand/national-league-women/standings (table reconciles W/D/L, GF/GA for all 9 clubs)",
+      "confirmed": false,
+      "at": "2026-11-22T06:07:29Z"
+    },
+    "nzl-w-26": {
+      "score": "0–2",
+      "status": "FT",
+      "source": "https://www.flashscore.com/football/new-zealand/national-league-women/results/",
+      "corroboration": "https://us.soccerway.com/new-zealand/national-league-women/standings (table reconciles W/D/L, GF/GA for all 9 clubs)",
+      "confirmed": false,
+      "at": "2026-11-22T06:07:29Z"
+    },
+    "nzl-w-20": {
+      "score": "4–1",
+      "status": "FT",
+      "source": "https://www.flashscore.com/football/new-zealand/national-league-women/results/",
+      "corroboration": "https://us.soccerway.com/new-zealand/national-league-women/standings (table reconciles W/D/L, GF/GA for all 9 clubs)",
+      "confirmed": false,
+      "at": "2026-11-22T06:07:29Z"
     }
   }
 }
