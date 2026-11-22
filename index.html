@@ -713,8 +713,19 @@ function currentStage(t){
 
 /* ---------- dashboard ---------- */
 function brief(s){ return String(s||"").split(/\. |\s\(/)[0]; }
+/* Live first (ending soonest), then upcoming (starting soonest), then finished (most recent first). */
+function ordered(){
+  const rank={live:0,soon:1,done:2};
+  return TOURNAMENTS.slice().sort((a,b)=>{
+    const ca=status(a).cls, cb=status(b).cls;
+    if(ca!==cb) return rank[ca]-rank[cb];
+    if(ca==="live") return a.end.localeCompare(b.end);
+    if(ca==="soon") return a.start.localeCompare(b.start);
+    return b.end.localeCompare(a.end);
+  });
+}
 function dashboard(){
-  const cards=TOURNAMENTS.map(t=>{
+  const cards=ordered().map(t=>{
     const st=status(t), stage=currentStage(t);
     return `<div class="card" role="button" tabindex="0" data-open="${t.id}">
       <div class="pills"><span class="pill ${st.cls}">${st.label}</span>${
@@ -923,10 +934,10 @@ function genericByTeam(t){
 /* ---------- render ---------- */
 function renderTabs(){
   const btn=t=>`<button data-open="${t.id}" aria-pressed="${route===t.id}">${esc(t.short)}</button>`;
-  const done=TOURNAMENTS.filter(t=>status(t).cls==="done");
+  const done=ordered().filter(t=>status(t).cls==="done");
   document.getElementById("tabs").innerHTML =
     `<button data-open="dash" aria-pressed="${route==="dash"}">Dashboard</button>`+
-    TOURNAMENTS.filter(t=>status(t).cls!=="done").map(btn).join("");
+    ordered().filter(t=>status(t).cls!=="done").map(btn).join("");
   const r2=document.getElementById("tabs2");
   r2.hidden=!done.length;
   r2.innerHTML=`<span class="lbl">Completed</span>`+done.map(btn).join("");
