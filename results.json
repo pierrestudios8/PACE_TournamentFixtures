@@ -1,7 +1,7 @@
 {
   "version": 1,
   "note": "Display-only scores, keyed by fixture id. Written by the scheduled fetcher. Never feeds Figma assets.",
-  "updated": "2026-11-22T06:07:29Z",
+  "updated": "2026-11-24T16:03:14Z",
   "results": {
     "icc-01": {
       "score": "1–0",
@@ -8924,6 +8924,166 @@
       "corroboration": "https://us.soccerway.com/new-zealand/national-league-women/standings (table reconciles W/D/L, GF/GA for all 9 clubs)",
       "confirmed": false,
       "at": "2026-11-22T06:07:29Z"
+    },
+    "u17m-25": {
+      "score": "0–2",
+      "status": "FT",
+      "source": "https://www.fifa.com/en/tournaments/mens/u17worldcup/qatar-2026/scores-fixtures",
+      "corroboration": "https://www.espn.com/soccer/standings/_/league/fifa.world.u17 (group tables reconcile GP/F/A)",
+      "confirmed": false,
+      "at": "2026-11-24T16:03:14Z"
+    },
+    "u17m-26": {
+      "score": "2–1",
+      "status": "FT",
+      "source": "https://www.fifa.com/en/tournaments/mens/u17worldcup/qatar-2026/scores-fixtures",
+      "corroboration": "https://www.espn.com/soccer/standings/_/league/fifa.world.u17 (group tables reconcile GP/F/A)",
+      "confirmed": false,
+      "at": "2026-11-24T16:03:14Z"
+    },
+    "u17m-27": {
+      "score": "6–0",
+      "status": "FT",
+      "source": "https://www.fifa.com/en/tournaments/mens/u17worldcup/qatar-2026/scores-fixtures",
+      "corroboration": "https://www.espn.com/soccer/standings/_/league/fifa.world.u17 (group tables reconcile GP/F/A)",
+      "confirmed": false,
+      "at": "2026-11-24T16:03:14Z"
+    },
+    "u17m-28": {
+      "score": "0–0",
+      "status": "FT",
+      "source": "https://www.fifa.com/en/tournaments/mens/u17worldcup/qatar-2026/scores-fixtures",
+      "corroboration": "https://www.espn.com/soccer/standings/_/league/fifa.world.u17 (group tables reconcile GP/F/A)",
+      "confirmed": false,
+      "at": "2026-11-24T16:03:14Z"
+    },
+    "u17m-29": {
+      "score": "2–1",
+      "status": "FT",
+      "source": "https://www.fifa.com/en/tournaments/mens/u17worldcup/qatar-2026/scores-fixtures",
+      "corroboration": "https://www.espn.com/soccer/standings/_/league/fifa.world.u17 (group tables reconcile GP/F/A)",
+      "confirmed": false,
+      "at": "2026-11-24T16:03:14Z"
+    },
+    "u17m-30": {
+      "score": "0–0",
+      "status": "FT",
+      "source": "https://www.fifa.com/en/tournaments/mens/u17worldcup/qatar-2026/scores-fixtures",
+      "corroboration": "https://www.espn.com/soccer/standings/_/league/fifa.world.u17 (group tables reconcile GP/F/A)",
+      "confirmed": false,
+      "at": "2026-11-24T16:03:14Z"
+    },
+    "u17m-31": {
+      "score": "0–1",
+      "status": "FT",
+      "source": "https://www.fifa.com/en/tournaments/mens/u17worldcup/qatar-2026/scores-fixtures",
+      "corroboration": "https://www.espn.com/soccer/standings/_/league/fifa.world.u17 (group tables reconcile GP/F/A)",
+      "confirmed": false,
+      "at": "2026-11-24T16:03:14Z"
+    },
+    "u17m-32": {
+      "score": "4–1",
+      "status": "FT",
+      "source": "https://www.fifa.com/en/tournaments/mens/u17worldcup/qatar-2026/scores-fixtures",
+      "corroboration": "https://www.espn.com/soccer/standings/_/league/fifa.world.u17 (group tables reconcile GP/F/A)",
+      "confirmed": false,
+      "at": "2026-11-24T16:03:14Z"
+    },
+    "u17m-33": {
+      "score": "2–1",
+      "status": "FT",
+      "source": "https://www.fifa.com/en/tournaments/mens/u17worldcup/qatar-2026/scores-fixtures",
+      "corroboration": "https://www.espn.com/soccer/standings/_/league/fifa.world.u17 (group tables reconcile GP/F/A)",
+      "confirmed": false,
+      "at": "2026-11-24T16:03:14Z"
+    },
+    "u17m-34": {
+      "score": "6–2",
+      "status": "FT",
+      "source": "https://www.fifa.com/en/tournaments/mens/u17worldcup/qatar-2026/scores-fixtures",
+      "corroboration": "https://www.espn.com/soccer/standings/_/league/fifa.world.u17 (group tables reconcile GP/F/A)",
+      "confirmed": false,
+      "at": "2026-11-24T16:03:14Z"
+    },
+    "u17m-35": {
+      "score": "9–0",
+      "status": "FT",
+      "source": "https://www.fifa.com/en/tournaments/mens/u17worldcup/qatar-2026/scores-fixtures",
+      "corroboration": "https://www.espn.com/soccer/standings/_/league/fifa.world.u17 (group tables reconcile GP/F/A)",
+      "confirmed": false,
+      "at": "2026-11-24T16:03:14Z"
+    },
+    "u17m-36": {
+      "score": "0–4",
+      "status": "FT",
+      "source": "https://www.fifa.com/en/tournaments/mens/u17worldcup/qatar-2026/scores-fixtures",
+      "corroboration": "https://www.espn.com/soccer/standings/_/league/fifa.world.u17 (group tables reconcile GP/F/A)",
+      "confirmed": false,
+      "at": "2026-11-24T16:03:14Z"
+    },
+    "u17m-37": {
+      "score": "2–1",
+      "status": "FT",
+      "source": "https://www.fifa.com/en/tournaments/mens/u17worldcup/qatar-2026/scores-fixtures",
+      "corroboration": "https://www.espn.com/soccer/standings/_/league/fifa.world.u17 (group tables reconcile GP/F/A)",
+      "confirmed": false,
+      "at": "2026-11-24T16:03:14Z"
+    },
+    "u17m-38": {
+      "score": "3–3",
+      "status": "FT",
+      "source": "https://www.fifa.com/en/tournaments/mens/u17worldcup/qatar-2026/scores-fixtures",
+      "corroboration": "https://www.espn.com/soccer/standings/_/league/fifa.world.u17 (group tables reconcile GP/F/A)",
+      "confirmed": false,
+      "at": "2026-11-24T16:03:14Z"
+    },
+    "u17m-39": {
+      "score": "15–0",
+      "status": "FT",
+      "source": "https://www.fifa.com/en/tournaments/mens/u17worldcup/qatar-2026/scores-fixtures",
+      "corroboration": "https://www.espn.com/soccer/standings/_/league/fifa.world.u17 (group tables reconcile GP/F/A)",
+      "confirmed": false,
+      "at": "2026-11-24T16:03:14Z"
+    },
+    "u17m-40": {
+      "score": "2–2",
+      "status": "FT",
+      "source": "https://www.fifa.com/en/tournaments/mens/u17worldcup/qatar-2026/scores-fixtures",
+      "corroboration": "https://www.espn.com/soccer/standings/_/league/fifa.world.u17 (group tables reconcile GP/F/A)",
+      "confirmed": false,
+      "at": "2026-11-24T16:03:14Z"
+    },
+    "u17m-42": {
+      "score": "0–2",
+      "status": "FT",
+      "source": "https://www.fifa.com/en/tournaments/mens/u17worldcup/qatar-2026/scores-fixtures",
+      "corroboration": "https://www.espn.com/soccer/standings/_/league/fifa.world.u17 (group tables reconcile GP/F/A)",
+      "confirmed": false,
+      "at": "2026-11-24T16:03:14Z"
+    },
+    "u17m-45": {
+      "score": "4–0",
+      "status": "FT",
+      "source": "https://www.fifa.com/en/tournaments/mens/u17worldcup/qatar-2026/scores-fixtures",
+      "corroboration": "https://www.espn.com/soccer/standings/_/league/fifa.world.u17 (group tables reconcile GP/F/A)",
+      "confirmed": false,
+      "at": "2026-11-24T16:03:14Z"
+    },
+    "u17m-46": {
+      "score": "1–0",
+      "status": "FT",
+      "source": "https://www.fifa.com/en/tournaments/mens/u17worldcup/qatar-2026/scores-fixtures",
+      "corroboration": "https://www.espn.com/soccer/standings/_/league/fifa.world.u17 (group tables reconcile GP/F/A)",
+      "confirmed": false,
+      "at": "2026-11-24T16:03:14Z"
+    },
+    "u17m-47": {
+      "score": "0–1",
+      "status": "FT",
+      "source": "https://www.fifa.com/en/tournaments/mens/u17worldcup/qatar-2026/scores-fixtures",
+      "corroboration": "https://www.espn.com/soccer/standings/_/league/fifa.world.u17 (group tables reconcile GP/F/A)",
+      "confirmed": false,
+      "at": "2026-11-24T16:03:14Z"
     }
   }
 }
